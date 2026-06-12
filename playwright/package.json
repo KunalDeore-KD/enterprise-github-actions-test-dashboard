@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:shared-lib": "npm run build --prefix Playwright_shared_lib",
+    "postinstall": "npm run build:shared-lib",
     "test": "npx playwright test",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
