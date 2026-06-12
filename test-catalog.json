@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-06-12T09:29:14.242Z",
+  "suites": {
+    "regression": [
+      "tests/08-hooks-and-organization.spec.ts",
+      "tests/09-faker-utilities.spec.ts",
+      "tests/10-api-ui-hybrid.spec.ts",
+      "tests/12-api-snapshot.spec.ts",
+      "tests/20-flaky-demo.spec.ts",
+      "tests/21-failure-demo.spec.ts"
+    ],
+    "smoke": [
+      "tests/08-hooks-and-organization.spec.ts",
+      "tests/09-faker-utilities.spec.ts",
+      "tests/10-api-ui-hybrid.spec.ts"
+    ],
+    "api": [
+      "tests/10-api-ui-hybrid.spec.ts",
+      "tests/12-api-snapshot.spec.ts"
+    ]
+  },
+  "allTests": [
+    "tests/01-first-test.spec.ts",
+    "tests/02-locators-basics.spec.ts",
+    "tests/03-assertion_and_validation.spec.ts",
+    "tests/04-actions-interactions.spec.ts",
+    "tests/05-Codegen-script.spec.ts",
+    "tests/06-waits-and-timing.spec.ts",
+    "tests/07-pom-practice.spec.ts",
+    "tests/08-hooks-and-organization.spec.ts",
+    "tests/09-faker-utilities.spec.ts",
+    "tests/10-api-ui-hybrid.spec.ts",
+    "tests/11-visual-regression.spec.ts",
+    "tests/12-api-snapshot.spec.ts",
+    "tests/13-component-test.spec.ts",
+    "tests/14-test-agents.spec.ts",
+    "tests/16-screenplay-pattern.spec.ts",
+    "tests/17-component-runner.spec.ts",
+    "tests/18-react-site-component.spec.ts",
+    "tests/19-shared-library.spec.ts",
+    "tests/20-flaky-demo.spec.ts",
+    "tests/21-failure-demo.spec.ts",
+    "tests/example.spec.ts"
+  ],
+  "totalCount": 74,
+  "suiteTestCaseCounts": {
+    "regression": 15,
+    "smoke": 5,
+    "api": 7
+  }
+}

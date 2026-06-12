@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>__RUN_TITLE__</title>
+  <script>
+    (function () {
+      const themeKey = 'dashboard-theme';
+      function readTheme() {
+        try {
+          const localTheme = localStorage.getItem(themeKey);
+          if (localTheme) return localTheme;
+        } catch (error) {}
+        return 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', readTheme());
+    })();
+  </script>
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <style>
+    .panel section h2,
+    #consoleLogsPanel h2,
+    #passedPanel h2,
+    #failurePanel h2,
+    #skippedPanel h2,
+    #flakyPanel h2 {
+      margin: 24px 0 12px;
+    }
+
+    .offline-badge {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div id="suiteBanner" class="banner-container" aria-live="polite"></div>
+    <header class="topbar">
+      <div>
+        <h1>Run Details</h1>
+        <p class="offline-badge">Offline report · __RUN_TITLE__</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn-secondary btn-sm" type="button">Light mode</button>
+        <button id="exportCsvBtn" class="btn-secondary btn-sm" type="button">Export CSV</button>
+        __PLAYWRIGHT_REPORT_LINK__
+      </div>
+    </header>
+
+    <main class="panel">
+      <div id="runMeta" class="run-meta"></div>
+      <div id="summaryCards" class="run-summary-grid run-filter-bar--sticky" role="group" aria-label="Jump to test sections"></div>
+      <div id="suiteNotice"></div>
+
+      <section id="consoleLogsPanel" aria-label="Console logs">
+        <h2>Console logs</h2>
+        <div id="consoleLogsContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="passedPanel" aria-label="Passed tests">
+        <h2>Passed tests</h2>
+        <div id="passedContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="failurePanel" aria-label="Failed tests">
+        <h2>Failed tests</h2>
+        <div id="failureContent" class="failure-list"></div>
+      </section>
+
+      <section id="skippedPanel" aria-label="Skipped tests">
+        <h2>Skipped tests</h2>
+        <div id="skippedContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="flakyPanel" aria-label="Flaky tests">
+        <h2>Flaky tests</h2>
+        <div id="flakyContent" class="workflow-log-list"></div>
+      </section>
+    </main>
+
+    <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+  </div>
+
+  <script>window.__RUN_DETAILS__ = __RUN_DATA_JSON__;</script>
+  <script src="./assets/error-explainer.js"></script>
+  <script src="./assets/run-offline.js"></script>
+</body>
+</html>

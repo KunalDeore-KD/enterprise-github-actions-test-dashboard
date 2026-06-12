@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Run Details</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' http://localhost:5000 http://127.0.0.1:5000 http://localhost:3000 http://127.0.0.1:3000; media-src 'self' http://localhost:5000 http://127.0.0.1:5000 blob:; img-src 'self'; font-src 'self';" />
+  <script src="./config.js"></script>
+  <script>
+    (function () {
+      const themeKey = 'dashboard-theme';
+      const defaultTheme = (window.DASHBOARD_CONFIG && window.DASHBOARD_CONFIG.dashboard && window.DASHBOARD_CONFIG.dashboard.defaultTheme) || 'dark';
+
+      function readTheme() {
+        try {
+          const localTheme = localStorage.getItem(themeKey);
+          if (localTheme) return localTheme;
+        } catch (error) {}
+
+        try {
+          const sessionTheme = sessionStorage.getItem(themeKey);
+          if (sessionTheme) return sessionTheme;
+        } catch (error) {}
+
+        return defaultTheme;
+      }
+
+      document.documentElement.setAttribute('data-theme', readTheme());
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div id="suiteBanner" class="banner-container" aria-live="polite"></div>
+    <header class="topbar">
+      <div>
+        <h1>Run Details</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="exportCsvBtn" class="btn-secondary btn-sm" type="button">Export CSV</button>
+        <a href="./" class="btn-secondary btn-sm">Back</a>
+      </div>
+    </header>
+
+    <main class="panel">
+      <div id="runMeta" class="run-meta"></div>
+      <div id="summaryCards" class="run-summary-grid run-filter-bar--sticky" role="group" aria-label="Jump to test sections"></div>
+      <div id="suiteNotice"></div>
+
+      <section id="consoleLogsPanel" aria-label="Console logs">
+        <h2>Console logs</h2>
+        <div id="consoleLogsContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="passedPanel" aria-label="Passed tests">
+        <h2>Passed tests</h2>
+        <div id="passedContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="failurePanel" aria-label="Failed tests">
+        <h2>Failed tests</h2>
+        <div id="failureContent" class="failure-list"></div>
+      </section>
+
+      <section id="skippedPanel" aria-label="Skipped tests">
+        <h2>Skipped tests</h2>
+        <div id="skippedContent" class="workflow-log-list"></div>
+      </section>
+
+      <section id="flakyPanel" aria-label="Flaky tests">
+        <h2>Flaky tests</h2>
+        <div id="flakyContent" class="workflow-log-list"></div>
+      </section>
+    </main>
+
+    <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./config-loader.js"></script>
+  <script src="./video-url.js"></script>
+  <script src="./error-explainer.js"></script>
+  <script src="./run.js"></script>
+</body>
+</html>
