@@ -1,6 +1,823 @@
 {
-  "lastUpdated": "2026-06-12T09:50:36.392Z",
+  "lastUpdated": "2026-06-12T09:56:04.497Z",
   "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "27408344820",
+      "runNumber": 6,
+      "branch": "main",
+      "commit": "5366b0d",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "KunalDeore-KD",
+        "email": "",
+        "date": "2026-06-12T09:56:01.185Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-12T09:53:32.624Z",
+      "finishedAt": "2026-06-12T09:56:01.900Z",
+      "durationSeconds": 147,
+      "environment": "",
+      "suiteFilter": "regression",
+      "summary": {
+        "total": 45,
+        "passed": 30,
+        "failed": 6,
+        "skipped": 3,
+        "flaky": 6,
+        "passRate": 66.7
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408344820",
+      "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408344820",
+      "artifactExpiresAt": "2026-07-12T09:56:01.897Z",
+      "allureReportUrl": null,
+      "videos": {
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm",
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox/video.webm",
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-chromium": "08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-firefox": "08-hooks-and-organization--c767e-uired-validation-regression-firefox/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-webkit": "08-hooks-and-organization--c767e-uired-validation-regression-webkit/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm",
+        "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/video.webm",
+        "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2": "21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium": "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1": "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2": "21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox": "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1": "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2": "21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit": "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1": "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/video.webm",
+        "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2": "21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2/video.webm"
+      },
+      "workflowLog": "Running 45 tests using 1 worker\n=== Starting AngularPractice Test Suite ===\n··=== Finished AngularPractice Test Suite ===\n°Run with data: {\n  name: 'Anthony Bartoletti',\n  email: 'Derick.Gerhold50@gmail.com',\n  password: 'kja7C2mcNV_k',\n  gender: 'Male',\n  dob: '1987-06-21',\n  loveIceCream: true,\n  employment: 'employed'\n}\n·Random name: Kristin Swift\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 132\nCreated at: 2026-06-12T09:53:37.315Z\n·····×±×±××F××F=== Starting AngularPractice Test Suite ===\n··=== Finished AngularPractice Test Suite ===\n°Run with data: {\n  name: 'Scott Conn PhD',\n  email: 'Maurice.Schiller@hotmail.com',\n  password: 'D4Uqwsvwb9ya',\n  gender: 'Male',\n  dob: '1989-11-30',\n  loveIceCream: false,\n  employment: 'employed'\n}\n·Random name: Rae Roberts\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 359\nCreated at: 2026-06-12T09:54:21.087Z\n·····×±×±××F××F=== Starting AngularPractice Test Suite ===\n··=== Finished AngularPractice Test Suite ===\n°Run with data: {\n  name: 'Miss Victoria Gutkowski',\n  email: 'Sarah_Hansen30@hotmail.com',\n  password: 'NNexgrg6oZA3',\n  gender: 'Male',\n  dob: '1996-08-08',\n  loveIceCream: false,\n  employment: 'student'\n}\n·Random name: Ronaldo Shanahan\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 35\nCreated at: 2026-06-12T09:55:18.948Z\n·····×±×±××F××F\n\n  1) [chromium] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2/error-context.md\n\n  2) [chromium] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2/error-context.md\n\n  3) [firefox] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2/error-context.md\n\n  4) [firefox] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        13 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        13 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        13 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2/error-context.md\n\n  5) [webkit] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#intentional-failure-missing-element')\n    Expected: visible\n    Timeout: 5000ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 5000ms\n      - waiting for locator('#intentional-failure-missing-element')\n\n\n       5 |   test(\"expects a missing element @regression\", async ({ page }) => {\n       6 |     await page.goto(PRACTICE_PAGE_URL);\n    >  7 |     await expect(page.locator(\"#intentional-failure-missing-element\")).toBeVisible();\n         |                                                                        ^\n       8 |   });\n       9 |\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2/error-context.md\n\n  6) [webkit] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit/error-context.md\n\n    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/error-context.md\n\n    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/trace.zip\n    Usage:\n\n        npx playwright show-trace test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry1/trace.zip\n\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────\n\n    Error: expect(page).toHaveTitle(expected) failed\n\n    Expected: \"This Title Is Wrong On Purpose\"\n    Received: \"AngularPractice Local Fixture\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveTitle\" with timeout 5000ms\n        14 × unexpected value \"AngularPractice Local Fixture\"\n\n\n      10 |   test(\"asserts the wrong page title @regression\", async ({ page }) => {\n      11 |     await page.goto(PRACTICE_PAGE_URL);\n    > 12 |     await expect(page).toHaveTitle(\"This Title Is Wrong On Purpose\");\n         |                        ^\n      13 |   });\n      14 | });\n      15 |\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2/error-context.md\n\n  7) [chromium] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/error-context.md\n\n  8) [chromium] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-chromium/error-context.md\n\n  9) [firefox] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/error-context.md\n\n  10) [firefox] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-firefox/error-context.md\n\n  11) [webkit] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/error-context.md\n\n  12) [webkit] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-webkit/error-context.md\n\n  6 failed\n    [chromium] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n    [chromium] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n    [firefox] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n    [firefox] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n    [webkit] › tests/21-failure-demo.spec.ts:5:3 › Failure demo › expects a missing element @regression \n    [webkit] › tests/21-failure-demo.spec.ts:10:3 › Failure demo › asserts the wrong page title @regression \n  6 flaky\n    [chromium] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [chromium] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n    [firefox] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [firefox] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n    [webkit] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [webkit] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n  3 skipped\n  30 passed (2.5m)",
+      "consoleLogs": [
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Anthony Bartoletti',\n  email: 'Derick.Gerhold50@gmail.com',\n  password: 'kja7C2mcNV_k',\n  gender: 'Male',\n  dob: '1987-06-21',\n  loveIceCream: true,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Kristin Swift"
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "firefox",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Scott Conn PhD',\n  email: 'Maurice.Schiller@hotmail.com',\n  password: 'D4Uqwsvwb9ya',\n  gender: 'Male',\n  dob: '1989-11-30',\n  loveIceCream: false,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "firefox",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Rae Roberts"
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "webkit",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Miss Victoria Gutkowski',\n  email: 'Sarah_Hansen30@hotmail.com',\n  password: 'NNexgrg6oZA3',\n  gender: 'Male',\n  dob: '1996-08-08',\n  loveIceCream: false,\n  employment: 'student'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "webkit",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Ronaldo Shanahan"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 132"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-12T09:53:37.315Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 359"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-12T09:54:21.087Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 35"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-12T09:55:18.948Z"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--c767e-uired-validation-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--c767e-uired-validation-regression-webkit/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 0,
+          "failed": 0,
+          "skipped": 3,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "chromium",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "firefox",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "webkit",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm"
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox/video.webm"
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "passed": 12,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Flaky demo",
+          "file": "20-flaky-demo.spec.ts",
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 6,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
+              "browser": "chromium",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+              "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm"
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
+              "browser": "chromium",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
+              "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+            },
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
+              "browser": "firefox",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+              "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm"
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
+              "browser": "firefox",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
+              "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+            },
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
+              "browser": "webkit",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+              "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm"
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
+              "browser": "webkit",
+              "status": "flaky",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
+              "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+            }
+          ]
+        },
+        {
+          "name": "Failure demo",
+          "file": "21-failure-demo.spec.ts",
+          "passed": 0,
+          "failed": 6,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "expects a missing element @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > expects a missing element @regression",
+              "browser": "chromium",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-chromium-retry2/video.webm"
+            },
+            {
+              "title": "asserts the wrong page title @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > asserts the wrong page title @regression",
+              "browser": "chromium",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 × unexpected value \"AngularPractice Local Fixture\"\n",
+              "errorStack": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 × unexpected value \"AngularPractice Local Fixture\"\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-chromium-retry2/video.webm"
+            },
+            {
+              "title": "expects a missing element @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > expects a missing element @regression",
+              "browser": "firefox",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-firefox-retry2/video.webm"
+            },
+            {
+              "title": "asserts the wrong page title @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > asserts the wrong page title @regression",
+              "browser": "firefox",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    13 × unexpected value \"AngularPractice Local Fixture\"\n",
+              "errorStack": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    13 × unexpected value \"AngularPractice Local Fixture\"\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-firefox-retry2/video.webm"
+            },
+            {
+              "title": "expects a missing element @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > expects a missing element @regression",
+              "browser": "webkit",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n",
+              "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#intentional-failure-missing-element')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 5000ms\n  - waiting for locator('#intentional-failure-missing-element')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:7:72",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-ad682--missing-element-regression-webkit-retry2/video.webm"
+            },
+            {
+              "title": "asserts the wrong page title @regression",
+              "fullTitle": "21-failure-demo.spec.ts > Failure demo > asserts the wrong page title @regression",
+              "browser": "webkit",
+              "status": "failed",
+              "durationMs": 0,
+              "errorMessage": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 × unexpected value \"AngularPractice Local Fixture\"\n",
+              "errorStack": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected: \"This Title Is Wrong On Purpose\"\nReceived: \"AngularPractice Local Fixture\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 × unexpected value \"AngularPractice Local Fixture\"\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/21-failure-demo.spec.ts:12:24",
+              "videoPath": "playwright/test-results/21-failure-demo-Failure-de-a0b5c-wrong-page-title-regression-webkit-retry2/video.webm"
+            }
+          ]
+        }
+      ]
+    },
     {
       "schemaVersion": "1.0",
       "runId": "27407969986",
