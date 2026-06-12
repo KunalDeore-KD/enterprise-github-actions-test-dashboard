@@ -1,41 +1,274 @@
 {
   "schemaVersion": "1.0",
-  "runId": "27407316123",
-  "runNumber": 2,
+  "runId": "27408861998",
+  "runNumber": 9,
   "branch": "main",
-  "commit": "64229ba",
+  "commit": "5366b0d",
   "triggeredBy": "KunalDeore-KD",
   "commitAuthor": {
     "name": "KunalDeore-KD",
     "email": "kunal.d@york.ie",
-    "date": "2026-06-12T09:27:54Z"
+    "date": "2026-06-12T09:36:48Z"
   },
   "workflowActor": "KunalDeore-KD",
-  "startedAt": "2026-06-12T09:32:44.385Z",
-  "finishedAt": "2026-06-12T09:33:07.523Z",
-  "durationSeconds": 1,
+  "startedAt": "2026-06-12T10:04:11.777Z",
+  "finishedAt": "2026-06-12T10:04:49.774Z",
+  "durationSeconds": 23,
   "environment": "",
-  "suiteFilter": null,
+  "suiteFilter": "single",
   "summary": {
-    "total": 1,
-    "passed": 0,
-    "failed": 1,
+    "total": 15,
+    "passed": 15,
+    "failed": 0,
     "skipped": 0,
     "flaky": 0,
-    "passRate": 0
+    "passRate": 100
   },
-  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407316123",
-  "artifactViewUrl": "./run?runId=27407316123#evidence",
-  "artifactExpiresAt": "2026-07-12T09:33:07.522Z",
+  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408861998",
+  "artifactViewUrl": "./run?runId=27408861998#evidence",
+  "artifactExpiresAt": "2026-07-12T10:04:49.773Z",
   "allureReportUrl": null,
-  "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-2",
-  "collectionFailed": true,
-  "errors": [
+  "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-9",
+  "videos": {
+    "17-component-runner-Compon-0a2af-d-test-validation-component-chromium": "17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm",
+    "17-component-runner-Compon-0a2af-d-test-validation-component-firefox": "17-component-runner-Compon-0a2af-d-test-validation-component-firefox/video.webm",
+    "17-component-runner-Compon-0a2af-d-test-validation-component-webkit": "17-component-runner-Compon-0a2af-d-test-validation-component-webkit/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium": "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox": "17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit": "17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-chromium": "17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-firefox": "17-component-runner-Compon-819fc--and-verify-click-component-firefox/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-webkit": "17-component-runner-Compon-819fc--and-verify-click-component-webkit/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-chromium": "17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-firefox": "17-component-runner-Compon-b83a4-d-test-validation-component-firefox/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-webkit": "17-component-runner-Compon-b83a4-d-test-validation-component-webkit/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium": "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-firefox": "17-component-runner-Compon-d18c6-nd-test-selection-component-firefox/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-webkit": "17-component-runner-Compon-d18c6-nd-test-selection-component-webkit/video.webm"
+  },
+  "workflowLog": "Running 15 tests using 1 worker\n····[Component Test] Email: Cordia.Wuckert@yahoo.com\n[Component Test] Password: RuboFy8YKISm\n·····[Component Test] Email: Laila_Bechtelar-Hilll@hotmail.com\n[Component Test] Password: 5UXuCNTVQFel\n·····[Component Test] Email: Mattie57@yahoo.com\n[Component Test] Password: B3iwxSIbRpWG\n·\n  15 passed (22.9s)",
+  "consoleLogs": [
     {
-      "message": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts",
-      "stack": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts"
+      "title": "login form with random Faker data @component",
+      "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+      "browser": "chromium",
+      "file": "17-component-runner.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Email: Cordia.Wuckert@yahoo.com"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Password: RuboFy8YKISm"
+        }
+      ]
+    },
+    {
+      "title": "login form with random Faker data @component",
+      "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+      "browser": "firefox",
+      "file": "17-component-runner.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Email: Laila_Bechtelar-Hilll@hotmail.com"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Password: 5UXuCNTVQFel"
+        }
+      ]
+    },
+    {
+      "title": "login form with random Faker data @component",
+      "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+      "browser": "webkit",
+      "file": "17-component-runner.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Email: Mattie57@yahoo.com"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Component Test] Password: B3iwxSIbRpWG"
+        }
+      ]
     }
   ],
-  "workflowLog": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts",
-  "suites": []
+  "suites": [
+    {
+      "name": "Component Runner: Inline Mount",
+      "file": "17-component-runner.spec.ts",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "durationMs": 0,
+      "tests": [
+        {
+          "title": "mount a button and verify click @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a button and verify click @component",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm"
+        },
+        {
+          "title": "mount a form inline and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a form inline and test validation @component",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm"
+        },
+        {
+          "title": "mount a button and verify click @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a button and verify click @component",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-firefox/video.webm"
+        },
+        {
+          "title": "mount a form inline and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a form inline and test validation @component",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-firefox/video.webm"
+        },
+        {
+          "title": "mount a button and verify click @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a button and verify click @component",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-webkit/video.webm"
+        },
+        {
+          "title": "mount a form inline and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a form inline and test validation @component",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-webkit/video.webm"
+        }
+      ]
+    },
+    {
+      "name": "Component Runner: File Mount",
+      "file": "17-component-runner.spec.ts",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "durationMs": 0,
+      "tests": [
+        {
+          "title": "mount dropdown fixture and test selection @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount dropdown fixture and test selection @component",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm"
+        },
+        {
+          "title": "mount login form fixture and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount login form fixture and test validation @component",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm"
+        },
+        {
+          "title": "login form with random Faker data @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm"
+        },
+        {
+          "title": "mount dropdown fixture and test selection @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount dropdown fixture and test selection @component",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-firefox/video.webm"
+        },
+        {
+          "title": "mount login form fixture and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount login form fixture and test validation @component",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-firefox/video.webm"
+        },
+        {
+          "title": "login form with random Faker data @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox/video.webm"
+        },
+        {
+          "title": "mount dropdown fixture and test selection @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount dropdown fixture and test selection @component",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-webkit/video.webm"
+        },
+        {
+          "title": "mount login form fixture and test validation @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount login form fixture and test validation @component",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-webkit/video.webm"
+        },
+        {
+          "title": "login form with random Faker data @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit/video.webm"
+        }
+      ]
+    }
+  ]
 }

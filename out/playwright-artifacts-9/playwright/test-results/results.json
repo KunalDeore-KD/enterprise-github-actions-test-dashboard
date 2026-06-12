@@ -1,0 +1,870 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/playwright.config.ts",
+    "rootDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408861998"
+      },
+      "gitCommit": {
+        "shortHash": "5366b0d",
+        "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+        "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+        "author": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781257008000
+        },
+        "committer": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781257008000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408861998"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408861998"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408861998"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "17-component-runner.spec.ts",
+      "file": "17-component-runner.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Component Runner: Inline Mount",
+          "file": "17-component-runner.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mount a button and verify click @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 348,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:12.657Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-6bb36bc3f486300a8f5d",
+              "file": "17-component-runner.spec.ts",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "mount a form inline and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 269,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:13.932Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-22d88b31333424f8e1cd",
+              "file": "17-component-runner.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "mount a button and verify click @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1438,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:15.728Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-b555c0fb5661bc07dfe3",
+              "file": "17-component-runner.spec.ts",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "mount a form inline and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 511,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:17.666Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-6a6a4816edfec864a003",
+              "file": "17-component-runner.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "mount a button and verify click @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9958,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:20.907Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-819fc--and-verify-click-component-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-6bbddcc2e8fad893a47b",
+              "file": "17-component-runner.spec.ts",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "mount a form inline and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 763,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:31.502Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-b83a4-d-test-validation-component-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-83a1b75f889a539ef271",
+              "file": "17-component-runner.spec.ts",
+              "line": 27,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Component Runner: File Mount",
+          "file": "17-component-runner.spec.ts",
+          "line": 66,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mount dropdown fixture and test selection @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:14.218Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-118e552a81813c34821e",
+              "file": "17-component-runner.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "mount login form fixture and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 333,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:14.448Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-e932171ff4549eb6f288",
+              "file": "17-component-runner.spec.ts",
+              "line": 94,
+              "column": 3
+            },
+            {
+              "title": "login form with random Faker data @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 237,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Component Test] Email: Cordia.Wuckert@yahoo.com\n"
+                        },
+                        {
+                          "text": "[Component Test] Password: RuboFy8YKISm\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:14.791Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-1a45e482ff1f0704dfe1",
+              "file": "17-component-runner.spec.ts",
+              "line": 127,
+              "column": 3
+            },
+            {
+              "title": "mount dropdown fixture and test selection @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 440,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:18.193Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-f148f5509b6e3c4867f7",
+              "file": "17-component-runner.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "mount login form fixture and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 674,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:18.650Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-90a70e2ca73207afa5f9",
+              "file": "17-component-runner.spec.ts",
+              "line": 94,
+              "column": 3
+            },
+            {
+              "title": "login form with random Faker data @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 486,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Component Test] Email: Laila_Bechtelar-Hilll@hotmail.com\n"
+                        },
+                        {
+                          "text": "[Component Test] Password: 5UXuCNTVQFel\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:19.339Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-0d1456e46a6b866dfca8",
+              "file": "17-component-runner.spec.ts",
+              "line": 127,
+              "column": 3
+            },
+            {
+              "title": "mount dropdown fixture and test selection @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 724,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:32.278Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-f6596cf6a1e79464cb16",
+              "file": "17-component-runner.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "mount login form fixture and test validation @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 902,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:33.017Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-0a2af-d-test-validation-component-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-790694ddb82767385a28",
+              "file": "17-component-runner.spec.ts",
+              "line": 94,
+              "column": 3
+            },
+            {
+              "title": "login form with random Faker data @component",
+              "ok": true,
+              "tags": [
+                "component"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 677,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Component Test] Email: Mattie57@yahoo.com\n"
+                        },
+                        {
+                          "text": "[Component Test] Password: B3iwxSIbRpWG\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T10:04:33.933Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6c2ddbbb90c219a49347-5bc21c040f1d690dbc49",
+              "file": "17-component-runner.spec.ts",
+              "line": 127,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-12T10:04:11.777Z",
+    "duration": 22888.367,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

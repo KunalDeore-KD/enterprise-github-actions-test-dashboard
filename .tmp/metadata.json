@@ -1,18 +1,34 @@
 {
-  "timestamp": "2026-06-12T09:33:06.156Z",
+  "timestamp": "2026-06-12T10:04:48.549Z",
   "commit": {
     "authorName": "KunalDeore-KD",
     "authorEmail": "kunal.d@york.ie",
-    "authorDate": "2026-06-12T09:27:54Z",
-    "message": "Initial commit: portable Playwright test dashboard.\n\nSingle-config setup via dashboard.config.json, dynamic dashboard UI, GitHub Actions integration, and cleaned project structure.\n\nCo-authored-by: Cursor <cursoragent@cursor.com>",
-    "sha": "64229ba9ebe7db9a262d1e1625605a4fd4547cd1"
+    "authorDate": "2026-06-12T09:36:48Z",
+    "message": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+    "sha": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30"
   },
   "workflow": {
     "actor": "KunalDeore-KD",
     "triggerEvent": "workflow_dispatch",
-    "runNumber": 2,
-    "runId": 27407316123,
+    "runNumber": 9,
+    "runId": 27408861998,
     "jobName": "test"
   },
-  "videos": {}
+  "videos": {
+    "17-component-runner-Compon-0a2af-d-test-validation-component-chromium": "17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm",
+    "17-component-runner-Compon-0a2af-d-test-validation-component-firefox": "17-component-runner-Compon-0a2af-d-test-validation-component-firefox/video.webm",
+    "17-component-runner-Compon-0a2af-d-test-validation-component-webkit": "17-component-runner-Compon-0a2af-d-test-validation-component-webkit/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium": "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox": "17-component-runner-Compon-7dfdc-random-Faker-data-component-firefox/video.webm",
+    "17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit": "17-component-runner-Compon-7dfdc-random-Faker-data-component-webkit/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-chromium": "17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-firefox": "17-component-runner-Compon-819fc--and-verify-click-component-firefox/video.webm",
+    "17-component-runner-Compon-819fc--and-verify-click-component-webkit": "17-component-runner-Compon-819fc--and-verify-click-component-webkit/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-chromium": "17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-firefox": "17-component-runner-Compon-b83a4-d-test-validation-component-firefox/video.webm",
+    "17-component-runner-Compon-b83a4-d-test-validation-component-webkit": "17-component-runner-Compon-b83a4-d-test-validation-component-webkit/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium": "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-firefox": "17-component-runner-Compon-d18c6-nd-test-selection-component-firefox/video.webm",
+    "17-component-runner-Compon-d18c6-nd-test-selection-component-webkit": "17-component-runner-Compon-d18c6-nd-test-selection-component-webkit/video.webm"
+  }
 }

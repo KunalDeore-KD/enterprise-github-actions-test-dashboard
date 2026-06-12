@@ -1,0 +1,957 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/playwright.config.ts",
+    "rootDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408574315"
+      },
+      "gitCommit": {
+        "shortHash": "5366b0d",
+        "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+        "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+        "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+        "author": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781257008000
+        },
+        "committer": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781257008000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408574315"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408574315"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "commitHash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27408574315"
+          },
+          "gitCommit": {
+            "shortHash": "5366b0d",
+            "hash": "5366b0d6378d4f32a45a41f4b251a9c9e35adb30",
+            "subject": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.",
+            "body": "Update dashboard and history files with latest run details, including error logging for missing package in Playwright tests.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781257008000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "08-hooks-and-organization.spec.ts",
+      "file": "08-hooks-and-organization.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "line": 21,
+          "column": 6,
+          "specs": [
+            {
+              "title": "fill form and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 546,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:23.846Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-4eaf1bc1b72001128e22",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "fill form and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1804,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:28.527Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-01004913b31fc488aecc",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "fill form and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5390,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:35.000Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-e43d0c810cc4ca7d0958",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 30,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "line": 75,
+          "column": 6,
+          "specs": [
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 183,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:25.665Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-5cdf4f9938b8e5d6d0cc",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 460,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:30.877Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-5475916bc4bb09388509",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 539,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:40.955Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-ed164108575d5eee78f6",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 80,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Navigation Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "line": 96,
+          "column": 6,
+          "specs": [
+            {
+              "title": "navigate to Shop page @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 261,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:25.861Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-0698f2988ae1b7499d58",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 101,
+              "column": 3
+            },
+            {
+              "title": "navigate to Shop page @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 564,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:31.348Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-5929daf58e72e4d91c15",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 101,
+              "column": 3
+            },
+            {
+              "title": "navigate to Shop page @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 673,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:41.509Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-1ca7a6d7d8946c1cffab",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 101,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "09-faker-utilities.spec.ts",
+      "file": "09-faker-utilities.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 550,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Generated form data: {\n  name: \u001b[32m'Rigoberto Runolfsdottir'\u001b[39m,\n  email: \u001b[32m'Elroy.Jast41@hotmail.com'\u001b[39m,\n  password: \u001b[32m'pGekytVqCFFv'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dob: \u001b[32m'1982-01-22'\u001b[39m,\n  loveIceCream: \u001b[33mtrue\u001b[39m,\n  employment: \u001b[32m'student'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:26.330Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-2013a358375d18a732ac",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 770,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Generated form data: {\n  name: \u001b[32m'Maryann Lowe'\u001b[39m,\n  email: \u001b[32m'Mason_Koelpin@hotmail.com'\u001b[39m,\n  password: \u001b[32m'sDgCkQX1g_35'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dob: \u001b[32m'1972-08-19'\u001b[39m,\n  loveIceCream: \u001b[33mfalse\u001b[39m,\n  employment: \u001b[32m'employed'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:32.141Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-73c7bf14a61261434708",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 905,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Generated form data: {\n  name: \u001b[32m'Zelda Koss'\u001b[39m,\n  email: \u001b[32m'Anais.Flatley@hotmail.com'\u001b[39m,\n  password: \u001b[32m'9tpZd7PAU4lk'\u001b[39m,\n  gender: \u001b[32m'Male'\u001b[39m,\n  dob: \u001b[32m'1985-09-07'\u001b[39m,\n  loveIceCream: \u001b[33mfalse\u001b[39m,\n  employment: \u001b[32m'student'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:42.410Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-00b339da161b816916ba",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 17,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "10-api-ui-hybrid.spec.ts",
+      "file": "10-api-ui-hybrid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1062,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:26.903Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-749203f051896ce0d60e",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1184,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:32.944Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-daf81c8f601fc208eabe",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1320,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-12T09:58:43.337Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-dc6255ef77430788c169",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-12T09:58:22.539Z",
+    "duration": 22179.096,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
