@@ -1,18 +1,18 @@
 {
   "schemaVersion": "1.0",
-  "runId": "27407142627",
-  "runNumber": 1,
+  "runId": "27407316123",
+  "runNumber": 2,
   "branch": "main",
   "commit": "64229ba",
   "triggeredBy": "KunalDeore-KD",
   "commitAuthor": {
     "name": "KunalDeore-KD",
     "email": "",
-    "date": "2026-06-12T09:29:14.881Z"
+    "date": "2026-06-12T09:32:46.536Z"
   },
   "workflowActor": "KunalDeore-KD",
-  "startedAt": "2026-06-12T09:29:12.732Z",
-  "finishedAt": "2026-06-12T09:29:15.579Z",
+  "startedAt": "2026-06-12T09:32:44.385Z",
+  "finishedAt": "2026-06-12T09:32:47.261Z",
   "durationSeconds": 1,
   "environment": "",
   "suiteFilter": null,
@@ -24,9 +24,9 @@
     "flaky": 0,
     "passRate": 0
   },
-  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407142627",
-  "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407142627",
-  "artifactExpiresAt": "2026-07-12T09:29:15.578Z",
+  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407316123",
+  "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407316123",
+  "artifactExpiresAt": "2026-07-12T09:32:47.260Z",
   "allureReportUrl": null,
   "collectionFailed": true,
   "errors": [
