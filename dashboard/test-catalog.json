@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T09:07:57.224Z",
+  "generatedAt": "2026-06-12T09:33:09.672Z",
   "suites": {
     "regression": [
       "tests/08-hooks-and-organization.spec.ts",
