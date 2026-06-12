@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-04T10:13:29Z",
+  "title": "Design System: Enterprise GitHub Actions Test Dashboard",
+  "extensions": {
+    "colorMeta": {
+      "brand": { "role": "primary", "displayName": "Brand Blue", "canonical": "#06b6d4" },
+      "surface": { "role": "surface", "displayName": "Surface", "canonical": "#0f172a" },
+      "surface-deep": { "role": "surface-deep", "displayName": "Deep Surface", "canonical": "#02060f" },
+      "text-primary": { "role": "text", "displayName": "Primary Text", "canonical": "#eff2ff" },
+      "text-secondary": { "role": "text-muted", "displayName": "Secondary Text", "canonical": "#cbd5e1" },
+      "text-muted": { "role": "text-muted", "displayName": "Muted Text", "canonical": "#94a3b8" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Primary page titles and large headings." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers and panel titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraph text and supporting copy." },
+      "label": { "displayName": "Label", "purpose": "Form labels, table headers, and compact metadata." },
+      "code": { "displayName": "Code", "purpose": "Numeric values and technical command output." }
+    },
+    "elevationMeta": {
+      "style": "Tonal layering with subtle panel shadow and soft borders.",
+      "notes": "Surfaces remain stable and grounded; shadows are used sparingly for modals and top-level panels."
+    }
+  }
+}

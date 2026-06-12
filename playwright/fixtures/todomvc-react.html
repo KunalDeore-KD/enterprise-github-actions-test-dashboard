@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TodoMVC Local Fixture</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 720px; margin: auto; }
+    h1 { margin-bottom: 1rem; }
+    .todo-app { border: 1px solid #ddd; border-radius: 0.5rem; padding: 1rem; }
+    .todo-input { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.35rem; margin-bottom: 1rem; }
+    .filters { display: flex; gap: 0.75rem; margin: 1rem 0; }
+    .filters a { color: #1d4ed8; text-decoration: none; cursor: pointer; }
+    .filters a.active { font-weight: 700; }
+    .todo-item { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.75rem; border-bottom: 1px solid #eee; }
+    .todo-item.completed label { text-decoration: line-through; opacity: 0.65; }
+    .todo-item button { opacity: 0; border: none; background: transparent; color: #dc2626; font-size: 1.25rem; cursor: pointer; }
+    .todo-item:hover button { opacity: 1; }
+    .todo-count { display: block; margin-top: 0.75rem; }
+    .toggle-all { margin-right: 0.5rem; }
+    .actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="todo-app">
+    <h1>TodoMVC Local Fixture</h1>
+    <div class="actions">
+      <label><input type="checkbox" class="toggle-all" /> Toggle All</label>
+      <button type="button" id="clearCompleted">Clear completed</button>
+    </div>
+    <input id="todoInput" class="todo-input" placeholder="What needs to be done?" aria-label="What needs to be done?" />
+
+    <div class="filters" role="navigation">
+      <a href="#" data-filter="all" class="active">All</a>
+      <a href="#" data-filter="active">Active</a>
+      <a href="#" data-filter="completed">Completed</a>
+    </div>
+
+    <div id="todoList"></div>
+    <span class="todo-count">0 items left</span>
+  </div>
+
+  <script>
+    const input = document.getElementById('todoInput');
+    const todoList = document.getElementById('todoList');
+    const count = document.querySelector('.todo-count');
+    const filters = Array.from(document.querySelectorAll('[data-filter]'));
+    const clearCompleted = document.getElementById('clearCompleted');
+    const toggleAll = document.querySelector('.toggle-all');
+    let todos = [];
+    let currentFilter = 'all';
+
+    function renderTodos() {
+      todoList.innerHTML = '';
+      const visibleTodos = todos.filter((todo) => {
+        if (currentFilter === 'active') return !todo.completed;
+        if (currentFilter === 'completed') return todo.completed;
+        return true;
+      });
+
+      visibleTodos.forEach((todo) => {
+        const item = document.createElement('div');
+        item.className = 'todo-item' + (todo.completed ? ' completed' : '');
+        item.dataset.testid = 'todo-item';
+
+        const left = document.createElement('div');
+        left.style.flex = '1';
+        left.style.display = 'flex';
+        left.style.alignItems = 'center';
+        left.style.gap = '0.75rem';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = todo.completed;
+        checkbox.addEventListener('change', () => {
+          todo.completed = checkbox.checked;
+          updateCount();
+          renderTodos();
+        });
+
+        const label = document.createElement('label');
+        label.textContent = todo.text;
+        label.dataset.testid = 'todo-item-label';
+        label.style.cursor = 'pointer';
+        label.addEventListener('dblclick', () => {
+          const editInput = document.createElement('input');
+          editInput.type = 'text';
+          editInput.value = todo.text;
+          editInput.dataset.testid = 'text-input';
+          editInput.style.width = '100%';
+          editInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+              todo.text = editInput.value.trim() || todo.text;
+              renderTodos();
+            }
+          });
+          left.replaceChild(editInput, label);
+          editInput.focus();
+        });
+
+        left.appendChild(checkbox);
+        left.appendChild(label);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.type = 'button';
+        deleteButton.textContent = '×';
+        deleteButton.addEventListener('click', () => {
+          todos = todos.filter((current) => current.id !== todo.id);
+          updateCount();
+          renderTodos();
+        });
+
+        item.appendChild(left);
+        item.appendChild(deleteButton);
+        todoList.appendChild(item);
+      });
+    }
+
+    function updateCount() {
+      const activeCount = todos.filter((todo) => !todo.completed).length;
+      count.textContent = activeCount === 1 ? '1 item left' : `${activeCount} items left`;
+      toggleAll.checked = todos.length > 0 && todos.every((todo) => todo.completed);
+    }
+
+    function addTodo(text) {
+      todos.push({ id: Date.now() + Math.random(), text, completed: false });
+      renderTodos();
+      updateCount();
+    }
+
+    input.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const trimmed = input.value.trim();
+      if (!trimmed) return;
+      addTodo(trimmed);
+      input.value = '';
+    });
+
+    filters.forEach((filterLink) => {
+      filterLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        currentFilter = filterLink.dataset.filter;
+        filters.forEach((link) => link.classList.toggle('active', link === filterLink));
+        renderTodos();
+      });
+    });
+
+    clearCompleted.addEventListener('click', () => {
+      todos = todos.filter((todo) => !todo.completed);
+      renderTodos();
+      updateCount();
+    });
+
+    toggleAll.addEventListener('change', () => {
+      const completed = toggleAll.checked;
+      todos = todos.map((todo) => ({ ...todo, completed }));
+      renderTodos();
+      updateCount();
+    });
+
+    window.addEventListener('load', () => {
+      input.focus();
+      updateCount();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "playwright-shared-lib",
+  "version": "1.0.0",
+  "description": "Shared utilities for Playwright test automation",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "shared-library"
+  ],
+  "author": "Kunal Deore",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.9.1",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "@faker-js/faker": ">=10.0.0",
+    "@playwright/test": ">=1.60.0",
+    "playwright": ">=1.60.0"
+  }
+}

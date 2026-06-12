@@ -1,0 +1,38 @@
+{
+  "github": {
+    "owner": "KunalDeore-KD",
+    "repo": "enterprise-github-actions-test-dashboard",
+    "workflow": "playwright.yml",
+    "defaultBranch": "main"
+  },
+  "server": {
+    "port": 5000,
+    "dashboardPort": 3000
+  },
+  "playwright": {
+    "browsers": ["chromium", "firefox", "webkit"],
+    "testDir": "playwright/tests",
+    "resultsFile": "test-results/results.json",
+    "suites": [
+      { "label": "All Test Cases", "value": "all" },
+      { "label": "Regression", "value": "regression", "pattern": "@regression" },
+      { "label": "Smoke", "value": "smoke", "pattern": "@smoke" },
+      { "label": "API", "value": "api", "pattern": "tests/10-api-ui-hybrid.spec.ts,tests/12-api-snapshot.spec.ts" }
+    ]
+  },
+  "dashboard": {
+    "title": "Test Execution Dashboard",
+    "description": "Live workflow status, pass rate trends, and failure context for your GitHub Actions test runs.",
+    "historyBranch": "dashboard-data",
+    "historyFile": "dashboard-history.json",
+    "rollingWindow": 30,
+    "refreshIntervalMs": 300000,
+    "defaultTheme": "dark"
+  },
+  "environments": [
+    { "label": "None", "value": "" },
+    { "label": "Staging", "value": "staging" },
+    { "label": "Production", "value": "production" },
+    { "label": "Dev", "value": "dev" }
+  ]
+}

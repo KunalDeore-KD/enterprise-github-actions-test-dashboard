@@ -1,0 +1,32 @@
+{
+  "name": "enterprise-github-actions-test-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm --prefix playwright test",
+    "playwright:install": "npm --prefix playwright ci && npm --prefix playwright exec npx playwright install --with-deps chromium firefox webkit",
+    "test:discover": "tsx scripts/test-discovery.ts",
+    "dashboard:validate": "tsx scripts/validate-reporter-config.ts",
+    "config:generate": "tsx scripts/generate-frontend-config.ts",
+    "prestart": "npm run config:generate",
+    "dashboard:generate": "tsx scripts/generate-dashboard-data.ts",
+    "dashboard:history": "tsx scripts/manage-history.ts",
+    "dashboard:mock": "tsx scripts/generate-mock-data.ts --runs=30",
+    "dashboard:dev": "tsx scripts/serve-dashboard.ts",
+    "dashboard:sri": "tsx scripts/generate-sri.ts",
+    "dashboard:curl": "tsx scripts/curl-generator.ts",
+    "metadata:extract": "tsx scripts/extract-metadata.ts",
+    "artifacts:download": "tsx scripts/download-artifacts.ts",
+    "server:install": "npm --prefix server install",
+    "server:dev": "npm --prefix server start",
+    "start": "concurrently \"npm run server:dev\" \"npm run dashboard:dev\""
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "concurrently": "^8.2.2",
+    "glob": "11.0.0",
+    "serve": "14.2.6",
+    "tsx": "4.19.2",
+    "typescript": "5.6.2"
+  }
+}

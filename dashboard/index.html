@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net http://localhost:8400 http://localhost:3000; style-src 'self'; connect-src 'self' http://localhost:8400 http://localhost:5000 http://127.0.0.1:5000 http://localhost:3000 http://127.0.0.1:3000; media-src 'self' http://localhost:5000 http://127.0.0.1:5000 blob:; img-src 'self'; font-src 'self';" />
+  <meta name="dashboard-version" content="__DASHBOARD_VERSION__" />
+  <title>Test Execution Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="hero-description" id="heroDescription"></p>
+        <h1 id="dashboardTitle">Test Execution Dashboard</h1>
+        <p class="subtitle">A streamlined operational view for your test pipeline with quick triggers and clear history.</p>
+        <p class="build-meta">Build #__DASHBOARD_VERSION__</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn-secondary btn-sm" type="button" aria-label="Toggle theme">Toggle theme</button>
+        <button id="openTriggerBtn" class="btn-primary" type="button">Trigger Run</button>
+      </div>
+    </header>
+
+    <div id="bannerContainer" class="banner-container" aria-live="polite"></div>
+
+    <section id="workflowProgressPanel" class="workflow-progress hidden" aria-live="polite" aria-label="Workflow sync progress">
+      <div class="workflow-progress__header">
+        <div>
+          <h2>Workflow sync</h2>
+          <p id="workflowProgressMessage" class="workflow-progress__message">Preparing workflow...</p>
+        </div>
+        <button id="dismissWorkflowProgress" class="btn-icon" type="button" aria-label="Dismiss workflow progress">×</button>
+      </div>
+      <ol id="workflowProgressSteps" class="workflow-progress__steps"></ol>
+    </section>
+
+    <main id="dashboardRoot" class="dashboard-grid" role="main">
+      <section class="panel" id="summaryPanel" aria-label="Summary statistics">
+        <div class="panel-header">
+          <h2>Summary</h2>
+        </div>
+        <div id="summaryCards" class="summary-grid"></div>
+      </section>
+
+      <section class="panel" id="chartsPanel" aria-label="Pass rate and duration trends">
+        <div class="panel-header panel-header--with-controls">
+          <h2>Trend Overview</h2>
+          <div class="panel-control-group">
+            <div class="trend-controls">
+              <label for="trendWindow">Show last:</label>
+              <select id="trendWindow" aria-label="Trend window">
+                <option value="5">5 runs</option>
+                <option value="10">10 runs</option>
+                <option value="20">20 runs</option>
+                <option value="30">30 runs</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="charts-grid">
+          <div class="chart-card card--total">
+            <h3>Pass Rate Trend</h3>
+            <div class="chart-plot">
+              <canvas id="passRateChart" aria-label="Pass rate trend chart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card card--duration">
+            <h3>Duration Trend</h3>
+            <div class="chart-plot">
+              <canvas id="durationChart" aria-label="Duration trend chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Failure analysis moved to Run Details page: dashboard/run.html -->
+
+      <section class="panel" id="historyPanel" aria-label="Run history">
+        <div class="panel-header panel-header--compact"><h2>Run history</h2></div>
+        <div class="table-wrap">
+          <table id="historyTable" class="history-table" aria-label="Run history table">
+            <thead>
+              <tr>
+                <th scope="col" data-sort-key="runNumber">Run</th>
+                <th scope="col" data-sort-key="branch">Branch</th>
+                <th scope="col" data-sort-key="environment">Env</th>
+                <th scope="col" data-sort-key="finishedAt">Date</th>
+                <th scope="col" data-sort-key="passRate">Pass %</th>
+                <th scope="col" data-sort-key="passed">Passed</th>
+                <th scope="col" data-sort-key="failed">Failed</th>
+                <th scope="col" data-sort-key="skipped">Skipped</th>
+                <th scope="col" data-sort-key="durationSeconds">Duration</th>
+                <th scope="col" class="history-table__action">Report</th>
+                <th scope="col" class="history-table__action">Download</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="emptyState" class="empty-state hidden" role="status">
+      <div>
+        <p class="empty-icon">📊</p>
+        <h2>No test runs yet</h2>
+        <p>Run your Playwright tests to see results in this dashboard.</p>
+      </div>
+    </div>
+
+    <div id="errorState" class="error-card hidden" role="alert">
+      <h2>Dashboard Error</h2>
+      <p id="errorMessage"></p>
+      <button id="retryButton" class="btn-primary btn-sm" type="button">Retry</button>
+    </div>
+  </div>
+
+  <div id="workflowModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="workflowModalTitle">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <div>
+          <h2 id="workflowModalTitle">Trigger Workflow Run</h2>
+          <p>Select branch, environment, suite, or search specific tests.</p>
+          <div id="serverStatus" class="server-status status-pending">Checking server status...</div>
+        </div>
+        <button id="closeModalBtn" class="btn-icon" type="button" aria-label="Close modal">×</button>
+      </div>
+      <form class="modal-form" id="workflowForm">
+        <p class="modal-note">Use this helper to trigger a focused workflow. Leave the optional search empty to run the selected suite as-is.</p>
+        <label>
+          Branch
+          <input id="branchInput" type="text" value="" autocomplete="off" />
+        </label>
+        <label>
+          Environment (optional)
+          <select id="envInput"></select>
+        </label>
+        <label>
+          Test Suite
+          <select id="suiteInput"></select>
+        </label>
+
+        <!-- Test Search: shown when suite is NOT "single" -->
+        <label id="testSearchLabel">
+          Test Search (optional)
+          <input id="testSearchInput" type="search" placeholder="Search tests or files" autocomplete="off" />
+        </label>
+
+        <!-- Test Files Dropdown: shown only when suite is "single" -->
+        <label id="testFilesLabel" class="hidden">
+          Select Test File
+          <select id="testFilesSelect">
+            <option value="">Choose a test file...</option>
+          </select>
+        </label>
+
+        <div id="searchResults" class="search-results" aria-live="polite"></div>
+        <div id="selectedTests" class="selected-tags"></div>
+
+        <div class="modal-footer">
+          <button id="cancelWorkflowBtn" class="btn-secondary btn-sm btn-cancel" type="button">Cancel</button>
+          <button id="runWorkflowBtn" class="btn-primary btn-sm" type="button">Run Workflow</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" integrity="__SRI_CHARTJS__" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="__SRI_FUSEJS__" crossorigin="anonymous"></script>
+  <script src="./config.js"></script>
+  <script src="./config-loader.js"></script>
+  <script src="./workflow-trigger.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

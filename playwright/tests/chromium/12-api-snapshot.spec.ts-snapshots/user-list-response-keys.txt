@@ -1,0 +1,9 @@
+[
+  "_meta",
+  "data",
+  "page",
+  "per_page",
+  "support",
+  "total",
+  "total_pages"
+]

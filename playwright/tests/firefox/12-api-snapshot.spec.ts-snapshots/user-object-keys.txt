@@ -1,0 +1,7 @@
+[
+  "avatar",
+  "email",
+  "first_name",
+  "id",
+  "last_name"
+]

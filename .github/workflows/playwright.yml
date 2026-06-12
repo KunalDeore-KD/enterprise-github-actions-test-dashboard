@@ -1,0 +1,139 @@
+# Generic Playwright dashboard workflow.
+# Configure suites and browsers in dashboard.config.json at the repo root.
+
+name: Playwright Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment (optional)'
+        required: false
+        default: ''
+        type: string
+      testSuite:
+        description: 'Test suite to run (any value from dashboard.config.json suites)'
+        required: false
+        default: 'all'
+        type: string
+      selectedTests:
+        description: 'Specific test file paths, comma-separated (overrides testSuite)'
+        required: false
+        default: ''
+
+concurrency:
+  group: playwright-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
+  checks: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix playwright
+
+      - name: Install Playwright browsers
+        run: npx tsx scripts/run-suite.ts --install-browsers
+
+      - name: Validate Playwright reporter config
+        run: npx tsx scripts/validate-reporter-config.ts
+
+      - name: Run Playwright tests
+        id: run_tests
+        run: |
+          set -o pipefail
+          rm -rf playwright/test-results playwright/playwright-report
+          mkdir -p "${GITHUB_WORKSPACE}/.tmp"
+          LOG="${GITHUB_WORKSPACE}/.tmp/playwright_run.log"
+          npx tsx scripts/run-suite.ts --suite "${{ inputs.testSuite }}" --selected "${{ inputs.selectedTests }}" --log "$LOG"
+          rc=$?
+          echo "exit_code=$rc" >> $GITHUB_OUTPUT
+          echo "log_path=$LOG" >> $GITHUB_OUTPUT
+        env:
+          TEST_ENVIRONMENT: ${{ inputs.environment || '' }}
+          TEST_SUITE_FILTER: ${{ inputs.testSuite || 'all' }}
+        continue-on-error: true
+
+      - name: Run test discovery
+        if: always()
+        run: npx tsx scripts/test-discovery.ts
+
+      - name: Extract commit and workflow metadata
+        if: always()
+        run: npx tsx scripts/extract-metadata.ts
+
+      - name: Generate dashboard data
+        if: always()
+        run: npx tsx scripts/generate-dashboard-data.ts
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          TEST_ENVIRONMENT: ${{ inputs.environment || '' }}
+          TEST_SUITE_FILTER: ${{ inputs.selectedTests != '' && 'single' || (inputs.testSuite || 'all') }}
+          TEST_SELECTED_TESTS: ${{ inputs.selectedTests || '' }}
+          WORKFLOW_RUN_LOG_PATH: ${{ steps.run_tests.outputs.log_path }}
+          ARTIFACT_RETENTION_DAYS: '30'
+          ARTIFACT_URL: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+          ALLURE_REPORT_URL: ''
+
+      - name: Upload Playwright artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-artifacts-${{ github.run_number }}
+          path: |
+            .tmp/playwright_run.log
+            playwright/playwright-report/
+            playwright/test-results/
+          retention-days: 30
+
+      - name: Update dashboard history
+        if: always()
+        run: npx tsx scripts/manage-history.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Evaluate test results
+        if: always()
+        run: |
+          LOG_PATH="${{ steps.run_tests.outputs.log_path }}"
+          EXIT_CODE="${{ steps.run_tests.outputs.exit_code }}"
+          echo "Playwright exit code: $EXIT_CODE"
+          if [ -n "$LOG_PATH" ] && [ -f "$LOG_PATH" ]; then
+            echo "---- Playwright run log (truncated) ----"
+            sed -n '1,500p' "$LOG_PATH" || true
+            if grep -q "No tests found" "$LOG_PATH"; then
+              echo "No tests found; treating as success."
+              exit 0
+            fi
+          fi
+          if [ "$EXIT_CODE" != "0" ]; then
+            echo "Playwright failed with exit code $EXIT_CODE"
+            exit 1
+          fi
+          echo "Playwright tests passed."

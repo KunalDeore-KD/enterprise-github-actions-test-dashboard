@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AngularPractice Local Fixture</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; padding: 2rem; margin: 0; }
+    form { max-width: 720px; margin: 0 auto; }
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+    input:not([type="checkbox"]):not([type="radio"]), select { width: 100%; height: 3rem; padding: 0.75rem; margin-bottom: 0.25rem; border: 1px solid #ccc; border-radius: 0.35rem; box-sizing: border-box; font-size: 1rem; font-family: inherit; }
+    input[type="date"], select { appearance: none; -webkit-appearance: none; -moz-appearance: none; }
+    .inline-radio { display: inline-flex; align-items: center; gap: 0.35rem; margin-right: 1rem; }
+    .alert { display: none; padding: 0.75rem 1rem; border-radius: 0.35rem; margin-top: 0.75rem; }
+    .alert-success { background: #d4edda; color: #155724; }
+    .alert-danger { background: #f8d7da; color: #842029; }
+    .actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .actions a { text-decoration: none; color: #1d4ed8; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>AngularPractice Local Fixture</h1>
+  <p><a href="shop.html">Shop</a></p>
+
+  <form id="practice-form" novalidate>
+    <div class="form-group">
+      <label for="nameInput">Name</label>
+      <input id="nameInput" name="name" type="text" autocomplete="name" />
+      <div id="nameError" class="alert alert-danger" role="alert">Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="emailInput">Email</label>
+      <input id="emailInput" name="email" type="email" autocomplete="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input id="exampleInputPassword1" name="password" type="password" aria-label="Password" />
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input id="iceCreamCheckbox" type="checkbox" />
+        Check me out if you Love IceCreams!
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Gender</label>
+      <select id="exampleFormControlSelect1" name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <span class="inline-radio">
+        <input id="inlineRadio1" type="radio" name="employment" value="student" checked />
+        <label for="inlineRadio1">Student</label>
+      </span>
+      <span class="inline-radio">
+        <input id="inlineRadio2" type="radio" name="employment" value="employed" />
+        <label for="inlineRadio2">Employed</label>
+      </span>
+      <span class="inline-radio">
+        <input id="inlineRadio3" type="radio" name="employment" value="entrepreneur" disabled />
+        <label for="inlineRadio3">Entrepreneur</label>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="bdayInput">Date of Birth</label>
+      <input id="bdayInput" name="bday" type="date" />
+    </div>
+
+    <div class="form-group actions">
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+
+  <form-comp id="form-comp"></form-comp>
+  <div id="successAlert" class="alert alert-success" role="status">Success! The Form has been submitted successfully!.</div>
+
+  <script>
+    const form = document.getElementById('practice-form');
+    const nameInput = document.getElementById('nameInput');
+    const nameError = document.getElementById('nameError');
+    const successAlert = document.getElementById('successAlert');
+    const formComp = document.getElementById('form-comp');
+
+    function updateSuccessState() {
+      formComp.textContent = '× Success! The Form has been submitted successfully!.';
+      successAlert.style.display = 'block';
+    }
+
+    function clearSuccessState() {
+      successAlert.style.display = 'none';
+      formComp.textContent = '';
+    }
+
+    function validateName() {
+      const value = nameInput.value.trim();
+      if (!value) {
+        nameError.style.display = 'block';
+        return false;
+      }
+      nameError.style.display = 'none';
+      return true;
+    }
+
+    nameInput.addEventListener('blur', () => {
+      const value = nameInput.value.trim();
+      if (!value) {
+        nameError.style.display = 'block';
+      }
+    });
+
+    nameInput.addEventListener('input', () => {
+      if (nameInput.value.trim()) {
+        nameError.style.display = 'none';
+      }
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      clearSuccessState();
+
+      if (!validateName()) {
+        return;
+      }
+
+      updateSuccessState();
+    });
+  </script>
+</body>
+</html>

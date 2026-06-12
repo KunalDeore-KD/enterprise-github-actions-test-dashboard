@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dropdown Component</title>
+    <link
+      rel="stylesheet"
+      href="<https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    >
+  </head>
+  <body>
+    <div id="component-root" class="container p-4">
+      <div class="form-group">
+        <label for="genderSelect">Gender</label>
+        <select class="form-control" id="genderSelect">
+          <option value="">-- Select --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <small id="selectedValue" class="form-text text-muted">
+          Selected: <span id="display">None</span>
+        </small>
+      </div>
+    </div>
+    <script>
+      document.getElementById("genderSelect").addEventListener("change", function () {
+        document.getElementById("display").textContent = this.value || "None";
+      });
+    </script>
+  </body>
+</html>

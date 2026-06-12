@@ -1,0 +1,98 @@
+name: Deploy Dashboard to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["Playwright Tests"]
+    types: [completed]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout main (dashboard source)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-src
+
+      - name: Checkout dashboard-data (JSON files)
+        uses: actions/checkout@v4
+        with:
+          ref: dashboard-data
+          path: data-src
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: main-src
+        run: npm ci
+
+      - name: Generate SRI hashes for CDN assets
+        working-directory: main-src
+        run: npx tsx scripts/generate-sri.ts
+
+      - name: Assemble dashboard
+        run: |
+          rm -rf deploy
+          mkdir -p deploy
+          cp -r main-src/dashboard/* deploy/
+          cp data-src/dashboard-history.json deploy/dashboard-history.json
+          cp data-src/test-catalog.json deploy/test-catalog.json 2>/dev/null || true
+          if [ -f data-src/dashboard.json ]; then
+            cp data-src/dashboard.json deploy/dashboard.json
+          fi
+          echo "✅ Dashboard assembled."
+
+      - name: Inject SRI hashes and version
+        run: |
+          BUILD_VERSION="${{ github.run_number }}"
+          SRI_CHARTJS=$(node -p "require('./main-src/sri-hashes.json')['__SRI_CHARTJS__'] || ''")
+          SRI_FUSEJS=$(node -p "require('./main-src/sri-hashes.json')['__SRI_FUSEJS__'] || ''")
+
+          for f in ./deploy/*.html; do
+            if [ -n "$SRI_CHARTJS" ]; then
+              sed -i "s|integrity=\"__SRI_CHARTJS__\"|integrity=\"${SRI_CHARTJS}\"|g" "$f"
+            else
+              sed -i 's| integrity="__SRI_CHARTJS__"||g' "$f"
+              echo "::warning::Chart.js SRI hash unavailable — integrity check omitted"
+            fi
+            if [ -n "$SRI_FUSEJS" ]; then
+              sed -i "s|integrity=\"__SRI_FUSEJS__\"|integrity=\"${SRI_FUSEJS}\"|g" "$f"
+            else
+              sed -i 's| integrity="__SRI_FUSEJS__"||g' "$f"
+              echo "::warning::Fuse.js SRI hash unavailable — integrity check omitted"
+            fi
+            sed -i "s|__DASHBOARD_VERSION__|${BUILD_VERSION}|g" "$f"
+          done
+          for f in ./deploy/*.js; do
+            sed -i "s|__DASHBOARD_VERSION__|${BUILD_VERSION}|g" "$f" || true
+          done
+          echo "✅ SRI hashes and version injected."
+
+      - name: Add cache headers via _headers
+        run: |
+          cat > ./deploy/_headers <<'EOF'
+          /*
+            Cache-Control: public, max-age=3600, stale-while-revalidate=120
+          EOF
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
+          keep_files: true

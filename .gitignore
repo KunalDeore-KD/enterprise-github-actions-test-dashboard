@@ -1,0 +1,30 @@
+node_modules/
+.DS_Store
+*.log
+dist/
+build/
+coverage/
+
+# Environment variables (secrets)
+server/.env
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test artifacts
+playwright/test-results/
+playwright/playwright-report/
+playwright/allure-result/
+playwright/allure-results/
+playwright/allure-report/
+
+# Build outputs
+*.tgz
+server/.env
