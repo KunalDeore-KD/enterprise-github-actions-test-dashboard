@@ -1,1 +1,40 @@
-{}
+{
+  "schemaVersion": "1.0",
+  "runId": "27407142627",
+  "runNumber": 1,
+  "branch": "main",
+  "commit": "64229ba",
+  "triggeredBy": "KunalDeore-KD",
+  "commitAuthor": {
+    "name": "KunalDeore-KD",
+    "email": "",
+    "date": "2026-06-12T09:29:14.881Z"
+  },
+  "workflowActor": "KunalDeore-KD",
+  "startedAt": "2026-06-12T09:29:12.732Z",
+  "finishedAt": "2026-06-12T09:29:15.579Z",
+  "durationSeconds": 1,
+  "environment": "",
+  "suiteFilter": null,
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0,
+    "flaky": 0,
+    "passRate": 0
+  },
+  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407142627",
+  "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27407142627",
+  "artifactExpiresAt": "2026-07-12T09:29:15.578Z",
+  "allureReportUrl": null,
+  "collectionFailed": true,
+  "errors": [
+    {
+      "message": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts",
+      "stack": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts"
+    }
+  ],
+  "workflowLog": "Error: Cannot find package '/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/node_modules/playwright-shared-lib/dist/index.js' imported from /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/19-shared-library.spec.ts",
+  "suites": []
+}
