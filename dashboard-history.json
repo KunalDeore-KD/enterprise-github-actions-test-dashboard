@@ -1,6 +1,417 @@
 {
-  "lastUpdated": "2026-06-16T09:27:00.506Z",
+  "lastUpdated": "2026-06-16T09:32:41.431Z",
   "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "27608074380",
+      "runNumber": 20,
+      "branch": "main",
+      "commit": "d6addfd",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "KunalDeore-KD",
+        "email": "",
+        "date": "2026-06-16T09:32:37.080Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-16T09:32:20.131Z",
+      "finishedAt": "2026-06-16T09:32:37.906Z",
+      "durationSeconds": 15,
+      "environment": "",
+      "suiteFilter": "api",
+      "summary": {
+        "total": 21,
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "passRate": 100
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380",
+      "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380",
+      "artifactExpiresAt": "2026-07-16T09:32:37.904Z",
+      "allureReportUrl": null,
+      "videos": {
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm",
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-firefox": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-firefox/video.webm",
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-webkit": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-webkit/video.webm"
+      },
+      "workflowLog": "Running 21 tests using 1 worker\nAPI returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}\nName: George Bluth\nEmail: george.bluth@reqres.in\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 119\nCreated at: 2026-06-16T09:32:22.814Z\n·····API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}\nName: George Bluth\nEmail: george.bluth@reqres.in\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 506\nCreated at: 2026-06-16T09:32:27.305Z\n·····API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}\nName: George Bluth\nEmail: george.bluth@reqres.in\n·Total users on page 1: 6\nFirst user: George Bluth\n·Created user with ID: 223\nCreated at: 2026-06-16T09:32:35.062Z\n·····\n  21 passed (15.3s)",
+      "consoleLogs": [
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 119"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-16T09:32:22.814Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 506"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-16T09:32:27.305Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 223"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-16T09:32:35.062Z"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 9,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-firefox/video.webm"
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-webkit/video.webm"
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "passed": 12,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "schemaVersion": "1.0",
       "runId": "27607771630",
