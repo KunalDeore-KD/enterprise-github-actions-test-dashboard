@@ -352,16 +352,23 @@ class ChartRenderer {
     return 14;
   }
 
-  _xTickLimit(runCount) {
-    if (runCount <= 5) return runCount;
-    if (runCount <= 10) return 5;
-    if (runCount <= 20) return 6;
-    return 8;
+  _xAxisTickConfig(runCount, theme) {
+    const useRotation = runCount > 15;
+    return {
+      color: theme.textPrimary,
+      autoSkip: false,
+      maxRotation: useRotation ? 45 : 0,
+      minRotation: useRotation ? 45 : 0,
+      font: {
+        size: runCount > 20 ? 9 : runCount > 10 ? 10 : 11,
+        weight: '600',
+      },
+      padding: 6,
+    };
   }
 
   _buildChartOptions(useEntries, valueLabel, runCount) {
     const theme = this._chartTheme();
-    const compactLabels = runCount > 10;
 
     return {
       responsive: true,
@@ -375,7 +382,7 @@ class ChartRenderer {
           top: 4,
           right: 10,
           left: 2,
-          bottom: 0,
+          bottom: runCount > 15 ? 10 : 0,
         },
       },
       scales: {
@@ -399,15 +406,7 @@ class ChartRenderer {
         },
         x: {
           border: { display: false },
-          ticks: {
-            color: theme.textPrimary,
-            autoSkip: true,
-            maxTicksLimit: this._xTickLimit(runCount),
-            maxRotation: 0,
-            minRotation: 0,
-            font: { size: 11, weight: '600' },
-            padding: 6,
-          },
+          ticks: this._xAxisTickConfig(runCount, theme),
           grid: {
             display: false,
           },
@@ -448,7 +447,7 @@ class ChartRenderer {
   }
 
   _createBarChart(ctx, { useEntries, data, valueLabel, color, runCount }) {
-    const compactLabels = runCount > 10;
+    const compactLabels = runCount > 8;
     const labels = useEntries.map((entry) => this._formatRunLabel(entry, compactLabels));
 
     return new Chart(ctx, {

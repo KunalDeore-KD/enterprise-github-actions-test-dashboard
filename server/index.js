@@ -110,40 +110,144 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function githubJsonRequest(url, token, options = {}) {
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `token ${token}`,
-      'User-Agent': 'dashboard-server',
-      ...(options.headers || {}),
-    },
-  });
+const GITHUB_RETRY_MAX_ATTEMPTS = 5;
+const GITHUB_RETRY_BASE_MS = 2000;
+const ARTIFACT_READY_MAX_ATTEMPTS = 18;
+const ARTIFACT_READY_INTERVAL_MS = 10000;
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`GitHub API error ${response.status} ${response.statusText}: ${errorText}`);
+function isRetryableNetworkError(error) {
+  if (!error) return false;
+  const code = error.code || error.cause?.code;
+  const retryableCodes = new Set([
+    'ECONNREFUSED',
+    'ECONNRESET',
+    'ETIMEDOUT',
+    'ENOTFOUND',
+    'EAI_AGAIN',
+    'UND_ERR_CONNECT_TIMEOUT',
+  ]);
+  if (code && retryableCodes.has(code)) return true;
+  const message = String(error.message || error.cause?.message || '');
+  return message.includes('fetch failed');
+}
+
+function isRetryableHttpStatus(status) {
+  return status === 429 || status === 502 || status === 503 || status === 504;
+}
+
+async function githubJsonRequest(url, token, options = {}) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= GITHUB_RETRY_MAX_ATTEMPTS; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        ...options,
+        headers: {
+          Accept: 'application/vnd.github+json',
+          Authorization: `token ${token}`,
+          'User-Agent': 'dashboard-server',
+          ...(options.headers || {}),
+        },
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        const error = new Error(`GitHub API error ${response.status} ${response.statusText}: ${errorText}`);
+        if (isRetryableHttpStatus(response.status) && attempt < GITHUB_RETRY_MAX_ATTEMPTS) {
+          const delayMs = GITHUB_RETRY_BASE_MS * attempt;
+          console.warn(
+            `⚠️  GitHub API ${response.status} for ${url} (${attempt}/${GITHUB_RETRY_MAX_ATTEMPTS}). Retrying in ${delayMs}ms...`
+          );
+          await sleep(delayMs);
+          continue;
+        }
+        throw error;
+      }
+
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+      if (isRetryableNetworkError(error) && attempt < GITHUB_RETRY_MAX_ATTEMPTS) {
+        const delayMs = GITHUB_RETRY_BASE_MS * attempt;
+        console.warn(
+          `⚠️  GitHub network error for ${url} (${attempt}/${GITHUB_RETRY_MAX_ATTEMPTS}): ${error.message}. Retrying in ${delayMs}ms...`
+        );
+        await sleep(delayMs);
+        continue;
+      }
+      throw error;
+    }
   }
 
-  return await response.json();
+  throw lastError || new Error(`GitHub API request failed for ${url}`);
 }
 
 async function githubBinaryRequest(url, token) {
-  const response = await fetch(url, {
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `token ${token}`,
-      'User-Agent': 'dashboard-server',
-    },
-  });
+  let lastError = null;
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`GitHub API error ${response.status} ${response.statusText}: ${errorText}`);
+  for (let attempt = 1; attempt <= GITHUB_RETRY_MAX_ATTEMPTS; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          Accept: 'application/vnd.github+json',
+          Authorization: `token ${token}`,
+          'User-Agent': 'dashboard-server',
+        },
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        const error = new Error(`GitHub API error ${response.status} ${response.statusText}: ${errorText}`);
+        if (isRetryableHttpStatus(response.status) && attempt < GITHUB_RETRY_MAX_ATTEMPTS) {
+          const delayMs = GITHUB_RETRY_BASE_MS * attempt;
+          console.warn(
+            `⚠️  GitHub download ${response.status} (${attempt}/${GITHUB_RETRY_MAX_ATTEMPTS}). Retrying in ${delayMs}ms...`
+          );
+          await sleep(delayMs);
+          continue;
+        }
+        throw error;
+      }
+
+      return Buffer.from(await response.arrayBuffer());
+    } catch (error) {
+      lastError = error;
+      if (isRetryableNetworkError(error) && attempt < GITHUB_RETRY_MAX_ATTEMPTS) {
+        const delayMs = GITHUB_RETRY_BASE_MS * attempt;
+        console.warn(
+          `⚠️  GitHub download network error (${attempt}/${GITHUB_RETRY_MAX_ATTEMPTS}): ${error.message}. Retrying in ${delayMs}ms...`
+        );
+        await sleep(delayMs);
+        continue;
+      }
+      throw error;
+    }
   }
 
-  return Buffer.from(await response.arrayBuffer());
+  throw lastError || new Error('GitHub artifact download failed.');
+}
+
+async function waitForPlaywrightArtifacts({ owner, repo, runId, token }) {
+  const artifactsUrl = `https://api.github.com/repos/${owner}/${repo}/actions/runs/${runId}/artifacts`;
+
+  for (let attempt = 1; attempt <= ARTIFACT_READY_MAX_ATTEMPTS; attempt += 1) {
+    const artifactsPayload = await githubJsonRequest(artifactsUrl, token);
+    const artifacts = Array.isArray(artifactsPayload.artifacts) ? artifactsPayload.artifacts : [];
+    const playwrightArtifacts = artifacts.filter(
+      (artifact) => artifact.name.includes('playwright') && !artifact.expired && artifact.archive_download_url
+    );
+
+    if (playwrightArtifacts.length) {
+      return playwrightArtifacts;
+    }
+
+    if (attempt < ARTIFACT_READY_MAX_ATTEMPTS) {
+      console.log(`⏳ Playwright artifacts not ready for run ${runId} (${attempt}/${ARTIFACT_READY_MAX_ATTEMPTS})...`);
+      await sleep(ARTIFACT_READY_INTERVAL_MS);
+    }
+  }
+
+  throw new Error(`No active Playwright artifacts found for run ${runId}.`);
 }
 
 function resolveArtifactResultsPath(artifactDir, artifactName) {
@@ -455,14 +559,12 @@ async function downloadAndSyncRunArtifacts({ owner, repo, workflowId, ref, token
       { runId: String(completedRun.id), runNumber: completedRun.run_number }
     );
 
-    const artifactsUrl = `https://api.github.com/repos/${owner}/${repo}/actions/runs/${completedRun.id}/artifacts`;
-    const artifactsPayload = await githubJsonRequest(artifactsUrl, token);
-    const artifacts = Array.isArray(artifactsPayload.artifacts) ? artifactsPayload.artifacts : [];
-    const playwrightArtifacts = artifacts.filter((artifact) => artifact.name.includes('playwright') && !artifact.expired && artifact.archive_download_url);
-
-    if (!playwrightArtifacts.length) {
-      throw new Error(`No active Playwright artifacts found for run ${completedRun.id}.`);
-    }
+    const playwrightArtifacts = await waitForPlaywrightArtifacts({
+      owner,
+      repo,
+      runId: completedRun.id,
+      token,
+    });
 
     const artifactDir = defaultArtifactDir;
     fs.mkdirSync(artifactDir, { recursive: true });
