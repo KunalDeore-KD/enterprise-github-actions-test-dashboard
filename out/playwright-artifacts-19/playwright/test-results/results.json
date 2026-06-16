@@ -1,0 +1,1009 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/playwright.config.ts",
+    "rootDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630"
+      },
+      "gitCommit": {
+        "shortHash": "d6addfd",
+        "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+        "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+        "author": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "committer": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "19-shared-library.spec.ts",
+      "file": "19-shared-library.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Shared Library Demo",
+          "file": "19-shared-library.spec.ts",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "use BasePage for common actions @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 354,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ BasePage actions completed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:35.157Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-e5e5b4caf0abddb74ee4",
+              "file": "19-shared-library.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 408,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: \u001b[32m'Kale'\u001b[39m,\n  lastName: \u001b[32m'Kirlin'\u001b[39m,\n  fullName: \u001b[32m'Kale Kirlin'\u001b[39m,\n  email: \u001b[32m'Kale.Kirlin40@gmail.com'\u001b[39m,\n  password: \u001b[32m'_n6TPEyGW6lH'\u001b[39m,\n  phone: \u001b[32m'1-655-208-1753 x5689'\u001b[39m,\n  avatar: \u001b[32m'https://avatars.githubusercontent.com/u/48780529'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated form: {\n  name: \u001b[32m'Audra Yundt IV'\u001b[39m,\n  email: \u001b[32m'Kellie82@hotmail.com'\u001b[39m,\n  password: \u001b[32m'3jHZW01gRtzx'\u001b[39m,\n  gender: \u001b[32m'Male'\u001b[39m,\n  dateOfBirth: \u001b[32m'1980-11-23'\u001b[39m,\n  message: \u001b[32m'Beneficium tantillus error culpo comptus placeat torrens suadeo totam. Tero utilis vitiosus vindico vomica id debilito vereor. Eveniet cursim appositus via confero communis ancilla.'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated address: {\n  street: \u001b[32m'11919 Gregory Expressway'\u001b[39m,\n  city: \u001b[32m'North Selena'\u001b[39m,\n  state: \u001b[32m'Arkansas'\u001b[39m,\n  zipCode: \u001b[32m'68031-8208'\u001b[39m,\n  country: \u001b[32m'Mali'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Form submitted with generated data\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:36.516Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-50aa591988291a3fe895",
+              "file": "19-shared-library.spec.ts",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 424,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ✅ ComponentRunner from shared library works\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:36.943Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-ed40d2e4be0c02363be9",
+              "file": "19-shared-library.spec.ts",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 378,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Retry] flaky operation — attempt 1/5 failed\n"
+                        },
+                        {
+                          "text": "[Retry] flaky operation — attempt 2/5 failed\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:37.387Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-6a5134e1158fcae5bfab",
+              "file": "19-shared-library.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 346,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[MyTest] Step 1: Navigate to page\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 2: Verify page loaded\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 3: Fill form\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 4: Submit\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 5: Verify success\n"
+                        },
+                        {
+                          "text": "[MyTest] ✅ All steps completed!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:37.781Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-25c2229b457d73080619",
+              "file": "19-shared-library.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "use BasePage for common actions @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1734,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ BasePage actions completed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:38.975Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-dbcf45783f47fe337c41",
+              "file": "19-shared-library.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 909,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: \u001b[32m'Elyssa'\u001b[39m,\n  lastName: \u001b[32m'Conroy-Ullrich'\u001b[39m,\n  fullName: \u001b[32m'Elyssa Conroy-Ullrich'\u001b[39m,\n  email: \u001b[32m'Elyssa.Conroy-Ullrich@hotmail.com'\u001b[39m,\n  password: \u001b[32m'g_2X6VFgVPbU'\u001b[39m,\n  phone: \u001b[32m'1-464-268-7784 x74622'\u001b[39m,\n  avatar: \u001b[32m'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated form: {\n  name: \u001b[32m'Kailyn Gottlieb'\u001b[39m,\n  email: \u001b[32m'Della84@hotmail.com'\u001b[39m,\n  password: \u001b[32m'C90NwYNoe8Qg'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dateOfBirth: \u001b[32m'1961-02-07'\u001b[39m,\n  message: \u001b[32m'Vilis aspernatur corroboro civitas confero. Ars curtus verumtamen tabula. Beneficium argumentum deficio solvo aveho spero.'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated address: {\n  street: \u001b[32m'380 Vicarage Road'\u001b[39m,\n  city: \u001b[32m'Ashburn'\u001b[39m,\n  state: \u001b[32m'Connecticut'\u001b[39m,\n  zipCode: \u001b[32m'73134-1226'\u001b[39m,\n  country: \u001b[32m'Norway'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Form submitted with generated data\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:41.456Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-29f49e4109c79b407ab9",
+              "file": "19-shared-library.spec.ts",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 553,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ✅ ComponentRunner from shared library works\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:42.388Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-e5a0c8722d96d4190352",
+              "file": "19-shared-library.spec.ts",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 523,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Retry] flaky operation — attempt 1/5 failed\n"
+                        },
+                        {
+                          "text": "[Retry] flaky operation — attempt 2/5 failed\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:42.976Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-d56af175cc254e129dfd",
+              "file": "19-shared-library.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 660,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[MyTest] Step 1: Navigate to page\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 2: Verify page loaded\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 3: Fill form\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 4: Submit\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 5: Verify success\n"
+                        },
+                        {
+                          "text": "[MyTest] ✅ All steps completed!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:43.520Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-2ee52ba96c2a2ad11564",
+              "file": "19-shared-library.spec.ts",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "use BasePage for common actions @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4167,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ BasePage actions completed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:45.312Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-bbf4c923ac8fdd93a0ca",
+              "file": "19-shared-library.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1467,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: \u001b[32m'Tamara'\u001b[39m,\n  lastName: \u001b[32m'Kerluke'\u001b[39m,\n  fullName: \u001b[32m'Tamara Kerluke'\u001b[39m,\n  email: \u001b[32m'Tamara.Kerluke3@yahoo.com'\u001b[39m,\n  password: \u001b[32m'CFAsfjCKSnvE'\u001b[39m,\n  phone: \u001b[32m'(273) 434-9816 x6971'\u001b[39m,\n  avatar: \u001b[32m'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/44.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated form: {\n  name: \u001b[32m'Don Kovacek-Runte'\u001b[39m,\n  email: \u001b[32m'Lowell.Bailey@yahoo.com'\u001b[39m,\n  password: \u001b[32m'v824b49PJqUe'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dateOfBirth: \u001b[32m'2006-06-22'\u001b[39m,\n  message: \u001b[32m'Utroque sunt tabgo statim conor xiphias audax turba. Vulpes celer complectus. Tamen laboriosam dicta.'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ℹ️  Generated address: {\n  street: \u001b[32m'8739 Lonnie Meadows'\u001b[39m,\n  city: \u001b[32m'Worcester'\u001b[39m,\n  state: \u001b[32m'Rhode Island'\u001b[39m,\n  zipCode: \u001b[32m'68270-6419'\u001b[39m,\n  country: \u001b[32m'Vanuatu'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Form submitted with generated data\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:50.166Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-62efe803d84563f23347",
+              "file": "19-shared-library.spec.ts",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 850,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[SharedLib] ✅ ComponentRunner from shared library works\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:51.664Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-4620b8724edc18bdd4e1",
+              "file": "19-shared-library.spec.ts",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 705,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[Retry] flaky operation — attempt 1/5 failed\n"
+                        },
+                        {
+                          "text": "[Retry] flaky operation — attempt 2/5 failed\n"
+                        },
+                        {
+                          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:52.541Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-3c3d28a1518aac5017f5",
+              "file": "19-shared-library.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "ok": true,
+              "tags": [
+                "shared"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 923,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[MyTest] Step 1: Navigate to page\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 2: Verify page loaded\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 3: Fill form\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 4: Submit\n"
+                        },
+                        {
+                          "text": "[MyTest] Step 5: Verify success\n"
+                        },
+                        {
+                          "text": "[MyTest] ✅ All steps completed!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:26:53.268Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35850563f99512898670-010d5ea422dc67b0f6c3",
+              "file": "19-shared-library.spec.ts",
+              "line": 105,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-16T09:26:33.923Z",
+    "duration": 20331.381999999998,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

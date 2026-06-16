@@ -1,6 +1,6 @@
 # Dashboard Setup Guide
 
-This guide helps you get the test dashboard running on your computer. No coding experience needed — just follow each step in order.
+This guide helps you get the test dashboard running on your computer.
 
 ---
 

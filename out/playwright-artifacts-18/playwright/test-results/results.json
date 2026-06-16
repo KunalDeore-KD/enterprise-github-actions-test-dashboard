@@ -1,0 +1,766 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/playwright.config.ts",
+    "rootDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129"
+      },
+      "gitCommit": {
+        "shortHash": "d6addfd",
+        "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+        "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+        "author": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "committer": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "20-flaky-demo.spec.ts",
+      "file": "20-flaky-demo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Flaky demo",
+          "file": "20-flaky-demo.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 795,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 81,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#this-element-does-not-exist-for-flaky-demo\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m500\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     }\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"form\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 81,
+                            "line": 12
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n\n  10 |\n  11 |     if (test.info().retry === 0) {\n> 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n     |                                                                                 ^\n  13 |     }\n  14 |\n  15 |     await expect(page.locator(\"form\")).toBeVisible();\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:35.154Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 81,
+                        "line": 12
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 387,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:38.204Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-d1e970613961d9e625a2",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 21,
+                          "line": 20
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 18 |\u001b[39m   test(\u001b[32m\"intermittent assertion recovers on retry @regression\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 19 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m       expect(\u001b[35m1\u001b[39m \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m3\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m     }\n \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m     expect(\u001b[35m2\u001b[39m \u001b[33m+\u001b[39m \u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 21,
+                            "line": 20
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n  19 |     if (test.info().retry === 0) {\n> 20 |       expect(1 + 1).toBe(3);\n     |                     ^\n  21 |     }\n  22 |\n  23 |     expect(2 + 2).toBe(4);\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:38.736Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 21,
+                        "line": 20
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:39.393Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-chromium-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-59218f45974c7678d870",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2179,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 81,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#this-element-does-not-exist-for-flaky-demo\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m500\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     }\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"form\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 81,
+                            "line": 12
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n\n  10 |\n  11 |     if (test.info().retry === 0) {\n> 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n     |                                                                                 ^\n  13 |     }\n  14 |\n  15 |     await expect(page.locator(\"form\")).toBeVisible();\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:40.039Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 81,
+                        "line": 12
+                      }
+                    },
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1992,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:43.691Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-4dacc6e98993577b11a2",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 21,
+                          "line": 20
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 18 |\u001b[39m   test(\u001b[32m\"intermittent assertion recovers on retry @regression\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 19 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m       expect(\u001b[35m1\u001b[39m \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m3\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m     }\n \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m     expect(\u001b[35m2\u001b[39m \u001b[33m+\u001b[39m \u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 21,
+                            "line": 20
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n  19 |     if (test.info().retry === 0) {\n> 20 |       expect(1 + 1).toBe(3);\n     |                     ^\n  21 |     }\n  22 |\n  23 |     expect(2 + 2).toBe(4);\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:46.157Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 21,
+                        "line": 20
+                      }
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:47.090Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-firefox-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-b3e102034f9d28561a9d",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "fails on first attempt then passes on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2430,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 81,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#this-element-does-not-exist-for-flaky-demo\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m500\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m     }\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"form\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 81,
+                            "line": 12
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 500ms\u001b[22m\n\u001b[2m  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\u001b[22m\n\n\n  10 |\n  11 |     if (test.info().retry === 0) {\n> 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n     |                                                                                 ^\n  13 |     }\n  14 |\n  15 |     await expect(page.locator(\"form\")).toBeVisible();\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:47.727Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 81,
+                        "line": 12
+                      }
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 824,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:51.376Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-93ac2fb3674e22693228",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "intermittent assertion recovers on retry @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21",
+                        "location": {
+                          "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                          "column": 21,
+                          "line": 20
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 18 |\u001b[39m   test(\u001b[32m\"intermittent assertion recovers on retry @regression\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 19 |\u001b[39m     \u001b[36mif\u001b[39m (test\u001b[33m.\u001b[39minfo()\u001b[33m.\u001b[39mretry \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m       expect(\u001b[35m1\u001b[39m \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m3\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m     }\n \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m     expect(\u001b[35m2\u001b[39m \u001b[33m+\u001b[39m \u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                            "column": 21,
+                            "line": 20
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\n  18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n  19 |     if (test.info().retry === 0) {\n> 20 |       expect(1 + 1).toBe(3);\n     |                     ^\n  21 |     }\n  22 |\n  23 |     expect(2 + 2).toBe(4);\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:23:52.350Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts",
+                        "column": 21,
+                        "line": 20
+                      }
+                    },
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-16T09:23:52.968Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-webkit-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "cf7df4441294e6755978-b17c7934e3437cb0f2c2",
+              "file": "20-flaky-demo.spec.ts",
+              "line": 18,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-16T09:23:34.501Z",
+    "duration": 18544.381999999998,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 6
+  }
+}

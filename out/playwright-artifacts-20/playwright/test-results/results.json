@@ -1,0 +1,1074 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/playwright.config.ts",
+    "rootDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380"
+      },
+      "gitCommit": {
+        "shortHash": "d6addfd",
+        "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+        "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+        "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+        "author": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "committer": {
+          "name": "KunalDeore-KD",
+          "email": "kunal.d@york.ie",
+          "time": 1781259367000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/commit/d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "commitHash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "buildHref": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27608074380"
+          },
+          "gitCommit": {
+            "shortHash": "d6addfd",
+            "hash": "d6addfd5a1b87118b4705e07bbd262bc71d97274",
+            "subject": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.",
+            "body": "Update dashboard files with new run details, including improved test summaries and video logs for all executed tests. Adjust timestamps and artifact URLs to reflect the latest run. Ensure all tests passed successfully with a 100% pass rate.\n",
+            "author": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "committer": {
+              "name": "KunalDeore-KD",
+              "email": "kunal.d@york.ie",
+              "time": 1781259367000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "10-api-ui-hybrid.spec.ts",
+      "file": "10-api-ui-hybrid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1286,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:20.891Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-749203f051896ce0d60e",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 197,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:22.453Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-d0b40585fe09f10c16ac",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 198,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 119\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-16T09:32:22.814Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:22.661Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-8d015be4cf3973419b42",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2387,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:23.858Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-daf81c8f601fc208eabe",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 264,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:26.826Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-fd95aa3696bc3e7ba833",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 262,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 506\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-16T09:32:27.305Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:27.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-0d8b085255d8665acdd5",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5348,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "API returned user: {\n  id: \u001b[33m1\u001b[39m,\n  email: \u001b[32m'george.bluth@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Bluth'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-image.jpg'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Name: George Bluth\n"
+                        },
+                        {
+                          "text": "Email: george.bluth@reqres.in\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:28.835Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-dc6255ef77430788c169",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:34.814Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-6ec0ea858953ff6aeeac",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 264,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 223\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-16T09:32:35.062Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:34.862Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-9ae8f91faaab8faa64b1",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "12-api-snapshot.spec.ts",
+      "file": "12-api-snapshot.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 191,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:22.884Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-d7de7adb0f492ceda14f",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:23.086Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-35f9d4441798350fe4d8",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 108,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:23.123Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-78ebc7b64374e0eafd8b",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:23.241Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-b8683409b42055a39fb1",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 256,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:27.397Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-b5cfa92748099695256c",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 31,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:27.664Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-242b642d98848425bc85",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 141,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:27.705Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-f2861a9d44a118079ffb",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:27.856Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-a85e7f725427e1dbd794",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:35.151Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-05bd438c0c6abcc5b443",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:35.199Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-64489fd2f421d3c60040",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 147,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:35.242Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-a0045f21264998c40260",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 32,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-16T09:32:35.399Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-f23b36f8d6eca13438c3",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-16T09:32:20.131Z",
+    "duration": 15336.298,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
