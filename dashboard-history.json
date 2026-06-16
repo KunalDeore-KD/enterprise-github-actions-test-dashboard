@@ -1,6 +1,544 @@
 {
-  "lastUpdated": "2026-06-16T09:23:59.059Z",
+  "lastUpdated": "2026-06-16T09:27:00.506Z",
   "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "27607771630",
+      "runNumber": 19,
+      "branch": "main",
+      "commit": "d6addfd",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "KunalDeore-KD",
+        "email": "",
+        "date": "2026-06-16T09:26:55.911Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-16T09:26:33.923Z",
+      "finishedAt": "2026-06-16T09:26:56.734Z",
+      "durationSeconds": 20,
+      "environment": "",
+      "suiteFilter": "single",
+      "summary": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "passRate": 100
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630",
+      "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630",
+      "artifactExpiresAt": "2026-07-16T09:26:56.733Z",
+      "allureReportUrl": null,
+      "videos": {
+        "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox/video.webm",
+        "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit/video.webm",
+        "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox/video.webm",
+        "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit/video.webm",
+        "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium": "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-96800--from-shared-library-shared-firefox": "19-shared-library-Shared-L-96800--from-shared-library-shared-firefox/video.webm",
+        "19-shared-library-Shared-L-96800--from-shared-library-shared-webkit": "19-shared-library-Shared-L-96800--from-shared-library-shared-webkit/video.webm",
+        "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium": "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox": "19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox/video.webm",
+        "19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit": "19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit/video.webm",
+        "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox/video.webm",
+        "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit/video.webm"
+      },
+      "workflowLog": "Running 15 tests using 1 worker\n[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Kale',\n  lastName: 'Kirlin',\n  fullName: 'Kale Kirlin',\n  email: 'Kale.Kirlin40@gmail.com',\n  password: '_n6TPEyGW6lH',\n  phone: '1-655-208-1753 x5689',\n  avatar: 'https://avatars.githubusercontent.com/u/48780529'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Audra Yundt IV',\n  email: 'Kellie82@hotmail.com',\n  password: '3jHZW01gRtzx',\n  gender: 'Male',\n  dateOfBirth: '1980-11-23',\n  message: 'Beneficium tantillus error culpo comptus placeat torrens suadeo totam. Tero utilis vitiosus vindico vomica id debilito vereor. Eveniet cursim appositus via confero communis ancilla.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '11919 Gregory Expressway',\n  city: 'North Selena',\n  state: 'Arkansas',\n  zipCode: '68031-8208',\n  country: 'Mali'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Elyssa',\n  lastName: 'Conroy-Ullrich',\n  fullName: 'Elyssa Conroy-Ullrich',\n  email: 'Elyssa.Conroy-Ullrich@hotmail.com',\n  password: 'g_2X6VFgVPbU',\n  phone: '1-464-268-7784 x74622',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Kailyn Gottlieb',\n  email: 'Della84@hotmail.com',\n  password: 'C90NwYNoe8Qg',\n  gender: 'Female',\n  dateOfBirth: '1961-02-07',\n  message: 'Vilis aspernatur corroboro civitas confero. Ars curtus verumtamen tabula. Beneficium argumentum deficio solvo aveho spero.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '380 Vicarage Road',\n  city: 'Ashburn',\n  state: 'Connecticut',\n  zipCode: '73134-1226',\n  country: 'Norway'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Tamara',\n  lastName: 'Kerluke',\n  fullName: 'Tamara Kerluke',\n  email: 'Tamara.Kerluke3@yahoo.com',\n  password: 'CFAsfjCKSnvE',\n  phone: '(273) 434-9816 x6971',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/44.jpg'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Don Kovacek-Runte',\n  email: 'Lowell.Bailey@yahoo.com',\n  password: 'v824b49PJqUe',\n  gender: 'Female',\n  dateOfBirth: '2006-06-22',\n  message: 'Utroque sunt tabgo statim conor xiphias audax turba. Vulpes celer complectus. Tamen laboriosam dicta.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '8739 Lonnie Meadows',\n  city: 'Worcester',\n  state: 'Rhode Island',\n  zipCode: '68270-6419',\n  country: 'Vanuatu'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·\n  15 passed (20.3s)",
+      "consoleLogs": [
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ BasePage actions completed"
+            }
+          ]
+        },
+        {
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Kale',\n  lastName: 'Kirlin',\n  fullName: 'Kale Kirlin',\n  email: 'Kale.Kirlin40@gmail.com',\n  password: '_n6TPEyGW6lH',\n  phone: '1-655-208-1753 x5689',\n  avatar: 'https://avatars.githubusercontent.com/u/48780529'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Audra Yundt IV',\n  email: 'Kellie82@hotmail.com',\n  password: '3jHZW01gRtzx',\n  gender: 'Male',\n  dateOfBirth: '1980-11-23',\n  message: 'Beneficium tantillus error culpo comptus placeat torrens suadeo totam. Tero utilis vitiosus vindico vomica id debilito vereor. Eveniet cursim appositus via confero communis ancilla.'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated address: {\n  street: '11919 Gregory Expressway',\n  city: 'North Selena',\n  state: 'Arkansas',\n  zipCode: '68031-8208',\n  country: 'Mali'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Form submitted with generated data"
+            }
+          ]
+        },
+        {
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+            }
+          ]
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 1/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 2/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+            }
+          ]
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 1: Navigate to page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 2: Verify page loaded"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 3: Fill form"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 4: Submit"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 5: Verify success"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] ✅ All steps completed!"
+            }
+          ]
+        },
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+          "browser": "firefox",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ BasePage actions completed"
+            }
+          ]
+        },
+        {
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+          "browser": "firefox",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Elyssa',\n  lastName: 'Conroy-Ullrich',\n  fullName: 'Elyssa Conroy-Ullrich',\n  email: 'Elyssa.Conroy-Ullrich@hotmail.com',\n  password: 'g_2X6VFgVPbU',\n  phone: '1-464-268-7784 x74622',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Kailyn Gottlieb',\n  email: 'Della84@hotmail.com',\n  password: 'C90NwYNoe8Qg',\n  gender: 'Female',\n  dateOfBirth: '1961-02-07',\n  message: 'Vilis aspernatur corroboro civitas confero. Ars curtus verumtamen tabula. Beneficium argumentum deficio solvo aveho spero.'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated address: {\n  street: '380 Vicarage Road',\n  city: 'Ashburn',\n  state: 'Connecticut',\n  zipCode: '73134-1226',\n  country: 'Norway'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Form submitted with generated data"
+            }
+          ]
+        },
+        {
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "firefox",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+            }
+          ]
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "firefox",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 1/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 2/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+            }
+          ]
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "firefox",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 1: Navigate to page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 2: Verify page loaded"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 3: Fill form"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 4: Submit"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 5: Verify success"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] ✅ All steps completed!"
+            }
+          ]
+        },
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+          "browser": "webkit",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ BasePage actions completed"
+            }
+          ]
+        },
+        {
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+          "browser": "webkit",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Tamara',\n  lastName: 'Kerluke',\n  fullName: 'Tamara Kerluke',\n  email: 'Tamara.Kerluke3@yahoo.com',\n  password: 'CFAsfjCKSnvE',\n  phone: '(273) 434-9816 x6971',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/44.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Don Kovacek-Runte',\n  email: 'Lowell.Bailey@yahoo.com',\n  password: 'v824b49PJqUe',\n  gender: 'Female',\n  dateOfBirth: '2006-06-22',\n  message: 'Utroque sunt tabgo statim conor xiphias audax turba. Vulpes celer complectus. Tamen laboriosam dicta.'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated address: {\n  street: '8739 Lonnie Meadows',\n  city: 'Worcester',\n  state: 'Rhode Island',\n  zipCode: '68270-6419',\n  country: 'Vanuatu'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Form submitted with generated data"
+            }
+          ]
+        },
+        {
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "webkit",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+            }
+          ]
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "webkit",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 1/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 2/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+            }
+          ]
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "webkit",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 1: Navigate to page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 2: Verify page loaded"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 3: Fill form"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 4: Submit"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 5: Verify success"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] ✅ All steps completed!"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Shared Library Demo",
+          "file": "19-shared-library.spec.ts",
+          "passed": 15,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "use BasePage for common actions @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm"
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium/video.webm"
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm"
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm"
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm"
+            },
+            {
+              "title": "use BasePage for common actions @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox/video.webm"
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox/video.webm"
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-firefox/video.webm"
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox/video.webm"
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox/video.webm"
+            },
+            {
+              "title": "use BasePage for common actions @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit/video.webm"
+            },
+            {
+              "title": "use data generators for random test data @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit/video.webm"
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-webkit/video.webm"
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit/video.webm"
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit/video.webm"
+            }
+          ]
+        }
+      ]
+    },
     {
       "schemaVersion": "1.0",
       "runId": "27607613129",

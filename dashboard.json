@@ -1,108 +1,536 @@
 {
   "schemaVersion": "1.0",
-  "runId": "27607613129",
-  "runNumber": 18,
+  "runId": "27607771630",
+  "runNumber": 19,
   "branch": "main",
   "commit": "d6addfd",
   "triggeredBy": "KunalDeore-KD",
   "commitAuthor": {
     "name": "KunalDeore-KD",
     "email": "",
-    "date": "2026-06-16T09:23:54.728Z"
+    "date": "2026-06-16T09:26:55.911Z"
   },
   "workflowActor": "KunalDeore-KD",
-  "startedAt": "2026-06-16T09:23:34.501Z",
-  "finishedAt": "2026-06-16T09:23:55.563Z",
-  "durationSeconds": 19,
+  "startedAt": "2026-06-16T09:26:33.923Z",
+  "finishedAt": "2026-06-16T09:26:56.734Z",
+  "durationSeconds": 20,
   "environment": "",
   "suiteFilter": "single",
   "summary": {
-    "total": 6,
-    "passed": 0,
+    "total": 15,
+    "passed": 15,
     "failed": 0,
     "skipped": 0,
-    "flaky": 6,
-    "passRate": 0
+    "flaky": 0,
+    "passRate": 100
   },
-  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129",
-  "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607613129",
-  "artifactExpiresAt": "2026-07-16T09:23:55.561Z",
+  "artifactUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630",
+  "artifactViewUrl": "https://github.com/KunalDeore-KD/enterprise-github-actions-test-dashboard/actions/runs/27607771630",
+  "artifactExpiresAt": "2026-07-16T09:26:56.733Z",
   "allureReportUrl": null,
   "videos": {
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm",
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium-retry1/video.webm",
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm",
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox-retry1/video.webm",
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm",
-    "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1": "20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit-retry1/video.webm"
+    "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm",
+    "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox/video.webm",
+    "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit/video.webm",
+    "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm",
+    "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox/video.webm",
+    "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit/video.webm",
+    "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium": "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm",
+    "19-shared-library-Shared-L-96800--from-shared-library-shared-firefox": "19-shared-library-Shared-L-96800--from-shared-library-shared-firefox/video.webm",
+    "19-shared-library-Shared-L-96800--from-shared-library-shared-webkit": "19-shared-library-Shared-L-96800--from-shared-library-shared-webkit/video.webm",
+    "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium": "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm",
+    "19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox": "19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox/video.webm",
+    "19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit": "19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit/video.webm",
+    "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium/video.webm",
+    "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox/video.webm",
+    "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit": "19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit/video.webm"
   },
-  "workflowLog": "Running 6 tests using 1 worker\n×±×±×±×±×±×±\n\n  1) [chromium] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/error-context.md\n\n  2) [chromium] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-chromium/error-context.md\n\n  3) [firefox] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/error-context.md\n\n  4) [firefox] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-firefox/error-context.md\n\n  5) [webkit] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator: locator('#this-element-does-not-exist-for-flaky-demo')\n    Expected: visible\n    Timeout: 500ms\n    Error: element(s) not found\n\n    Call log:\n      - Expect \"toBeVisible\" with timeout 500ms\n      - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n\n      10 |\n      11 |     if (test.info().retry === 0) {\n    > 12 |       await expect(page.locator(\"#this-element-does-not-exist-for-flaky-demo\")).toBeVisible({ timeout: 500 });\n         |                                                                                 ^\n      13 |     }\n      14 |\n      15 |     await expect(page.locator(\"form\")).toBeVisible();\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────\n    test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/error-context.md\n\n  6) [webkit] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n\n    Error: expect(received).toBe(expected) // Object.is equality\n\n    Expected: 3\n    Received: 2\n\n      18 |   test(\"intermittent assertion recovers on retry @regression\", async () => {\n      19 |     if (test.info().retry === 0) {\n    > 20 |       expect(1 + 1).toBe(3);\n         |                     ^\n      21 |     }\n      22 |\n      23 |     expect(2 + 2).toBe(4);\n        at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21\n\n    Error Context: test-results/20-flaky-demo-Flaky-demo-i-6a4f9-ecovers-on-retry-regression-webkit/error-context.md\n\n  6 flaky\n    [chromium] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [chromium] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n    [firefox] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [firefox] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression \n    [webkit] › tests/20-flaky-demo.spec.ts:8:3 › Flaky demo › fails on first attempt then passes on retry @regression \n    [webkit] › tests/20-flaky-demo.spec.ts:18:3 › Flaky demo › intermittent assertion recovers on retry @regression",
+  "workflowLog": "Running 15 tests using 1 worker\n[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Kale',\n  lastName: 'Kirlin',\n  fullName: 'Kale Kirlin',\n  email: 'Kale.Kirlin40@gmail.com',\n  password: '_n6TPEyGW6lH',\n  phone: '1-655-208-1753 x5689',\n  avatar: 'https://avatars.githubusercontent.com/u/48780529'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Audra Yundt IV',\n  email: 'Kellie82@hotmail.com',\n  password: '3jHZW01gRtzx',\n  gender: 'Male',\n  dateOfBirth: '1980-11-23',\n  message: 'Beneficium tantillus error culpo comptus placeat torrens suadeo totam. Tero utilis vitiosus vindico vomica id debilito vereor. Eveniet cursim appositus via confero communis ancilla.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '11919 Gregory Expressway',\n  city: 'North Selena',\n  state: 'Arkansas',\n  zipCode: '68031-8208',\n  country: 'Mali'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Elyssa',\n  lastName: 'Conroy-Ullrich',\n  fullName: 'Elyssa Conroy-Ullrich',\n  email: 'Elyssa.Conroy-Ullrich@hotmail.com',\n  password: 'g_2X6VFgVPbU',\n  phone: '1-464-268-7784 x74622',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Kailyn Gottlieb',\n  email: 'Della84@hotmail.com',\n  password: 'C90NwYNoe8Qg',\n  gender: 'Female',\n  dateOfBirth: '1961-02-07',\n  message: 'Vilis aspernatur corroboro civitas confero. Ars curtus verumtamen tabula. Beneficium argumentum deficio solvo aveho spero.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '380 Vicarage Road',\n  city: 'Ashburn',\n  state: 'Connecticut',\n  zipCode: '73134-1226',\n  country: 'Norway'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·[SharedLib] ℹ️  Page title: AngularPractice Local Fixture\n[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html\n[SharedLib] ✅ BasePage actions completed\n·[SharedLib] ℹ️  Generated user: {\n  firstName: 'Tamara',\n  lastName: 'Kerluke',\n  fullName: 'Tamara Kerluke',\n  email: 'Tamara.Kerluke3@yahoo.com',\n  password: 'CFAsfjCKSnvE',\n  phone: '(273) 434-9816 x6971',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/44.jpg'\n}\n[SharedLib] ℹ️  Generated form: {\n  name: 'Don Kovacek-Runte',\n  email: 'Lowell.Bailey@yahoo.com',\n  password: 'v824b49PJqUe',\n  gender: 'Female',\n  dateOfBirth: '2006-06-22',\n  message: 'Utroque sunt tabgo statim conor xiphias audax turba. Vulpes celer complectus. Tamen laboriosam dicta.'\n}\n[SharedLib] ℹ️  Generated address: {\n  street: '8739 Lonnie Meadows',\n  city: 'Worcester',\n  state: 'Rhode Island',\n  zipCode: '68270-6419',\n  country: 'Vanuatu'\n}\n[SharedLib] ✅ Form submitted with generated data\n·[SharedLib] ✅ ComponentRunner from shared library works\n·[Retry] flaky operation — attempt 1/5 failed\n[Retry] flaky operation — attempt 2/5 failed\n[SharedLib] ✅ Retry succeeded after 3 attempts\n·[MyTest] Step 1: Navigate to page\n[MyTest] Step 2: Verify page loaded\n[MyTest] Step 3: Fill form\n[MyTest] Step 4: Submit\n[MyTest] Step 5: Verify success\n[MyTest] ✅ All steps completed!\n·\n  15 passed (20.3s)",
+  "consoleLogs": [
+    {
+      "title": "use BasePage for common actions @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+      "browser": "chromium",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ BasePage actions completed"
+        }
+      ]
+    },
+    {
+      "title": "use data generators for random test data @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+      "browser": "chromium",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Kale',\n  lastName: 'Kirlin',\n  fullName: 'Kale Kirlin',\n  email: 'Kale.Kirlin40@gmail.com',\n  password: '_n6TPEyGW6lH',\n  phone: '1-655-208-1753 x5689',\n  avatar: 'https://avatars.githubusercontent.com/u/48780529'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Audra Yundt IV',\n  email: 'Kellie82@hotmail.com',\n  password: '3jHZW01gRtzx',\n  gender: 'Male',\n  dateOfBirth: '1980-11-23',\n  message: 'Beneficium tantillus error culpo comptus placeat torrens suadeo totam. Tero utilis vitiosus vindico vomica id debilito vereor. Eveniet cursim appositus via confero communis ancilla.'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated address: {\n  street: '11919 Gregory Expressway',\n  city: 'North Selena',\n  state: 'Arkansas',\n  zipCode: '68031-8208',\n  country: 'Mali'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Form submitted with generated data"
+        }
+      ]
+    },
+    {
+      "title": "use ComponentRunner from shared library @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+      "browser": "chromium",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+        }
+      ]
+    },
+    {
+      "title": "use retry helper for flaky operations @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+      "browser": "chromium",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 1/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 2/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+        }
+      ]
+    },
+    {
+      "title": "use Logger for structured output @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+      "browser": "chromium",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 1: Navigate to page"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 2: Verify page loaded"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 3: Fill form"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 4: Submit"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 5: Verify success"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] ✅ All steps completed!"
+        }
+      ]
+    },
+    {
+      "title": "use BasePage for common actions @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+      "browser": "firefox",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ BasePage actions completed"
+        }
+      ]
+    },
+    {
+      "title": "use data generators for random test data @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+      "browser": "firefox",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Elyssa',\n  lastName: 'Conroy-Ullrich',\n  fullName: 'Elyssa Conroy-Ullrich',\n  email: 'Elyssa.Conroy-Ullrich@hotmail.com',\n  password: 'g_2X6VFgVPbU',\n  phone: '1-464-268-7784 x74622',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Kailyn Gottlieb',\n  email: 'Della84@hotmail.com',\n  password: 'C90NwYNoe8Qg',\n  gender: 'Female',\n  dateOfBirth: '1961-02-07',\n  message: 'Vilis aspernatur corroboro civitas confero. Ars curtus verumtamen tabula. Beneficium argumentum deficio solvo aveho spero.'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated address: {\n  street: '380 Vicarage Road',\n  city: 'Ashburn',\n  state: 'Connecticut',\n  zipCode: '73134-1226',\n  country: 'Norway'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Form submitted with generated data"
+        }
+      ]
+    },
+    {
+      "title": "use ComponentRunner from shared library @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+      "browser": "firefox",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+        }
+      ]
+    },
+    {
+      "title": "use retry helper for flaky operations @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+      "browser": "firefox",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 1/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 2/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+        }
+      ]
+    },
+    {
+      "title": "use Logger for structured output @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+      "browser": "firefox",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 1: Navigate to page"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 2: Verify page loaded"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 3: Fill form"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 4: Submit"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 5: Verify success"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] ✅ All steps completed!"
+        }
+      ]
+    },
+    {
+      "title": "use BasePage for common actions @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+      "browser": "webkit",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Page title: AngularPractice Local Fixture"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Current URL: file:///home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/fixtures/angularpractice.html"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ BasePage actions completed"
+        }
+      ]
+    },
+    {
+      "title": "use data generators for random test data @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+      "browser": "webkit",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Tamara',\n  lastName: 'Kerluke',\n  fullName: 'Tamara Kerluke',\n  email: 'Tamara.Kerluke3@yahoo.com',\n  password: 'CFAsfjCKSnvE',\n  phone: '(273) 434-9816 x6971',\n  avatar: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/44.jpg'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Don Kovacek-Runte',\n  email: 'Lowell.Bailey@yahoo.com',\n  password: 'v824b49PJqUe',\n  gender: 'Female',\n  dateOfBirth: '2006-06-22',\n  message: 'Utroque sunt tabgo statim conor xiphias audax turba. Vulpes celer complectus. Tamen laboriosam dicta.'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ℹ️  Generated address: {\n  street: '8739 Lonnie Meadows',\n  city: 'Worcester',\n  state: 'Rhode Island',\n  zipCode: '68270-6419',\n  country: 'Vanuatu'\n}"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Form submitted with generated data"
+        }
+      ]
+    },
+    {
+      "title": "use ComponentRunner from shared library @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+      "browser": "webkit",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+        }
+      ]
+    },
+    {
+      "title": "use retry helper for flaky operations @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+      "browser": "webkit",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 1/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[Retry] flaky operation — attempt 2/5 failed"
+        },
+        {
+          "stream": "stdout",
+          "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+        }
+      ]
+    },
+    {
+      "title": "use Logger for structured output @shared",
+      "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+      "browser": "webkit",
+      "file": "19-shared-library.spec.ts",
+      "lines": [
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 1: Navigate to page"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 2: Verify page loaded"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 3: Fill form"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 4: Submit"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] Step 5: Verify success"
+        },
+        {
+          "stream": "stdout",
+          "text": "[MyTest] ✅ All steps completed!"
+        }
+      ]
+    }
+  ],
   "suites": [
     {
-      "name": "Flaky demo",
-      "file": "20-flaky-demo.spec.ts",
-      "passed": 0,
+      "name": "Shared Library Demo",
+      "file": "19-shared-library.spec.ts",
+      "passed": 15,
       "failed": 0,
       "skipped": 0,
-      "flaky": 6,
+      "flaky": 0,
       "durationMs": 0,
       "tests": [
         {
-          "title": "fails on first attempt then passes on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
           "browser": "chromium",
-          "status": "flaky",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
-          "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
-          "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-chromium/video.webm"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm"
         },
         {
-          "title": "intermittent assertion recovers on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
           "browser": "chromium",
-          "status": "flaky",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
-          "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-chromium/video.webm"
         },
         {
-          "title": "fails on first attempt then passes on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm"
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm"
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "chromium",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm"
+        },
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
           "browser": "firefox",
-          "status": "flaky",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
-          "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
-          "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-firefox/video.webm"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-firefox/video.webm"
         },
         {
-          "title": "intermittent assertion recovers on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
           "browser": "firefox",
-          "status": "flaky",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
-          "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-firefox/video.webm"
         },
         {
-          "title": "fails on first attempt then passes on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > fails on first attempt then passes on retry @regression",
-          "browser": "webkit",
-          "status": "flaky",
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "firefox",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n",
-          "errorStack": "Error: expect(locator).toBeVisible() failed\n\nLocator: locator('#this-element-does-not-exist-for-flaky-demo')\nExpected: visible\nTimeout: 500ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 500ms\n  - waiting for locator('#this-element-does-not-exist-for-flaky-demo')\n\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:12:81",
-          "videoPath": "playwright/test-results/20-flaky-demo-Flaky-demo-f-0c24a--passes-on-retry-regression-webkit/video.webm"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-firefox/video.webm"
         },
         {
-          "title": "intermittent assertion recovers on retry @regression",
-          "fullTitle": "20-flaky-demo.spec.ts > Flaky demo > intermittent assertion recovers on retry @regression",
-          "browser": "webkit",
-          "status": "flaky",
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "firefox",
+          "status": "passed",
           "durationMs": 0,
-          "errorMessage": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2",
-          "errorStack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 2\n    at /home/runner/work/enterprise-github-actions-test-dashboard/enterprise-github-actions-test-dashboard/playwright/tests/20-flaky-demo.spec.ts:20:21"
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-firefox/video.webm"
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "firefox",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-firefox/video.webm"
+        },
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-webkit/video.webm"
+        },
+        {
+          "title": "use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use data generators for random test data @shared",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-ef7e1-for-random-test-data-shared-webkit/video.webm"
+        },
+        {
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-webkit/video.webm"
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-webkit/video.webm"
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "webkit",
+          "status": "passed",
+          "durationMs": 0,
+          "errorMessage": null,
+          "errorStack": null,
+          "videoPath": "playwright/test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-webkit/video.webm"
         }
       ]
     }
