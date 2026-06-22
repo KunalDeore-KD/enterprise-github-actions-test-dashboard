@@ -4,15 +4,90 @@
 window.DASHBOARD_CONFIG = {
   "repo": {
     "owner": "KunalDeore-KD",
-    "name": "enterprise-github-actions-test-dashboard",
-    "defaultBranch": "main",
+    "name": "Playwright_with_TypeScript",
+    "defaultBranch": "test",
     "isPrivate": false
   },
   "github": {
     "owner": "KunalDeore-KD",
-    "repo": "enterprise-github-actions-test-dashboard",
+    "repo": "Playwright_with_TypeScript",
     "workflow": "playwright.yml",
-    "defaultBranch": "main"
+    "defaultBranch": "test",
+    "activeRepositoryId": "KunalDeore-KD/Playwright_with_TypeScript",
+    "repositories": [
+      {
+        "id": "KunalDeore-KD/Playwright_with_TypeScript",
+        "owner": "KunalDeore-KD",
+        "repo": "Playwright_with_TypeScript",
+        "label": "Playwright TypeScript",
+        "workflow": "playwright.yml",
+        "defaultBranch": "test",
+        "testDir": "tests",
+        "browsers": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "resultsFile": "test-results/results.json",
+        "suites": [
+          {
+            "label": "All Test Cases",
+            "value": "all"
+          },
+          {
+            "label": "Regression",
+            "value": "regression",
+            "pattern": "@regression"
+          },
+          {
+            "label": "Smoke",
+            "value": "smoke",
+            "pattern": "@smoke"
+          },
+          {
+            "label": "API",
+            "value": "api",
+            "pattern": "tests/10-api-ui-hybrid.spec.ts,tests/12-api-snapshot.spec.ts"
+          }
+        ]
+      },
+      {
+        "id": "KunalDeore-KD/enterprise-github-actions-test-dashboard",
+        "owner": "KunalDeore-KD",
+        "repo": "enterprise-github-actions-test-dashboard",
+        "label": "Dashboard Demo",
+        "workflow": "playwright.yml",
+        "defaultBranch": "main",
+        "testDir": "playwright/tests",
+        "browsers": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "resultsFile": "test-results/results.json",
+        "suites": [
+          {
+            "label": "All Test Cases",
+            "value": "all"
+          },
+          {
+            "label": "Regression",
+            "value": "regression",
+            "pattern": "@regression"
+          },
+          {
+            "label": "Smoke",
+            "value": "smoke",
+            "pattern": "@smoke"
+          },
+          {
+            "label": "API",
+            "value": "api",
+            "pattern": "playwright/tests/10-api-ui-hybrid.spec.ts,playwright/tests/12-api-snapshot.spec.ts"
+          }
+        ]
+      }
+    ]
   },
   "playwright": {
     "browsers": [
@@ -41,7 +116,7 @@ window.DASHBOARD_CONFIG = {
         "pattern": "tests/10-api-ui-hybrid.spec.ts,tests/12-api-snapshot.spec.ts"
       }
     ],
-    "testDir": "playwright/tests",
+    "testDir": "tests",
     "resultsFile": "test-results/results.json"
   },
   "dashboard": {
@@ -51,7 +126,8 @@ window.DASHBOARD_CONFIG = {
     "trendChartDefault": 10,
     "historyWindowSize": 30,
     "defaultTheme": "dark",
-    "artifactExpiryWarningDays": 7
+    "artifactExpiryWarningDays": 7,
+    "historyBranch": "dashboard-data"
   },
   "environments": [
     {
@@ -84,6 +160,6 @@ window.DASHBOARD_CONFIG = {
   "artifactRetentionDays": 30,
   "workflows": {
     "playwright": "playwright.yml",
-    "dispatchRef": "main"
+    "dispatchRef": "test"
   }
 };

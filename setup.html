@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' http://localhost:5000 http://127.0.0.1:5000 http://localhost:3000 http://127.0.0.1:3000; img-src 'self'; font-src 'self';" />
+  <title>Dashboard Setup</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="hero-description">Bring your own repo</p>
+        <h1>Connect Playwright Dashboard</h1>
+        <p class="subtitle">Point this dashboard at your GitHub repository and token. No source edits required.</p>
+      </div>
+      <div class="topbar-actions">
+        <a href="./" class="btn-secondary btn-sm">Back to dashboard</a>
+      </div>
+    </header>
+
+    <main class="panel setup-panel">
+      <div class="setup-steps" aria-label="Setup progress">
+        <div class="setup-step is-active" data-step-indicator="1">
+          <span class="setup-step__number">1</span>
+          <span class="setup-step__label">Connect</span>
+        </div>
+        <div class="setup-step" data-step-indicator="2">
+          <span class="setup-step__number">2</span>
+          <span class="setup-step__label">Review</span>
+        </div>
+        <div class="setup-step" data-step-indicator="3">
+          <span class="setup-step__number">3</span>
+          <span class="setup-step__label">Done</span>
+        </div>
+      </div>
+
+      <section id="setupStepConnect" class="setup-step-panel">
+        <h2>Connect your GitHub repository</h2>
+        <p class="setup-note">Enter the repository that contains your Playwright tests and a personal access token with <strong>repo</strong> and <strong>workflow</strong> scopes. Add <strong>contents:write</strong> if you want the wizard to scaffold <code>playwright.yml</code> automatically.</p>
+
+        <form id="setupConnectForm" class="modal-form setup-form">
+          <label for="setupRepoUrl">GitHub repository</label>
+          <input id="setupRepoUrl" name="repoUrl" type="text" required autocomplete="off" placeholder="https://github.com/owner/repo or owner/repo" />
+
+          <label for="setupToken">GitHub token (PAT)</label>
+          <input id="setupToken" name="token" type="password" required autocomplete="off" placeholder="ghp_... or github_pat_..." />
+
+          <p id="setupServerStatus" class="setup-status" aria-live="polite"></p>
+          <p id="setupConnectError" class="setup-error hidden" aria-live="polite"></p>
+
+          <div class="setup-actions">
+            <button id="setupPreflightBtn" class="btn-primary" type="submit">Continue</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="setupStepReview" class="setup-step-panel hidden">
+        <h2>Review detected settings</h2>
+        <p class="setup-note">Confirm the values below. The wizard will update <code>dashboard.config.json</code>, write your token to <code>.env</code>, and regenerate <code>dashboard/config.js</code>.</p>
+
+        <div id="setupPreflightSummary" class="setup-summary"></div>
+
+        <form id="setupReviewForm" class="modal-form setup-form">
+          <label for="setupWorkflow">Workflow file</label>
+          <input id="setupWorkflow" name="workflow" type="text" required placeholder="playwright.yml" />
+
+          <label for="setupBranch">Default branch</label>
+          <input id="setupBranch" name="defaultBranch" type="text" required placeholder="main" />
+
+          <label for="setupTestDir">Playwright test directory</label>
+          <input id="setupTestDir" name="testDir" type="text" required placeholder="playwright/tests" />
+
+          <label class="setup-checkbox">
+            <input id="setupScaffoldWorkflow" name="scaffoldWorkflow" type="checkbox" checked />
+            Create or update the Playwright workflow on GitHub when manual dispatch is missing
+          </label>
+
+          <label class="setup-checkbox">
+            <input id="setupScaffoldIntegration" name="scaffoldIntegration" type="checkbox" checked />
+            Upload dashboard CI files (<code>scripts/</code>, <code>dashboard.config.json</code>) to the target repository
+          </label>
+
+          <p id="setupReviewError" class="setup-error hidden" aria-live="polite"></p>
+
+          <div class="setup-actions">
+            <button id="setupBackBtn" class="btn-secondary" type="button">Back</button>
+            <button id="setupCompleteBtn" class="btn-primary" type="submit">Save and finish</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="setupStepDone" class="setup-step-panel hidden">
+        <h2>Dashboard connected</h2>
+        <p id="setupDoneMessage" class="setup-note">Your dashboard is ready.</p>
+        <div id="setupDoneWarnings" class="setup-warnings hidden"></div>
+        <div class="setup-actions">
+          <a href="./" class="btn-primary">Open dashboard</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./config-loader.js"></script>
+  <script src="./toast.js"></script>
+  <script src="./setup.js"></script>
+</body>
+</html>

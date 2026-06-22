@@ -7,6 +7,7 @@ class WorkflowTrigger {
     this.branchInput = document.getElementById('branchInput');
     this.envInput = document.getElementById('envInput');
     this.suiteInput = document.getElementById('suiteInput');
+    this.browserCheckboxes = document.getElementById('browserCheckboxes');
     this.searchInput = document.getElementById('testSearchInput');
     this.searchResults = document.getElementById('searchResults');
     this.testSearchLabel = document.getElementById('testSearchLabel');
@@ -89,6 +90,59 @@ class WorkflowTrigger {
         this.envInput.appendChild(option);
       });
     }
+
+    this._populateBrowserCheckboxes();
+  }
+
+  _formatBrowserLabel(browser) {
+    const value = String(browser || '').trim();
+    if (!value) return value;
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
+
+  _populateBrowserCheckboxes() {
+    if (!this.browserCheckboxes) return;
+
+    const config = this.config || window.DASHBOARD_CONFIG || {};
+    const browsers = config.playwright?.browsers || ['chromium', 'firefox', 'webkit'];
+    const previouslySelected = new Set(this._getSelectedBrowsers());
+    const shouldSelectAll = previouslySelected.size === 0;
+
+    this.browserCheckboxes.innerHTML = '';
+    browsers.forEach((browser) => {
+      const value = String(browser).trim().toLowerCase();
+      if (!value) return;
+
+      const label = document.createElement('label');
+      label.className = 'browser-checkbox';
+
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.name = 'browser';
+      input.value = value;
+      input.checked = shouldSelectAll || previouslySelected.has(value);
+
+      const text = document.createElement('span');
+      text.textContent = this._formatBrowserLabel(value);
+
+      label.append(input, text);
+      this.browserCheckboxes.appendChild(label);
+    });
+  }
+
+  _getSelectedBrowsers() {
+    if (!this.browserCheckboxes) return [];
+
+    return Array.from(this.browserCheckboxes.querySelectorAll('input[type="checkbox"]:checked'))
+      .map((input) => String(input.value || '').trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  _resetBrowserSelection() {
+    if (!this.browserCheckboxes) return;
+    this.browserCheckboxes.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+      input.checked = true;
+    });
   }
 
   _getBackendBaseUrl() {
@@ -286,6 +340,7 @@ class WorkflowTrigger {
     if (!this.config || !this.config.repo) return;
     // Reset form to default state
     this.suiteInput.value = 'all';
+    this._resetBrowserSelection();
     this.testSearchLabel.classList.remove('hidden');
     this.testFilesLabel.classList.add('hidden');
     this.searchInput.value = '';
@@ -428,6 +483,13 @@ class WorkflowTrigger {
       inputs.environment = this.envInput.value.trim();
     }
     const suite = this.suiteInput.value;
+    const selectedBrowsers = this._getSelectedBrowsers();
+    if (!selectedBrowsers.length) {
+      this._notify('Select at least one browser.', 'error');
+      return;
+    }
+    inputs.browsers = selectedBrowsers.join(',');
+
     if (suite === 'single') {
       // For single test file selection, only send selectedTests
       if (this.selectedTests.length) {
@@ -451,7 +513,14 @@ class WorkflowTrigger {
       const response = await fetch(serverUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ owner, repo, workflowId, ref, inputs }),
+        body: JSON.stringify({
+          owner,
+          repo,
+          workflowId,
+          ref,
+          inputs,
+          repositoryId: this.config.github?.activeRepositoryId,
+        }),
       });
 
       const result = await response.json();

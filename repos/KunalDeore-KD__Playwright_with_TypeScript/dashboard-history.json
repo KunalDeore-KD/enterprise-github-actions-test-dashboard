@@ -1,0 +1,1400 @@
+{
+  "lastUpdated": "2026-06-21T15:16:53.857Z",
+  "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "27908582460",
+      "runNumber": 62,
+      "branch": "test",
+      "commit": "c27aac1",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "Kunal Deore",
+        "email": "kunal.d@york.ie",
+        "date": "2026-06-21T15:02:03Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-21T15:16:14.083Z",
+      "finishedAt": "2026-06-21T15:16:53.857Z",
+      "durationSeconds": 23,
+      "environment": "",
+      "suiteFilter": "smoke",
+      "summary": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "passRate": 100
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27908582460",
+      "artifactViewUrl": "./run?runId=27908582460#evidence",
+      "artifactExpiresAt": "2026-07-21T15:16:53.855Z",
+      "allureReportUrl": null,
+      "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-62",
+      "videos": {
+        "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium": "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm",
+        "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium": "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm",
+        "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium": "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm",
+        "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium": "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm",
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm",
+        "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium": "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm"
+      },
+      "consoleLogs": [
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Chester Herzog',\n  email: 'Geovanni_Fay@yahoo.com',\n  password: 'QfSNxL0eVGE0',\n  gender: 'Male',\n  dob: '1996-11-24',\n  loveIceCream: false,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Navigation Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        }
+      ],
+      "owner": "KunalDeore-KD",
+      "repo": "Playwright_with_TypeScript",
+      "repositoryId": "KunalDeore-KD/Playwright_with_TypeScript"
+    },
+    {
+      "schemaVersion": "1.0",
+      "runId": "27907529329",
+      "runNumber": 48,
+      "branch": "test",
+      "commit": "aa0311e",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "Kunal Deore",
+        "email": "kunal.d@york.ie",
+        "date": "2026-06-21T14:29:24Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-21T14:35:00.486Z",
+      "finishedAt": "2026-06-21T14:36:50.620Z",
+      "durationSeconds": 76,
+      "environment": "",
+      "suiteFilter": "regression",
+      "summary": {
+        "total": 39,
+        "passed": 36,
+        "failed": 0,
+        "skipped": 3,
+        "flaky": 0,
+        "passRate": 92.3
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27907529329",
+      "artifactViewUrl": "./run?runId=27907529329#evidence",
+      "artifactExpiresAt": "2026-07-21T14:36:50.618Z",
+      "allureReportUrl": null,
+      "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-48",
+      "videos": {
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm",
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox/video.webm",
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-chromium": "08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-firefox": "08-hooks-and-organization--c767e-uired-validation-regression-firefox/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-webkit": "08-hooks-and-organization--c767e-uired-validation-regression-webkit/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit/video.webm",
+        "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium": "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium/video.webm",
+        "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-firefox": "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-firefox/video.webm",
+        "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-webkit": "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-webkit/video.webm",
+        "15-allure-reporting-Allure-d7df9--correct-options-regression-chromium": "15-allure-reporting-Allure-d7df9--correct-options-regression-chromium/video.webm",
+        "15-allure-reporting-Allure-d7df9--correct-options-regression-firefox": "15-allure-reporting-Allure-d7df9--correct-options-regression-firefox/video.webm",
+        "15-allure-reporting-Allure-d7df9--correct-options-regression-webkit": "15-allure-reporting-Allure-d7df9--correct-options-regression-webkit/video.webm"
+      },
+      "consoleLogs": [
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify name is required validation @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "verify disabled dropdown option @regression",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Brycen Greenfelder',\n  email: 'Horace37@gmail.com',\n  password: '5pWsA_AdwLIq',\n  gender: 'Female',\n  dob: '1980-03-15',\n  loveIceCream: false,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Helene Ondricka-Torp"
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "firefox",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Arvel Mosciski',\n  email: 'Herman_Shields@yahoo.com',\n  password: 'xPzOw_n_cQyP',\n  gender: 'Female',\n  dob: '1990-02-01',\n  loveIceCream: false,\n  employment: 'student'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "firefox",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Harley Feest"
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "webkit",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Modesta Reichert',\n  email: 'Kathy.West80@yahoo.com',\n  password: 'PJPXtLl10ees',\n  gender: 'Female',\n  dob: '1971-09-11',\n  loveIceCream: true,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "webkit",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Nathaniel Armstrong PhD"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 211"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-21T14:35:14.921Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 25"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-21T14:35:37.500Z"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 127"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-21T14:36:08.079Z"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--c767e-uired-validation-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--c767e-uired-validation-regression-webkit/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 0,
+          "failed": 0,
+          "skipped": 3,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "chromium",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "firefox",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "webkit",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm"
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox/video.webm"
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "passed": 12,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify entrepreneur radio is disabled @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify dropdown has correct options @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify entrepreneur radio is disabled @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify dropdown has correct options @regression",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-firefox/video.webm"
+            },
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify entrepreneur radio is disabled @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-webkit/video.webm"
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify dropdown has correct options @regression",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-webkit/video.webm"
+            }
+          ]
+        }
+      ],
+      "owner": "KunalDeore-KD",
+      "repo": "Playwright_with_TypeScript",
+      "repositoryId": "KunalDeore-KD/Playwright_with_TypeScript"
+    },
+    {
+      "schemaVersion": "1.0",
+      "runId": "27906595440",
+      "runNumber": 33,
+      "branch": "test",
+      "commit": "cb31aba",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "Kunal Deore",
+        "email": "kunal.d@york.ie",
+        "date": "2026-06-21T13:55:37Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-21T13:58:43.764Z",
+      "finishedAt": "2026-06-21T14:00:16.555Z",
+      "durationSeconds": 73,
+      "environment": "",
+      "suiteFilter": "smoke",
+      "summary": {
+        "total": 18,
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "passRate": 100
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27906595440",
+      "artifactViewUrl": "./run?runId=27906595440#evidence",
+      "artifactExpiresAt": "2026-07-21T14:00:16.553Z",
+      "allureReportUrl": null,
+      "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-33",
+      "consoleLogs": [
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "firefox",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "webkit",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Hilma Howell',\n  email: 'Moses75@hotmail.com',\n  password: 'mUYZrl91GMHi',\n  gender: 'Male',\n  dob: '1977-10-14',\n  loveIceCream: true,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "firefox",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Margot Rolfson',\n  email: 'Geoffrey_Cartwright46@gmail.com',\n  password: 'z0jfolUJajXT',\n  gender: 'Male',\n  dob: '1991-05-12',\n  loveIceCream: true,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "webkit",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Kari Hartmann',\n  email: 'Parker21@yahoo.com',\n  password: 'Kd1rdLLcc_Ei',\n  gender: 'Female',\n  dob: '1962-04-04',\n  loveIceCream: false,\n  employment: 'student'\n}"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "firefox",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "webkit",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Navigation Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "firefox",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "webkit",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -440,7 +440,63 @@
     testGroup.appendChild(videoStack);
   }
 
-  function renderCollapsibleTests(container, tests, emptyMessage) {
+  function showToast(message, variant) {
+    if (window.toastManager && typeof window.toastManager.show === 'function') {
+      window.toastManager.show(message, variant || 'default');
+      return;
+    }
+
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = `toast toast--${variant || 'default'}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    window.requestAnimationFrame(() => toast.classList.add('toast--visible'));
+    window.setTimeout(() => {
+      toast.classList.remove('toast--visible');
+      window.setTimeout(() => toast.remove(), 200);
+    }, 3200);
+  }
+
+  function shouldOfferCopyPrompt(test) {
+    return Boolean(test && (test.status === 'failed' || test.isCollectionError));
+  }
+
+  function attachCopyPromptButton(summaryEl, test, entry) {
+    if (!shouldOfferCopyPrompt(test) || !window.AiPromptBuilder) {
+      return;
+    }
+
+    const label = document.createElement('span');
+    label.className = 'test-summary-label';
+    label.textContent = test.title || test.fullTitle || 'Untitled test';
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn-secondary btn-sm test-copy-prompt-btn';
+    button.textContent = 'Copy AI prompt';
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const result = await window.AiPromptBuilder.copyFixPrompt({
+        test,
+        entry,
+        videoBaseUrl: entry && entry.videoBaseUrl,
+      });
+      if (result.ok) {
+        showToast('Copied AI fix prompt to clipboard.', 'default');
+      } else {
+        showToast(result.error || 'Failed to copy AI prompt.', 'error');
+      }
+    });
+
+    summaryEl.append(label, button);
+  }
+
+  function renderCollapsibleTests(container, tests, emptyMessage, entry, options = {}) {
+    const { showCopyPrompt = false } = options;
     container.innerHTML = '';
 
     if (!tests.length) {
@@ -460,7 +516,11 @@
 
           const testSummary = document.createElement('summary');
           testSummary.className = 'nested-group-summary';
-          testSummary.textContent = test.title || test.fullTitle || 'Untitled test';
+          if (showCopyPrompt && shouldOfferCopyPrompt(test)) {
+            attachCopyPromptButton(testSummary, test, entry);
+          } else {
+            testSummary.textContent = test.title || test.fullTitle || 'Untitled test';
+          }
           testGroup.appendChild(testSummary);
 
           appendTestNestedContent(testGroup, test);
@@ -471,38 +531,30 @@
       });
   }
 
-  function renderPassedTests(container, tests) {
+  function renderPassedTests(container, tests, entry) {
     const passedTests = tests.filter((test) => test.status === 'passed');
-    renderCollapsibleTests(container, passedTests, 'No passed tests in this run.');
+    renderCollapsibleTests(container, passedTests, 'No passed tests in this run.', entry);
   }
 
-  function renderSkippedTests(container, tests) {
+  function renderSkippedTests(container, tests, entry) {
     const skippedTests = tests.filter((test) => test.status === 'skipped');
-    renderCollapsibleTests(container, skippedTests, 'No skipped tests in this run.');
+    renderCollapsibleTests(container, skippedTests, 'No skipped tests in this run.', entry);
   }
 
-  function renderFailedTests(container, tests) {
+  function renderFailedTests(container, tests, entry) {
     const failedTests = tests.filter((test) => test.status === 'failed');
-    renderCollapsibleTests(container, failedTests, 'No failed tests in this run.');
+    renderCollapsibleTests(
+      container,
+      failedTests,
+      'No failed tests in this run.',
+      entry,
+      { showCopyPrompt: true }
+    );
   }
 
-  function renderFlakyTests(container, tests) {
+  function renderFlakyTests(container, tests, entry) {
     const flakyTests = tests.filter((test) => test.status === 'flaky');
-    renderCollapsibleTests(container, flakyTests, 'No flaky tests in this run.');
-  }
-
-  function showToast(message, variant) {
-    const container = document.getElementById('toastContainer');
-    if (!container) return;
-    const toast = document.createElement('div');
-    toast.className = `toast toast--${variant || 'default'}`;
-    toast.textContent = message;
-    container.appendChild(toast);
-    window.requestAnimationFrame(() => toast.classList.add('toast--visible'));
-    window.setTimeout(() => {
-      toast.classList.remove('toast--visible');
-      window.setTimeout(() => toast.remove(), 200);
-    }, 3200);
+    renderCollapsibleTests(container, flakyTests, 'No flaky tests in this run.', entry);
   }
 
   function csvEscape(value) {
@@ -588,6 +640,9 @@
       }
 
       applyTheme(readTheme());
+      if (window.ToastManager) {
+        new window.ToastManager('toastContainer');
+      }
 
       const themeToggle = document.getElementById('themeToggle');
       if (themeToggle) {
@@ -616,10 +671,10 @@
 
       const tests = flattenSuitesForList(entry.suites || []);
       const allTests = testsForFilter(tests, 'all', entry);
-      renderPassedTests(passedContent, allTests);
-      renderFailedTests(failureContent, allTests);
-      renderSkippedTests(skippedContent, allTests);
-      renderFlakyTests(flakyContent, allTests);
+      renderPassedTests(passedContent, allTests, entry);
+      renderFailedTests(failureContent, allTests, entry);
+      renderSkippedTests(skippedContent, allTests, entry);
+      renderFlakyTests(flakyContent, allTests, entry);
 
       const displaySummary = getDisplaySummary(entry, tests);
       renderMeta(meta, entry, displaySummary);

@@ -132,14 +132,64 @@
     return { group, body };
   }
 
-  async function loadHistory() {
-    const url = './dashboard-history.json?v=' + Date.now();
-    const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to load history');
-    return await res.json();
+  async function getBackendBaseUrl() {
+    const config = window.DASHBOARD_CONFIG || {};
+    const backendConfig = config.backend || {};
+    const host = window.location.hostname || '127.0.0.1';
+    const port = backendConfig.port || 5000;
+    const protocol = window.location.protocol.replace(':', '') || 'http';
+
+    if (backendConfig.url) {
+      try {
+        const configured = new URL(backendConfig.url);
+        if (configured.hostname === 'localhost' || configured.hostname === '127.0.0.1') {
+          return `${protocol}://${host}:${configured.port || port}`;
+        }
+        return configured.origin;
+      } catch (error) {
+        return backendConfig.url.replace(/\/+$/, '');
+      }
+    }
+
+    return `${protocol}://${host}:${port}`;
+  }
+
+  function resolveRepositoryId() {
+    return qs('repositoryId')
+      || (window.getDashboardActiveRepositoryId && window.getDashboardActiveRepositoryId())
+      || window.DASHBOARD_CONFIG?.github?.activeRepositoryId
+      || null;
+  }
+
+  async function loadHistory(repositoryId) {
+    const activeRepositoryId = repositoryId || resolveRepositoryId();
+    const query = activeRepositoryId ? `?repositoryId=${encodeURIComponent(activeRepositoryId)}` : '';
+    const cacheBuster = query ? `&v=${Date.now()}` : `?v=${Date.now()}`;
+
+    try {
+      const backendBaseUrl = await getBackendBaseUrl();
+      const response = await fetch(`${backendBaseUrl}/api/data/history${query}${cacheBuster}`, { cache: 'no-store' });
+      if (response.ok) {
+        const history = await response.json();
+        if (history && Array.isArray(history.entries)) {
+          return history;
+        }
+      }
+    } catch (error) {
+      // Fall back to static dashboard files when the API is unavailable.
+    }
+
+    const fallback = await fetch(`./dashboard-history.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!fallback.ok) throw new Error('Failed to load history');
+    return await fallback.json();
   }
 
   function showToast(message, variant) {
+    if (window.toastManager && typeof window.toastManager.show === 'function') {
+      window.toastManager.show(message, variant || 'default');
+      return;
+    }
+
     const container = document.getElementById('toastContainer');
     if (!container) return;
     const toast = document.createElement('div');
@@ -151,6 +201,38 @@
       toast.classList.remove('toast--visible');
       window.setTimeout(() => toast.remove(), 200);
     }, 3200);
+  }
+
+  function shouldOfferCopyPrompt(test) {
+    return Boolean(test && (test.status === 'failed' || test.isCollectionError));
+  }
+
+  function attachCopyPromptButton(summaryEl, test, entry, videoBaseUrl) {
+    if (!shouldOfferCopyPrompt(test) || !window.AiPromptBuilder) {
+      return;
+    }
+
+    const label = document.createElement('span');
+    label.className = 'test-summary-label';
+    label.textContent = test.title || test.fullTitle || 'Untitled test';
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn-secondary btn-sm test-copy-prompt-btn';
+    button.textContent = 'Copy AI prompt';
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const result = await window.AiPromptBuilder.copyFixPrompt({ test, entry, videoBaseUrl });
+      if (result.ok) {
+        showToast('Copied AI fix prompt to clipboard.', 'default');
+      } else {
+        showToast(result.error || 'Failed to copy AI prompt.', 'error');
+      }
+    });
+
+    summaryEl.append(label, button);
   }
 
   function csvEscape(value) {
@@ -572,7 +654,8 @@
     testGroup.appendChild(videoStack);
   }
 
-  function renderCollapsibleTests(container, tests, videoBaseUrl, emptyMessage) {
+  function renderCollapsibleTests(container, tests, videoBaseUrl, emptyMessage, entry, options = {}) {
+    const { showCopyPrompt = false } = options;
     container.innerHTML = '';
 
     if (!tests.length) {
@@ -592,7 +675,11 @@
 
           const testSummary = document.createElement('summary');
           testSummary.className = 'nested-group-summary';
-          testSummary.textContent = test.title || test.fullTitle || 'Untitled test';
+          if (showCopyPrompt && shouldOfferCopyPrompt(test)) {
+            attachCopyPromptButton(testSummary, test, entry, videoBaseUrl);
+          } else {
+            testSummary.textContent = test.title || test.fullTitle || 'Untitled test';
+          }
           testGroup.appendChild(testSummary);
 
           appendTestNestedContent(testGroup, test, videoBaseUrl);
@@ -603,32 +690,43 @@
       });
   }
 
-  function renderPassedTests(container, tests, videoBaseUrl) {
+  function renderPassedTests(container, tests, videoBaseUrl, entry) {
     const passedTests = tests.filter((test) => test.status === 'passed');
-    renderCollapsibleTests(container, passedTests, videoBaseUrl, 'No passed tests in this run.');
+    renderCollapsibleTests(container, passedTests, videoBaseUrl, 'No passed tests in this run.', entry);
   }
 
-  function renderSkippedTests(container, tests, videoBaseUrl) {
+  function renderSkippedTests(container, tests, videoBaseUrl, entry) {
     const skippedTests = tests.filter((test) => test.status === 'skipped');
-    renderCollapsibleTests(container, skippedTests, videoBaseUrl, 'No skipped tests in this run.');
+    renderCollapsibleTests(container, skippedTests, videoBaseUrl, 'No skipped tests in this run.', entry);
   }
 
-  function renderFailedTests(container, tests, videoBaseUrl) {
+  function renderFailedTests(container, tests, videoBaseUrl, entry) {
     const failedTests = tests.filter((test) => test.status === 'failed');
-    renderCollapsibleTests(container, failedTests, videoBaseUrl, 'No failed tests in this run.');
+    renderCollapsibleTests(
+      container,
+      failedTests,
+      videoBaseUrl,
+      'No failed tests in this run.',
+      entry,
+      { showCopyPrompt: true }
+    );
   }
 
-  function renderFlakyTests(container, tests, videoBaseUrl) {
+  function renderFlakyTests(container, tests, videoBaseUrl, entry) {
     const flakyTests = tests.filter((test) => test.status === 'flaky');
-    renderCollapsibleTests(container, flakyTests, videoBaseUrl, 'No flaky tests in this run.');
+    renderCollapsibleTests(container, flakyTests, videoBaseUrl, 'No flaky tests in this run.', entry);
   }
 
   async function init() {
     try {
+      const repositoryId = resolveRepositoryId();
       if (window.loadDashboardConfig) {
-        await window.loadDashboardConfig();
+        await window.loadDashboardConfig(repositoryId);
       }
       syncTheme();
+      if (window.ToastManager) {
+        new window.ToastManager('toastContainer');
+      }
       window.addEventListener('storage', (event) => {
         if (event.key === THEME_KEY) {
           syncTheme();
@@ -637,7 +735,7 @@
 
       const runId = qs('runId');
       if (!runId) throw new Error('No runId provided');
-      const hist = await loadHistory();
+      const hist = await loadHistory(repositoryId);
       const entry = (hist.entries || []).find((e) => String(e.runId) === String(runId));
       if (!entry) throw new Error('Run not found');
       const meta = document.getElementById('runMeta');
@@ -656,10 +754,10 @@
 
       const tests = flattenSuitesForList(entry.suites || []);
       const allTests = testsForFilter(tests, 'all', entry);
-      renderPassedTests(passedContent, allTests, entry.videoBaseUrl);
-      renderFailedTests(failureContent, allTests, entry.videoBaseUrl);
-      renderSkippedTests(skippedContent, allTests, entry.videoBaseUrl);
-      renderFlakyTests(flakyContent, allTests, entry.videoBaseUrl);
+      renderPassedTests(passedContent, allTests, entry.videoBaseUrl, entry);
+      renderFailedTests(failureContent, allTests, entry.videoBaseUrl, entry);
+      renderSkippedTests(skippedContent, allTests, entry.videoBaseUrl, entry);
+      renderFlakyTests(flakyContent, allTests, entry.videoBaseUrl, entry);
 
       const displaySummary = getDisplaySummary(entry, tests);
       renderMeta(meta, entry, displaySummary);
