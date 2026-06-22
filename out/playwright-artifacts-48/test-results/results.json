@@ -1,0 +1,2128 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/playwright.config.ts",
+    "rootDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/commit/aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+        "commitHash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+        "buildHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27907529329"
+      },
+      "gitCommit": {
+        "shortHash": "aa0311e",
+        "hash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+        "subject": "chore: add dashboard CI npm scripts [dashboard-setup]",
+        "body": "chore: add dashboard CI npm scripts [dashboard-setup]",
+        "author": {
+          "name": "Kunal Deore",
+          "email": "kunal.d@york.ie",
+          "time": 1782052164000
+        },
+        "committer": {
+          "name": "Kunal Deore",
+          "email": "kunal.d@york.ie",
+          "time": 1782052164000
+        },
+        "branch": "test"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/commit/aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "commitHash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "buildHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27907529329"
+          },
+          "gitCommit": {
+            "shortHash": "aa0311e",
+            "hash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "subject": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "body": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "author": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "committer": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "branch": "test"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/commit/aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "commitHash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "buildHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27907529329"
+          },
+          "gitCommit": {
+            "shortHash": "aa0311e",
+            "hash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "subject": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "body": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "author": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "committer": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "branch": "test"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/commit/aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "commitHash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "buildHref": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27907529329"
+          },
+          "gitCommit": {
+            "shortHash": "aa0311e",
+            "hash": "aa0311ee543bb584110d541bb9cf15cae6fd2b07",
+            "subject": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "body": "chore: add dashboard CI npm scripts [dashboard-setup]",
+            "author": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "committer": {
+              "name": "Kunal Deore",
+              "email": "kunal.d@york.ie",
+              "time": 1782052164000
+            },
+            "branch": "test"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/node_modules/allure-playwright/dist/cjs/index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "08-hooks-and-organization.spec.ts",
+      "file": "08-hooks-and-organization.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "verify name is required validation @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2676,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:02.178Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-a9fdc414542a3ddb0ad6",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2542,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:05.148Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-27fee378a3e40645282f",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3966,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:21.494Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--c767e-uired-validation-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-26809adf41e9e9501e73",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3945,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:26.096Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-fa862d8a563483b45332",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8372,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Starting AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:44.798Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--c767e-uired-validation-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-26de6fac99308cbefa3d",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4306,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:53.779Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-e049547f70f7baafa43e",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 61,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "line": 74,
+          "column": 6,
+          "specs": [
+            {
+              "title": "verify disabled dropdown option @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                        "line": 85,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:07.719Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                            "line": 85,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-3d26025da60f772b4d6c",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 85,
+              "column": 8
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                        "line": 85,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:30.068Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                            "line": 85,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-40b5876d597781a76e92",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 85,
+              "column": 8
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                        "line": 85,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "=== Finished AngularPractice Test Suite ===\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:58.137Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/tests/08-hooks-and-organization.spec.ts",
+                            "line": 85,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3d91d3b4ff9e345793dc-1fef7a39b364b5ddc5d1",
+              "file": "08-hooks-and-organization.spec.ts",
+              "line": 85,
+              "column": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "09-faker-utilities.spec.ts",
+      "file": "09-faker-utilities.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "fill form with different random data on each run @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3296,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Run with data: {\n  name: \u001b[32m'Brycen Greenfelder'\u001b[39m,\n  email: \u001b[32m'Horace37@gmail.com'\u001b[39m,\n  password: \u001b[32m'5pWsA_AdwLIq'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dob: \u001b[32m'1980-03-15'\u001b[39m,\n  loveIceCream: \u001b[33mfalse\u001b[39m,\n  employment: \u001b[32m'employed'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:07.962Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-cb819a65bc119e0ca137",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2695,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Random name: Helene Ondricka-Torp\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:11.282Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-a50fe4d90f22775f122d",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3602,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Run with data: {\n  name: \u001b[32m'Arvel Mosciski'\u001b[39m,\n  email: \u001b[32m'Herman_Shields@yahoo.com'\u001b[39m,\n  password: \u001b[32m'xPzOw_n_cQyP'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dob: \u001b[32m'1990-02-01'\u001b[39m,\n  loveIceCream: \u001b[33mfalse\u001b[39m,\n  employment: \u001b[32m'student'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:30.333Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-f6bfe07cc1d4b3b04feb",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2984,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Random name: Harley Feest\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:33.957Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-793045e1b17c4f801f64",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4745,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Run with data: {\n  name: \u001b[32m'Modesta Reichert'\u001b[39m,\n  email: \u001b[32m'Kathy.West80@yahoo.com'\u001b[39m,\n  password: \u001b[32m'PJPXtLl10ees'\u001b[39m,\n  gender: \u001b[32m'Female'\u001b[39m,\n  dob: \u001b[32m'1971-09-11'\u001b[39m,\n  loveIceCream: \u001b[33mtrue\u001b[39m,\n  employment: \u001b[32m'employed'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:58.415Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-fbc221bcea609dd2099a",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4218,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Random name: Nathaniel Armstrong PhD\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:03.192Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a1541916e3f8c4346b8-1b516757282199719bb6",
+              "file": "09-faker-utilities.spec.ts",
+              "line": 52,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "10-api-ui-hybrid.spec.ts",
+      "file": "10-api-ui-hybrid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 670,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:14.008Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-d0b40585fe09f10c16ac",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 287,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 211\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-21T14:35:14.921Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:14.701Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-8d015be4cf3973419b42",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 382,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:36.999Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-fd95aa3696bc3e7ba833",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 161,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 25\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-21T14:35:37.500Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:37.405Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-0d8b085255d8665acdd5",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 392,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Total users on page 1: \u001b[33m6\u001b[39m\n"
+                        },
+                        {
+                          "text": "First user: George Bluth\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:07.447Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-6ec0ea858953ff6aeeac",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 288,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Created user with ID: 127\n"
+                        },
+                        {
+                          "text": "Created at: 2026-06-21T14:36:08.079Z\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:07.858Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0eefd9a4cbc75b25ca89-9ae8f91faaab8faa64b1",
+              "file": "10-api-ui-hybrid.spec.ts",
+              "line": 91,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "12-api-snapshot.spec.ts",
+      "file": "12-api-snapshot.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 169,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:15.006Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-d7de7adb0f492ceda14f",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:15.191Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-35f9d4441798350fe4d8",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 155,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:15.233Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-78ebc7b64374e0eafd8b",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:15.402Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-b8683409b42055a39fb1",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:37.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-b5cfa92748099695256c",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 24,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:37.632Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-242b642d98848425bc85",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 153,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:37.669Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-f2861a9d44a118079ffb",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:35:37.849Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-a85e7f725427e1dbd794",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "snapshot single user response structure @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:08.171Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-05bd438c0c6abcc5b443",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 33,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:08.216Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-64489fd2f421d3c60040",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 166,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:08.280Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-a0045f21264998c40260",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T14:36:08.470Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b2f2894c0293ab8e568-f23b36f8d6eca13438c3",
+              "file": "12-api-snapshot.spec.ts",
+              "line": 74,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "15-allure-reporting.spec.ts",
+      "file": "15-allure-reporting.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2694,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 2335
+                        },
+                        {
+                          "title": "Assert entrepreneur radio is disabled",
+                          "duration": 59
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:35:15.466Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJEaXNhYmxlZCBFbGVtZW50cyJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhhdCB0aGUgRW50cmVwcmVuZXVyIHJhZGlvIGJ1dHRvbiBpcyBkaXNhYmxlZCBvbiB0aGUgZm9ybS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-11b35830a54725510f1c",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2669,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 2308
+                        },
+                        {
+                          "title": "Verify dropdown options",
+                          "duration": 94
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:35:18.182Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJtaW5vciJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJHZW5kZXIgRHJvcGRvd24ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhlIGdlbmRlciBkcm9wZG93biBoYXMgZXhhY3RseSAyIG9wdGlvbnM6IE1hbGUgYW5kIEZlbWFsZS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-48b0d050d3ca0e70d314",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2946,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 2457
+                        },
+                        {
+                          "title": "Assert entrepreneur radio is disabled",
+                          "duration": 56
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:35:37.901Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJEaXNhYmxlZCBFbGVtZW50cyJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhhdCB0aGUgRW50cmVwcmVuZXVyIHJhZGlvIGJ1dHRvbiBpcyBkaXNhYmxlZCBvbiB0aGUgZm9ybS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-52b704f535a4ff9cffb8",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2945,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 2453
+                        },
+                        {
+                          "title": "Verify dropdown options",
+                          "duration": 91
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:35:40.875Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJtaW5vciJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJHZW5kZXIgRHJvcGRvd24ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhlIGdlbmRlciBkcm9wZG93biBoYXMgZXhhY3RseSAyIG9wdGlvbnM6IE1hbGUgYW5kIEZlbWFsZS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-firefox/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-a3d8c59f8bfcebc75f5d",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4077,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 3127
+                        },
+                        {
+                          "title": "Assert entrepreneur radio is disabled",
+                          "duration": 49
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:36:08.527Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJEaXNhYmxlZCBFbGVtZW50cyJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhhdCB0aGUgRW50cmVwcmVuZXVyIHJhZGlvIGJ1dHRvbiBpcyBkaXNhYmxlZCBvbiB0aGUgZm9ybS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-f73afc6a2ef69377ea36",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4155,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to practice page",
+                          "duration": 3128
+                        },
+                        {
+                          "title": "Verify dropdown options",
+                          "duration": 105
+                        }
+                      ],
+                      "startTime": "2026-06-21T14:36:12.625Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJtaW5vciJ9XX19"
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlByYWN0aWNlIEZvcm0ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJHZW5kZXIgRHJvcGRvd24ifV19fQ=="
+                        },
+                        {
+                          "name": "Allure Metadata (metadata)",
+                          "contentType": "application/vnd.allure.message+json",
+                          "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmVyaWZpZXMgdGhlIGdlbmRlciBkcm9wZG93biBoYXMgZXhhY3RseSAyIG9wdGlvbnM6IE1hbGUgYW5kIEZlbWFsZS4ifX0="
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/Playwright_with_TypeScript/Playwright_with_TypeScript/test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "50a2b9928b739497d51b-e35771e167ad8054c6d3",
+              "file": "15-allure-reporting.spec.ts",
+              "line": 64,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-21T14:35:00.486Z",
+    "duration": 76395.171,
+    "expected": 36,
+    "skipped": 3,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -17,6 +17,7 @@
     "dashboard:curl": "tsx scripts/curl-generator.ts",
     "metadata:extract": "tsx scripts/extract-metadata.ts",
     "artifacts:download": "tsx scripts/download-artifacts.ts",
+    "target:integrate": "node server/push-target-integration.js",
     "server:install": "npm --prefix server install",
     "server:dev": "npm --prefix server start",
     "start": "concurrently \"npm run server:dev\" \"npm run dashboard:dev\""

@@ -5,9 +5,9 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [main]
+    branches: [main, master, test]
   pull_request:
-    branches: [main]
+    branches: [main, master, test]
   workflow_dispatch:
     inputs:
       environment:
@@ -24,6 +24,12 @@ on:
         description: 'Specific test file paths, comma-separated (overrides testSuite)'
         required: false
         default: ''
+        type: string
+      browsers:
+        description: 'Comma-separated browser projects (chromium, firefox, webkit). Empty means all configured browsers.'
+        required: false
+        default: ''
+        type: string
 
 concurrency:
   group: playwright-${{ github.ref }}
@@ -49,14 +55,56 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Detect Playwright layout
+        id: layout
+        run: |
+          set -euo pipefail
+          if [ -f dashboard.config.json ]; then
+            PLAYWRIGHT_BASE=$(node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const config = JSON.parse(fs.readFileSync('dashboard.config.json', 'utf8'));
+          const testDir = config.playwright?.testDir || 'playwright/tests';
+          const parent = path.dirname(testDir);
+          if (parent !== '.' && fs.existsSync(path.join(parent, 'package.json'))) {
+            process.stdout.write(parent);
+          } else if (fs.existsSync('playwright/package.json')) {
+            process.stdout.write('playwright');
+          } else {
+            process.stdout.write('.');
+          }
+          NODE
+            )
+          elif [ -f playwright/package.json ]; then
+            PLAYWRIGHT_BASE="playwright"
+          else
+            PLAYWRIGHT_BASE="."
+          fi
+          echo "playwright_base=$PLAYWRIGHT_BASE" >> "$GITHUB_OUTPUT"
+          echo "Detected Playwright base directory: $PLAYWRIGHT_BASE"
+
       - name: Install dependencies
         run: |
-          npm ci
-          npm ci --prefix playwright
-          npm run build:shared-lib --prefix playwright
+          set -euo pipefail
+          BASE="${{ steps.layout.outputs.playwright_base }}"
+          if [ -f dashboard.config.json ]; then
+            echo "Dashboard integration detected — using npm install (CI deps installed separately)"
+            npm install
+            echo "Installing dashboard CI script dependencies..."
+            npm install --no-save tsx@4.19.2 typescript@5.6.2 glob@11.0.0 @types/node@20.14.0
+          else
+            npm ci
+          fi
+          if [ "$BASE" != "." ] && [ -f "$BASE/package-lock.json" ]; then
+            npm ci --prefix "$BASE"
+            npm run build:shared-lib --prefix "$BASE" --if-present
+          fi
 
       - name: Install Playwright browsers
         run: npx tsx scripts/run-suite.ts --install-browsers
+
+      - name: Ensure Playwright JSON reporter
+        run: npx tsx scripts/ensure-reporter-config.ts
 
       - name: Validate Playwright reporter config
         run: npx tsx scripts/validate-reporter-config.ts
@@ -65,10 +113,11 @@ jobs:
         id: run_tests
         run: |
           set -o pipefail
-          rm -rf playwright/test-results playwright/playwright-report
+          BASE="${{ steps.layout.outputs.playwright_base }}"
+          rm -rf "${BASE}/test-results" "${BASE}/playwright-report"
           mkdir -p "${GITHUB_WORKSPACE}/.tmp"
           LOG="${GITHUB_WORKSPACE}/.tmp/playwright_run.log"
-          npx tsx scripts/run-suite.ts --suite "${{ inputs.testSuite }}" --selected "${{ inputs.selectedTests }}" --log "$LOG"
+          npx tsx scripts/run-suite.ts --suite "${{ inputs.testSuite }}" --selected "${{ inputs.selectedTests }}" --browsers "${{ inputs.browsers }}" --log "$LOG"
           rc=$?
           echo "exit_code=$rc" >> $GITHUB_OUTPUT
           echo "log_path=$LOG" >> $GITHUB_OUTPUT
@@ -109,8 +158,10 @@ jobs:
           name: playwright-artifacts-${{ github.run_number }}
           path: |
             .tmp/playwright_run.log
-            playwright/playwright-report/
-            playwright/test-results/
+            **/playwright-report/**
+            **/test-results/**
+            test-catalog.json
+            dashboard/test-catalog.json
           retention-days: 30
 
       - name: Update dashboard history

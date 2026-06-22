@@ -14,6 +14,7 @@ function parseArgs(argv: string[]) {
     const token = argv[i];
     if (token === '--suite') args.suite = argv[++i] || '';
     else if (token === '--selected') args.selected = argv[++i] || '';
+    else if (token === '--browsers') args.browsers = argv[++i] || '';
     else if (token === '--install-browsers') args.installBrowsers = 'true';
     else if (token === '--log') args.log = argv[++i] || '';
   }
@@ -75,6 +76,27 @@ function buildPlaywrightArgs(suite: string, selected: string, baseDir: string): 
   return ['--grep', `@${normalizedSuite}`];
 }
 
+function buildBrowserProjectArgs(browsersRaw: string): string[] {
+  const configured = loadDashboardConfig().playwright.browsers.map((browser) =>
+    String(browser).trim().toLowerCase()
+  );
+  const requested = String(browsersRaw || process.env.TEST_BROWSERS || '')
+    .split(',')
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+
+  if (!requested.length || requested.includes('all')) {
+    return [];
+  }
+
+  const valid = requested.filter((browser) => configured.includes(browser));
+  if (!valid.length) {
+    return [];
+  }
+
+  return valid.flatMap((browser) => ['--project', browser]);
+}
+
 function runCommand(command: string, args: string[], cwd: string, logPath?: string) {
   const result = spawnSync(command, args, {
     cwd,
@@ -109,7 +131,11 @@ function main() {
   }
 
   const logPath = args.log || process.env.WORKFLOW_RUN_LOG_PATH;
-  const playwrightArgs = ['test', ...buildPlaywrightArgs(args.suite || '', args.selected || '', baseDir)];
+  const playwrightArgs = [
+    'test',
+    ...buildPlaywrightArgs(args.suite || process.env.TEST_SUITE_FILTER || '', args.selected || process.env.TEST_SELECTED_TESTS || '', baseDir),
+    ...buildBrowserProjectArgs(args.browsers || ''),
+  ];
   const status = runCommand('npx', ['playwright', ...playwrightArgs], cwd, logPath);
   process.exit(status);
 }

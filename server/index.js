@@ -7,10 +7,25 @@ import { execFile } from 'child_process';
 import { promisify } from 'util';
 import { loadHistoryEntry, streamRunDetailsZip } from './run-package.js';
 import {
+  getActiveRepositoryProfile,
   getGithubTarget,
   getPublicConfig,
   loadDashboardConfig,
+  buildRepositoryId,
 } from '../scripts/load-dashboard-config.js';
+import {
+  getSetupStatus,
+  runComplete,
+  runPreflight,
+  SetupError,
+} from './setup-service.js';
+import {
+  loadRepositoryCatalog,
+  loadRepositoryHistory,
+  loadRepositoryLatest,
+  syncRepositoryCatalogAfterRun,
+  saveRepositoryHistoryEntry,
+} from './repo-data-service.js';
 
 dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), '..', '.env') });
@@ -474,21 +489,31 @@ async function syncDashboardData({ headSha, run, owner, repo, artifactDir, token
     env: generatorEnv,
   });
 
-  await execFileAsync('npx', ['tsx', 'scripts/test-discovery.ts'], {
-    cwd: repoRoot,
+  await syncRepositoryCatalogAfterRun({
+    repoRoot,
+    owner,
+    repo,
+    historyBranch: dashboardConfig.dashboard.historyBranch || 'dashboard-data',
+    repositoryId: buildRepositoryId(owner, repo),
+    artifactDir,
+    artifactName,
   });
 
   let dashboardData = null;
   if (fs.existsSync(dashboardJsonPath)) {
     dashboardData = JSON.parse(fs.readFileSync(dashboardJsonPath, 'utf-8'));
-    const historyFile = fs.existsSync(uiHistoryPath)
-      ? JSON.parse(fs.readFileSync(uiHistoryPath, 'utf-8'))
-      : { lastUpdated: '', entries: [] };
+    dashboardData.owner = owner;
+    dashboardData.repo = repo;
+    dashboardData.repositoryId = buildRepositoryId(owner, repo);
 
-    historyFile.entries = Array.isArray(historyFile.entries) ? historyFile.entries : [];
-    historyFile.entries = historyFile.entries.filter((entry) => entry.runId !== dashboardData.runId);
-    historyFile.entries.unshift(dashboardData);
-    historyFile.lastUpdated = dashboardData.finishedAt || new Date().toISOString();
+    const repoPaths = saveRepositoryHistoryEntry({
+      repoRoot,
+      owner,
+      repo,
+      dashboardData,
+    });
+
+    const historyFile = JSON.parse(fs.readFileSync(repoPaths.history, 'utf-8'));
 
     fs.mkdirSync(path.dirname(uiHistoryPath), { recursive: true });
     fs.writeFileSync(uiDashboardJsonPath, JSON.stringify(dashboardData, null, 2));
@@ -646,7 +671,143 @@ async function downloadAndSyncRunArtifacts({ owner, repo, workflowId, ref, token
 
 // Health check
 app.get('/api/config', (req, res) => {
-  res.json(getPublicConfig());
+  res.json(getPublicConfig(req.query.repositoryId));
+});
+
+app.get('/api/repositories', (req, res) => {
+  const config = loadDashboardConfig();
+  res.json({
+    success: true,
+    activeRepositoryId: getActiveRepositoryProfile(req.query.repositoryId).id,
+    repositories: getPublicConfig(req.query.repositoryId).github.repositories,
+    dashboard: {
+      historyBranch: config.dashboard.historyBranch,
+    },
+  });
+});
+
+app.get('/api/data/catalog', async (req, res) => {
+  try {
+    const profile = getActiveRepositoryProfile(req.query.repositoryId);
+    const config = loadDashboardConfig();
+    const refresh = req.query.refresh !== 'false';
+    const catalog = await loadRepositoryCatalog({
+      repoRoot,
+      owner: profile.owner,
+      repo: profile.repo,
+      historyBranch: config.dashboard.historyBranch || 'dashboard-data',
+      profile,
+      refresh,
+    });
+    res.json(catalog || { generatedAt: '', suites: {}, allTests: [], totalCount: 0, suiteTestCaseCounts: {} });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to load test catalog.',
+    });
+  }
+});
+
+app.get('/api/data/history', async (req, res) => {
+  try {
+    const profile = getActiveRepositoryProfile(req.query.repositoryId);
+    const config = loadDashboardConfig();
+    const refresh = req.query.refresh !== 'false';
+    const history = await loadRepositoryHistory({
+      repoRoot,
+      owner: profile.owner,
+      repo: profile.repo,
+      historyBranch: config.dashboard.historyBranch || 'dashboard-data',
+      refresh,
+    });
+    res.json(history);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to load dashboard history.',
+    });
+  }
+});
+
+app.get('/api/data/latest', async (req, res) => {
+  try {
+    const profile = getActiveRepositoryProfile(req.query.repositoryId);
+    const latest = loadRepositoryLatest({
+      repoRoot,
+      owner: profile.owner,
+      repo: profile.repo,
+    });
+    res.json(latest);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to load latest dashboard run.',
+    });
+  }
+});
+
+app.get('/api/setup/status', (req, res) => {
+  res.json({
+    success: true,
+    ...getSetupStatus(),
+  });
+});
+
+app.post('/api/setup/preflight', async (req, res) => {
+  try {
+    const { repoUrl, token } = req.body || {};
+    const report = await runPreflight({ repoUrl, token });
+    res.json({
+      success: true,
+      report,
+    });
+  } catch (error) {
+    const status = error instanceof SetupError ? error.status : 500;
+    console.error('Setup preflight failed:', error instanceof SetupError ? error.message : error);
+    res.status(status).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Setup preflight failed.',
+      code: error instanceof SetupError ? error.code : 'setup_preflight_failed',
+    });
+  }
+});
+
+app.post('/api/setup/complete', async (req, res) => {
+  try {
+    const {
+      repoUrl,
+      token,
+      workflow,
+      defaultBranch,
+      testDir,
+      scaffoldWorkflow,
+      scaffoldIntegration,
+    } = req.body || {};
+
+    const result = await runComplete({
+      repoUrl,
+      token,
+      workflow,
+      defaultBranch,
+      testDir,
+      scaffoldWorkflow: scaffoldWorkflow !== false,
+      scaffoldIntegration: scaffoldIntegration !== false,
+      repoRoot,
+    });
+
+    res.json({
+      success: true,
+      ...result,
+    });
+  } catch (error) {
+    const status = error instanceof SetupError ? error.status : 500;
+    console.error('Setup complete failed:', error instanceof SetupError ? error.message : error);
+    res.status(status).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Setup failed.',
+      code: error instanceof SetupError ? error.code : 'setup_complete_failed',
+    });
+  }
 });
 
 app.get('/api/health', (req, res) => {
@@ -698,7 +859,7 @@ app.get('/api/sync-status/:jobId', (req, res) => {
 // Trigger workflow endpoint
 app.post('/api/trigger-workflow', async (req, res) => {
   try {
-    const githubDefaults = getGithubTarget();
+    const githubDefaults = getGithubTarget(req.body.repositoryId);
     const owner = req.body.owner || githubDefaults.owner;
     const repo = req.body.repo || githubDefaults.repo;
     const workflowId = req.body.workflowId || githubDefaults.workflow;
@@ -740,9 +901,18 @@ app.post('/api/trigger-workflow', async (req, res) => {
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`GitHub API error (${response.status}):`, errorText);
+
+      let errorMessage = `GitHub API error: ${response.status} ${response.statusText}`;
+      if (response.status === 422 && errorText.includes('Unexpected inputs') && inputs?.browsers) {
+        errorMessage =
+          'The GitHub workflow on this repository does not support the "browsers" input yet. ' +
+          'For Playwright TypeScript run `npm run target:integrate`. ' +
+          'For Dashboard Demo push the updated `.github/workflows/playwright.yml` to GitHub on the target branch.';
+      }
+
       return res.status(response.status).json({
         success: false,
-        error: `GitHub API error: ${response.status} ${response.statusText}`,
+        error: errorMessage,
         details: errorText,
       });
     }

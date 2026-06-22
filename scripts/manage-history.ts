@@ -150,7 +150,9 @@ async function main() {
   const dashboardData = JSON.parse(fs.readFileSync('dashboard.json', 'utf-8'));
   const catalogJson = fs.existsSync('dashboard/test-catalog.json')
     ? fs.readFileSync('dashboard/test-catalog.json', 'utf-8')
-    : null;
+    : fs.existsSync('test-catalog.json')
+      ? fs.readFileSync('test-catalog.json', 'utf-8')
+      : null;
   // CONFIG: was hardcoded, now reads from dashboard.config.json
   const config = loadDashboardConfig();
   const rolling_window = config.dashboard.rollingWindow;

@@ -65,28 +65,6 @@ class ThemeManager {
   }
 }
 
-class ToastManager {
-  constructor(containerId) {
-    this.container = document.getElementById(containerId);
-    if (!this.container) throw new Error('Toast container not found');
-    window.toastManager = this;
-  }
-
-  show(message, variant = 'default') {
-    const toast = document.createElement('div');
-    toast.className = `toast toast--${variant}`;
-    toast.textContent = message;
-    this.container.appendChild(toast);
-    window.requestAnimationFrame(() => toast.classList.add('toast--visible'));
-    const remove = () => {
-      toast.classList.remove('toast--visible');
-      toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-    };
-    window.setTimeout(remove, 4000);
-    toast.addEventListener('click', remove);
-  }
-}
-
 class BannerManager {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
@@ -126,7 +104,8 @@ class DataLoader {
   }
 
   _getUrl(url) {
-    return `${url}?v=${Date.now()}`;
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}v=${Date.now()}`;
   }
 
   async _fetchJson(url) {
@@ -140,11 +119,55 @@ class DataLoader {
     return await response.json();
   }
 
+  _getBackendBaseUrl() {
+    const backendConfig = this.config.backend || {};
+    const host = window.location.hostname || '127.0.0.1';
+    const port = backendConfig.port || 5000;
+    const protocol = window.location.protocol.replace(':', '') || 'http';
+
+    if (backendConfig.url) {
+      try {
+        const configured = new URL(backendConfig.url);
+        if (configured.hostname === 'localhost' || configured.hostname === '127.0.0.1') {
+          return `${protocol}://${host}:${configured.port || port}`;
+        }
+        return configured.origin;
+      } catch (error) {
+        return backendConfig.url.replace(/\/+$/, '');
+      }
+    }
+
+    return `${protocol}://${host}:${port}`;
+  }
+
   async loadAll() {
-    const historyPromise = this._fetchJson(this.config.dataUrls.history);
-    const catalogPromise = this._fetchJson(this.config.dataUrls.catalog);
-    const latestPromise = this._fetchJson(this.config.dataUrls.latest);
-    const [history, catalog, latest] = await Promise.all([historyPromise, catalogPromise, latestPromise]);
+    const repositoryId = this.config.github?.activeRepositoryId;
+    const query = repositoryId ? `?repositoryId=${encodeURIComponent(repositoryId)}` : '';
+    const backendBaseUrl = this._getBackendBaseUrl();
+
+    let history = null;
+    let catalog = null;
+    let latest = null;
+
+    try {
+      [history, catalog, latest] = await Promise.all([
+        this._fetchJson(`${backendBaseUrl}/api/data/history${query}`),
+        this._fetchJson(`${backendBaseUrl}/api/data/catalog${query}`),
+        this._fetchJson(`${backendBaseUrl}/api/data/latest${query}`),
+      ]);
+    } catch (error) {
+      // Fall back to static dashboard files when the API is unavailable.
+    }
+
+    if (!history) {
+      history = await this._fetchJson(this.config.dataUrls.history);
+    }
+    if (!catalog) {
+      catalog = await this._fetchJson(this.config.dataUrls.catalog);
+    }
+    if (!latest) {
+      latest = await this._fetchJson(this.config.dataUrls.latest);
+    }
 
     let normalizedHistory = history;
     if (!normalizedHistory || !Array.isArray(normalizedHistory.entries) || normalizedHistory.entries.length === 0) {
@@ -181,10 +204,10 @@ class DataLoader {
       try {
         const { history, catalog } = await this.loadAll();
         const catalogSignature = this._catalogSignature(catalog);
-        const historyChanged = history && history.lastUpdated !== this.lastUpdated;
+        const historyChanged = Boolean(history && history.lastUpdated !== this.lastUpdated);
         const catalogChanged = catalogSignature !== this.lastCatalogSignature;
-        if (history && (historyChanged || catalogChanged)) {
-          if (historyChanged) {
+        if (historyChanged || catalogChanged) {
+          if (historyChanged && history) {
             this.lastUpdated = history.lastUpdated;
           }
           if (catalogChanged) {
@@ -231,14 +254,13 @@ class StatisticsRenderer {
     if (!catalog) return;
 
     const suiteCaseCounts = catalog.suiteTestCaseCounts || {};
-    const browserSource = this._findBrowserCountSource(latestEntry, historyEntries);
-    const configuredBrowsers = window.DASHBOARD_CONFIG?.playwright?.browsers || [];
-    const browserCount = this._getBrowserCount(browserSource) || configuredBrowsers.length || 1;
-    const totalCount = Number(catalog.totalCount || (Array.isArray(catalog.allTests) ? catalog.allTests.length : 0)) * browserCount;
+    const totalCount = Number(
+      catalog.totalCount || (Array.isArray(catalog.allTests) ? catalog.allTests.length : 0)
+    );
     const suiteDefinitions = (window.DASHBOARD_CONFIG?.playwright?.suites || []).filter((suite) => suite.value !== 'all');
     const suiteModifiers = ['card--regression', 'card--smoke', 'card--duration'];
     const cards = [
-      this._createCard('Total Test Cases', String(totalCount), 'card--total', `${browserCount} browser projects`),
+      this._createCard('Total Test Cases', String(totalCount), 'card--total'),
     ];
 
     suiteDefinitions.forEach((suiteDef, index) => {
@@ -246,9 +268,8 @@ class StatisticsRenderer {
       cards.push(
         this._createCard(
           `Total ${suiteDef.label} Test Cases`,
-          String(logicalCount * browserCount),
-          suiteModifiers[index % suiteModifiers.length],
-          `${logicalCount} logical test cases`
+          String(logicalCount),
+          suiteModifiers[index % suiteModifiers.length]
         )
       );
     });
@@ -565,9 +586,11 @@ class DashboardApp {
     this.errorMessage = document.getElementById('errorMessage');
     this.historyTableBody = document.getElementById('historyTableBody');
     this.openTriggerBtn = document.getElementById('openTriggerBtn');
+    this.repositorySelect = document.getElementById('repositorySelect');
 
     this.themeToggle.addEventListener('click', () => this.themeManager.toggle());
     this.retryButton.addEventListener('click', () => this.loadAndRender());
+    this._initializeRepositorySelector();
     this._bindHistorySorting();
     if (this.trendWindowSelect) {
       this.trendWindowSelect.value = this.trendWindow;
@@ -595,14 +618,72 @@ class DashboardApp {
     }
   }
 
+  _initializeRepositorySelector() {
+    if (!this.repositorySelect) {
+      return;
+    }
+
+    const repositories = this.config.github?.repositories || [];
+    this.repositorySelect.innerHTML = '';
+
+    if (repositories.length <= 1) {
+      this.repositorySelect.classList.add('hidden');
+      const label = this.repositorySelect.previousElementSibling;
+      if (label && label.classList.contains('repo-select-label')) {
+        label.classList.add('hidden');
+      }
+      if (repositories.length === 1) {
+        const only = repositories[0];
+        const option = document.createElement('option');
+        option.value = only.id;
+        option.textContent = only.label || only.repo;
+        this.repositorySelect.appendChild(option);
+      }
+      return;
+    }
+
+    repositories.forEach((entry) => {
+      const option = document.createElement('option');
+      option.value = entry.id;
+      option.textContent = entry.label || `${entry.owner}/${entry.repo}`;
+      this.repositorySelect.appendChild(option);
+    });
+
+    const activeId = this.config.github?.activeRepositoryId || repositories[0].id;
+    this.repositorySelect.value = activeId;
+    this.repositorySelect.addEventListener('change', async () => {
+      const nextRepositoryId = this.repositorySelect.value;
+      if (window.setDashboardActiveRepositoryId) {
+        window.setDashboardActiveRepositoryId(nextRepositoryId);
+      }
+      if (window.loadDashboardConfig) {
+        this.config = await window.loadDashboardConfig(nextRepositoryId);
+        window.DASHBOARD_CONFIG = this.config;
+      }
+      this.loader.config = this.config;
+      this.loader.lastCatalogSignature = null;
+      this.loader.lastUpdated = null;
+      this.workflowTrigger.config = this.config;
+      this.workflowTrigger._populateFormOptions?.();
+      applyDashboardHeader(this.config);
+      this.lastRendered = null;
+      await this.loadAndRender(true);
+    });
+  }
+
   async loadAndRender(force = false) {
     try {
       const { history, catalog } = await this.loader.loadAll();
       if (catalog && this.workflowTrigger) {
         this.workflowTrigger.loadCatalog(catalog);
       }
-      if (!history || !Array.isArray(history.entries) || history.entries.length === 0) {
-        this._showEmpty();
+
+      const entries = Array.isArray(history?.entries) ? history.entries : [];
+      const latest = entries[0] || null;
+      this.statisticsRenderer.render(catalog, latest, entries);
+
+      if (entries.length === 0) {
+        this._showEmptyWithSummary();
         return;
       }
       if (!force && history.lastUpdated === this.lastRendered) {
@@ -610,8 +691,6 @@ class DashboardApp {
       }
       this.lastRendered = history.lastUpdated;
       this._hideStates();
-      const latest = history.entries[0];
-      this.statisticsRenderer.render(catalog, latest, history.entries);
       this.historyEntries = history.entries;
       this._showLatestRunAlert(latest);
       this.lastHistoryEntries = history.entries;
@@ -694,7 +773,7 @@ class DashboardApp {
       const reportCell = document.createElement('td');
       reportCell.className = 'history-table__action';
       const reportLink = document.createElement('a');
-      reportLink.href = `./run?runId=${encodeURIComponent(entry.runId)}`;
+      reportLink.href = `./run?runId=${encodeURIComponent(entry.runId)}&repositoryId=${encodeURIComponent(this.config.github?.activeRepositoryId || '')}`;
       reportLink.target = '_blank';
       reportLink.rel = 'noopener';
       reportLink.className = 'btn-primary btn-sm history-action-btn btn-open-report';
@@ -721,6 +800,23 @@ class DashboardApp {
     this.emptyState.classList.remove('hidden');
     this.errorState.classList.add('hidden');
     document.getElementById('dashboardRoot').classList.add('hidden');
+  }
+
+  _showEmptyWithSummary() {
+    this.errorState.classList.add('hidden');
+    this.emptyState.classList.add('hidden');
+    document.getElementById('dashboardRoot').classList.remove('hidden');
+    if (this.historyTableBody) {
+      this.historyTableBody.innerHTML = '';
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.colSpan = 11;
+      cell.textContent = 'No test runs yet for this repository. Trigger a workflow run to populate history.';
+      row.appendChild(cell);
+      this.historyTableBody.appendChild(row);
+    }
+    this.historyEntries = [];
+    this.lastHistoryEntries = [];
   }
 
   _showError(error) {
@@ -807,7 +903,7 @@ class DashboardApp {
     }
 
     const runLabel = entry.runNumber && Number(entry.runNumber) > 0 ? `Run #${entry.runNumber}` : `Run ${entry.runId}`;
-    const reportHref = `./run?runId=${encodeURIComponent(entry.runId)}`;
+    const reportHref = `./run?runId=${encodeURIComponent(entry.runId)}&repositoryId=${encodeURIComponent(this.config.github?.activeRepositoryId || '')}`;
     const message = hasCollectionFailure
       ? `${runLabel} failed before any tests could run. Use Open report in Run history for failure analysis.`
       : `${runLabel} has failed tests. Use Open report in Run history for failure analysis.`;
@@ -815,10 +911,35 @@ class DashboardApp {
   }
 }
 
+async function shouldRedirectToSetup() {
+  try {
+    const config = window.DASHBOARD_CONFIG || {};
+    const backend = config.backend || {};
+    const host = window.location.hostname || '127.0.0.1';
+    const port = backend.port || 5000;
+    const protocol = window.location.protocol.replace(':', '') || 'http';
+    const baseUrl = backend.url && !backend.url.includes('localhost') && !backend.url.includes('127.0.0.1')
+      ? backend.url.replace(/\/+$/, '')
+      : `${protocol}://${host}:${port}`;
+    const response = await fetch(`${baseUrl}/api/setup/status`, { cache: 'no-store' });
+    if (!response.ok) return false;
+    const payload = await response.json();
+    return payload.configured === false;
+  } catch (error) {
+    return false;
+  }
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
   if (window.loadDashboardConfig) {
     await window.loadDashboardConfig();
   }
+
+  if (await shouldRedirectToSetup()) {
+    window.location.replace('./setup.html');
+    return;
+  }
+
   applyDashboardHeader(window.DASHBOARD_CONFIG);
   const app = new DashboardApp();
   window.dashboardApp = app;

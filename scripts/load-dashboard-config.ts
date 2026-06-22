@@ -20,12 +20,27 @@ export interface EnvironmentDefinition {
   value: string;
 }
 
+export interface RepositoryProfile {
+  id: string;
+  owner: string;
+  repo: string;
+  label?: string;
+  workflow?: string;
+  defaultBranch?: string;
+  testDir?: string;
+  browsers?: string[];
+  resultsFile?: string;
+  suites?: SuiteDefinition[];
+}
+
 export interface DashboardConfigFile {
   github: {
     owner: string;
     repo: string;
     workflow: string;
     defaultBranch: string;
+    activeRepositoryId?: string;
+    repositories?: RepositoryProfile[];
   };
   server: {
     port: number;
@@ -133,6 +148,88 @@ function applyEnvOverrides(config: DashboardConfigFile): DashboardConfigFile {
 
 let cachedConfig: DashboardConfigFile | null = null;
 
+const UNCONFIGURED_OWNERS = new Set(['YOUR_GITHUB_USERNAME_OR_ORG']);
+const UNCONFIGURED_REPOS = new Set(['YOUR_REPO_NAME']);
+
+export function isDashboardConfigured(config?: DashboardConfigFile): boolean {
+  const { owner, repo } = (config || loadDashboardConfig()).github;
+  const normalizedOwner = String(owner || '').trim();
+  const normalizedRepo = String(repo || '').trim();
+  if (!normalizedOwner || !normalizedRepo) return false;
+  if (UNCONFIGURED_OWNERS.has(normalizedOwner) || UNCONFIGURED_REPOS.has(normalizedRepo)) {
+    return false;
+  }
+  if (normalizedOwner.includes('YOUR_') || normalizedRepo.includes('YOUR_')) {
+    return false;
+  }
+  return true;
+}
+
+export function clearConfigCache(): void {
+  cachedConfig = null;
+}
+
+export function buildRepositoryId(owner: string, repo: string): string {
+  return `${String(owner).trim()}/${String(repo).trim()}`;
+}
+
+export function getRepositoryProfiles(config?: DashboardConfigFile): RepositoryProfile[] {
+  const source = config || loadDashboardConfig();
+  const github = source.github || ({} as DashboardConfigFile['github']);
+  if (Array.isArray(github.repositories) && github.repositories.length > 0) {
+    return github.repositories.map((entry) => ({
+      id: entry.id || buildRepositoryId(entry.owner, entry.repo),
+      owner: entry.owner,
+      repo: entry.repo,
+      label: entry.label || entry.repo,
+      workflow: entry.workflow || github.workflow,
+      defaultBranch: entry.defaultBranch || github.defaultBranch,
+      testDir: entry.testDir || source.playwright.testDir,
+      browsers: entry.browsers?.length ? [...entry.browsers] : [...source.playwright.browsers],
+      resultsFile: entry.resultsFile || source.playwright.resultsFile,
+      suites: entry.suites?.length ? entry.suites.map((suite) => ({ ...suite })) : source.playwright.suites.map((suite) => ({ ...suite })),
+    }));
+  }
+
+  return [{
+    id: buildRepositoryId(github.owner, github.repo),
+    owner: github.owner,
+    repo: github.repo,
+    label: github.repo,
+    workflow: github.workflow,
+    defaultBranch: github.defaultBranch,
+    testDir: source.playwright.testDir,
+    browsers: [...source.playwright.browsers],
+    resultsFile: source.playwright.resultsFile,
+    suites: source.playwright.suites.map((suite) => ({ ...suite })),
+  }];
+}
+
+export function normalizeRepositoryId(repositoryId?: string | null): string | undefined {
+  if (!repositoryId) return undefined;
+  const normalized = String(repositoryId).split('?')[0].split('&')[0].trim();
+  return normalized || undefined;
+}
+
+export function resolveRepositoryProfile(
+  config: DashboardConfigFile,
+  repositoryId?: string | null
+): RepositoryProfile {
+  const profiles = getRepositoryProfiles(config);
+  const requested = normalizeRepositoryId(
+    repositoryId || config.github.activeRepositoryId || buildRepositoryId(config.github.owner, config.github.repo)
+  ) || buildRepositoryId(config.github.owner, config.github.repo);
+
+  const match = profiles.find(
+    (profile) => profile.id === requested || profile.repo === requested || buildRepositoryId(profile.owner, profile.repo) === requested
+  );
+  return match || profiles[0];
+}
+
+export function getActiveRepositoryProfile(repositoryId?: string | null): RepositoryProfile {
+  return resolveRepositoryProfile(loadDashboardConfig(), repositoryId);
+}
+
 export function loadDashboardConfig(): DashboardConfigFile {
   if (!cachedConfig) {
     cachedConfig = applyEnvOverrides(readConfigFile());
@@ -140,29 +237,55 @@ export function loadDashboardConfig(): DashboardConfigFile {
   return cachedConfig;
 }
 
-export function getGithubTarget(): { owner: string; repo: string; workflow: string; defaultBranch: string } {
-  const config = loadDashboardConfig();
-  return { ...config.github };
-}
-
-export function getSuiteDefinitions(): SuiteDefinition[] {
-  return loadDashboardConfig().playwright.suites;
-}
-
-export function getPublicConfig() {
-  const config = loadDashboardConfig();
+export function getGithubTarget(repositoryId?: string | null): {
+  owner: string;
+  repo: string;
+  workflow: string;
+  defaultBranch: string;
+  repositoryId: string;
+} {
+  const profile = getActiveRepositoryProfile(repositoryId);
   return {
-    github: { ...config.github },
+    owner: profile.owner,
+    repo: profile.repo,
+    workflow: profile.workflow || loadDashboardConfig().github.workflow,
+    defaultBranch: profile.defaultBranch || loadDashboardConfig().github.defaultBranch,
+    repositoryId: profile.id,
+  };
+}
+
+export function getSuiteDefinitions(repositoryId?: string | null): SuiteDefinition[] {
+  return getActiveRepositoryProfile(repositoryId).suites || loadDashboardConfig().playwright.suites;
+}
+
+export function getPublicConfig(repositoryId?: string | null) {
+  const config = loadDashboardConfig();
+  const active = getActiveRepositoryProfile(repositoryId);
+  const repositories = getRepositoryProfiles(config);
+  return {
+    setup: {
+      configured: isDashboardConfigured(config),
+    },
+    github: {
+      ...config.github,
+      owner: active.owner,
+      repo: active.repo,
+      workflow: active.workflow || config.github.workflow,
+      defaultBranch: active.defaultBranch || config.github.defaultBranch,
+      activeRepositoryId: active.id,
+      repositories,
+    },
     server: { ...config.server },
     playwright: {
-      browsers: [...config.playwright.browsers],
-      suites: config.playwright.suites.map((suite) => ({ ...suite })),
-      testDir: config.playwright.testDir,
-      resultsFile: config.playwright.resultsFile,
+      browsers: [...(active.browsers || config.playwright.browsers)],
+      suites: (active.suites || config.playwright.suites).map((suite) => ({ ...suite })),
+      testDir: active.testDir || config.playwright.testDir,
+      resultsFile: active.resultsFile || config.playwright.resultsFile,
     },
     dashboard: {
       title: config.dashboard.title,
       description: config.dashboard.description,
+      historyBranch: config.dashboard.historyBranch,
     },
     environments: config.environments.map((env) => ({ ...env })),
   };

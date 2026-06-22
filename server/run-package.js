@@ -1,11 +1,20 @@
 import archiver from 'archiver';
 import fs from 'fs';
 import path from 'path';
+import { findHistoryEntryAcrossRepositories } from './repo-data-service.js';
 const OFFLINE_ASSET_FILES = [
   'assets/styles.css',
   'assets/error-explainer.js',
+  'assets/toast.js',
+  'assets/ai-prompt-builder.js',
   'assets/run-offline.js',
 ];
+
+const DASHBOARD_ROOT_ASSET_ALIASES = {
+  'assets/error-explainer.js': 'error-explainer.js',
+  'assets/toast.js': 'toast.js',
+  'assets/ai-prompt-builder.js': 'ai-prompt-builder.js',
+};
 
 function csvEscape(value) {
   return `"${String(value ?? '').replace(/"/g, '""')}"`;
@@ -27,10 +36,15 @@ function isSecondaryCollectionError(message) {
 }
 
 export function loadHistoryEntry(repoRoot, runId) {
+  const entry = findHistoryEntryAcrossRepositories(repoRoot, runId);
+  if (entry) {
+    return entry;
+  }
+
   const historyPath = path.join(repoRoot, 'dashboard', 'dashboard-history.json');
   if (!fs.existsSync(historyPath)) return null;
   const history = JSON.parse(fs.readFileSync(historyPath, 'utf8'));
-  return (history.entries || []).find((entry) => String(entry.runId) === String(runId)) || null;
+  return (history.entries || []).find((item) => String(item.runId) === String(runId)) || null;
 }
 
 export function getArtifactDirName(entry, artifactRoot) {
@@ -124,9 +138,10 @@ function buildOfflineIndexHtml(entry, repoRoot, hasPlaywrightReport) {
 
 function resolveOfflineAssetPath(repoRoot, relativePath) {
   const offlineRoot = path.join(repoRoot, 'dashboard', 'offline-report');
-  const candidates = relativePath === 'assets/error-explainer.js'
+  const dashboardAlias = DASHBOARD_ROOT_ASSET_ALIASES[relativePath];
+  const candidates = dashboardAlias
     ? [
-        path.join(repoRoot, 'dashboard', 'error-explainer.js'),
+        path.join(repoRoot, 'dashboard', dashboardAlias),
         path.join(offlineRoot, relativePath),
       ]
     : [path.join(offlineRoot, relativePath)];

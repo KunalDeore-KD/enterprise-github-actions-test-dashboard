@@ -2,17 +2,60 @@
 import { glob } from 'glob';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import {
+  getActiveRepositoryProfile,
   getPlaywrightBaseDir,
   getSuiteDefinitions,
   loadDashboardConfig,
 } from './load-dashboard-config';
+
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function splitSuitePattern(pattern: string): string[] {
   return String(pattern)
     .split(',')
     .map((value) => value.trim())
     .filter(Boolean);
+}
+
+function parseRepositoryIdArg(): string | undefined {
+  const index = process.argv.indexOf('--repository-id');
+  return index >= 0 ? process.argv[index + 1] : undefined;
+}
+
+function resolvePlaywrightBaseDir(testDir: string): string {
+  const parent = path.dirname(testDir);
+  if (parent !== '.' && fs.existsSync(path.join(REPO_ROOT, parent))) {
+    return parent;
+  }
+  return fs.existsSync(path.join(REPO_ROOT, 'playwright')) ? 'playwright' : '.';
+}
+
+function resolveDiscoveryContext(repositoryId?: string) {
+  if (!repositoryId) {
+    loadDashboardConfig();
+    const testDir = loadDashboardConfig().playwright.testDir;
+    return {
+      baseDir: getPlaywrightBaseDir(),
+      testDir,
+      suiteDefs: getSuiteDefinitions().filter((suite) => suite.value !== 'all'),
+      outputPaths: [
+        path.join(REPO_ROOT, 'dashboard', 'test-catalog.json'),
+        path.join(REPO_ROOT, 'test-catalog.json'),
+      ],
+    };
+  }
+
+  const profile = getActiveRepositoryProfile(repositoryId);
+  const testDir = profile.testDir || loadDashboardConfig().playwright.testDir;
+  const storageKey = `${profile.owner}__${profile.repo}`;
+  return {
+    baseDir: resolvePlaywrightBaseDir(testDir),
+    testDir,
+    suiteDefs: (profile.suites || getSuiteDefinitions()).filter((suite) => suite.value !== 'all'),
+    outputPaths: [path.join(REPO_ROOT, 'dashboard', 'repos', storageKey, 'test-catalog.json')],
+  };
 }
 
 function matchesTag(fileContents: string, tag: string): boolean {
@@ -62,11 +105,26 @@ function resolveSuitePattern(suiteValue: string, pattern?: string): string {
   return `@${suiteValue}`;
 }
 
+function toCatalogPath(baseDir: string, file: string): string {
+  if (baseDir === '.') {
+    return file.replace(/^\.\//, '');
+  }
+  return `${baseDir}/${file}`.replace(/\\/g, '/');
+}
+
+function normalizePatternForBaseDir(baseDir: string, segment: string): string {
+  if (baseDir === 'playwright' && segment.startsWith('playwright/')) {
+    return segment.replace(/^playwright\//, '');
+  }
+  if (baseDir !== '.' && segment.startsWith(`${baseDir}/`)) {
+    return segment.slice(baseDir.length + 1);
+  }
+  return segment;
+}
+
 async function main() {
-  // CONFIG: was hardcoded, now reads from dashboard.config.json
-  loadDashboardConfig();
-  const baseDir = getPlaywrightBaseDir();
-  const testDir = loadDashboardConfig().playwright.testDir;
+  const repositoryId = parseRepositoryIdArg();
+  const { baseDir, testDir, suiteDefs, outputPaths } = resolveDiscoveryContext(repositoryId);
   const testGlob = testDir.includes('/')
     ? `${path.basename(testDir)}/**/*.spec.ts`
     : 'tests/**/*.spec.ts';
@@ -79,8 +137,6 @@ async function main() {
     cwd: baseDir,
   });
 
-  const suiteDefs = getSuiteDefinitions().filter((suite) => suite.value !== 'all');
-
   for (const suiteDef of suiteDefs) {
     const suiteName = suiteDef.value;
     const pattern = resolveSuitePattern(suiteName, suiteDef.pattern);
@@ -92,25 +148,22 @@ async function main() {
         for (const file of allTestFiles) {
           const contents = readFileContents(baseDir, file);
           if (matchesTag(contents, tag)) {
-            files.add(file);
+            files.add(toCatalogPath(baseDir, file));
           }
         }
         continue;
       }
 
-      const normalizedPattern =
-        baseDir === 'playwright' && segment.startsWith('playwright/')
-          ? segment.replace(/^playwright\//, '')
-          : segment;
+      const normalizedPattern = normalizePatternForBaseDir(baseDir, segment);
       const matched = await glob(normalizedPattern, { nodir: true, cwd: baseDir });
-      matched.forEach((file) => files.add(file));
+      matched.forEach((file) => files.add(toCatalogPath(baseDir, file)));
     }
 
     if (files.size === 0 && !suiteDef.pattern) {
       for (const file of allTestFiles) {
         const contents = readFileContents(baseDir, file);
         if (matchesTag(contents, suiteName) || matchesValueInTitle(contents, suiteName)) {
-          files.add(file);
+          files.add(toCatalogPath(baseDir, file));
         }
       }
     }
@@ -118,7 +171,7 @@ async function main() {
     catalog[suiteName] = Array.from(files).sort();
     catalog[suiteName].forEach((f) => allTests.add(f));
   }
-  allTestFiles.forEach((f) => allTests.add(f));
+  allTestFiles.forEach((f) => allTests.add(toCatalogPath(baseDir, f)));
 
   let totalTestCases = 0;
   const suiteTestCaseCounts: Record<string, number> = {};
@@ -149,7 +202,10 @@ async function main() {
       const suiteFiles = catalog[suiteName] || [];
       let count = 0;
       for (const file of suiteFiles) {
-        count += countTestsInFile(readFileContents(baseDir, file));
+        const relativeFile = file.startsWith(`${baseDir}/`)
+          ? file.slice(baseDir.length + 1)
+          : file;
+        count += countTestsInFile(readFileContents(baseDir, relativeFile));
       }
       suiteTestCaseCounts[suiteName] = count;
       continue;
@@ -174,11 +230,13 @@ async function main() {
     suiteTestCaseCounts,
   };
 
-  const dashboardDir = path.resolve('dashboard');
-  fs.mkdirSync(dashboardDir, { recursive: true });
-  fs.writeFileSync(path.join(dashboardDir, 'test-catalog.json'), JSON.stringify(output, null, 2));
+  for (const outputPath of outputPaths) {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
+  }
+
   console.log(
-    `✅ test-catalog.json written to dashboard/. ${totalTestCases} test cases across ${allTests.size} files and ${Object.keys(catalog).length} suites.`
+    `✅ test-catalog.json written (${outputPaths.join(', ')}). ${totalTestCases} test cases across ${allTests.size} files and ${Object.keys(catalog).length} suites.`
   );
 }
 

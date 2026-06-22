@@ -19,7 +19,10 @@
         <p class="build-meta">Build #__DASHBOARD_VERSION__</p>
       </div>
       <div class="topbar-actions">
+        <label class="repo-select-label" for="repositorySelect">Repository</label>
+        <select id="repositorySelect" class="repo-select" aria-label="Select Playwright repository"></select>
         <button id="themeToggle" class="btn-secondary btn-sm" type="button" aria-label="Toggle theme">Toggle theme</button>
+        <a href="./setup.html" class="btn-secondary btn-sm">Reconfigure repo</a>
         <button id="openTriggerBtn" class="btn-primary" type="button">Trigger Run</button>
       </div>
     </header>
@@ -143,6 +146,12 @@
           <select id="suiteInput"></select>
         </label>
 
+        <fieldset id="browserFieldset" class="browser-fieldset">
+          <legend>Browsers</legend>
+          <p class="field-hint">Select one or more browsers to run tests on.</p>
+          <div id="browserCheckboxes" class="browser-checkbox-group" role="group" aria-label="Browsers"></div>
+        </fieldset>
+
         <!-- Test Search: shown when suite is NOT "single" -->
         <label id="testSearchLabel">
           Test Search (optional)
@@ -174,6 +183,7 @@
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="__SRI_FUSEJS__" crossorigin="anonymous"></script>
   <script src="./config.js"></script>
   <script src="./config-loader.js"></script>
+  <script src="./toast.js"></script>
   <script src="./workflow-trigger.js"></script>
   <script src="./app.js"></script>
 </body>

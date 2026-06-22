@@ -29,14 +29,14 @@ function getCommitMetadata(sha?: string): CommitMetadata {
     const authorEmail = execSync(`git show -s --format='%ae' ${commitSha}`).toString().trim();
     const authorDate = execSync(`git show -s --format='%aI' ${commitSha}`).toString().trim();
     const message = execSync(`git show -s --format='%s' ${commitSha}`).toString().trim();
-    const sha = execSync(`git show -s --format='%H' ${commitSha}`).toString().trim();
+    const commitHash = execSync(`git show -s --format='%H' ${commitSha}`).toString().trim();
 
     return {
       authorName,
       authorEmail,
       authorDate,
       message,
-      sha,
+      sha: commitHash,
     };
   } catch (err) {
     console.warn('Failed to extract commit metadata:', err);
