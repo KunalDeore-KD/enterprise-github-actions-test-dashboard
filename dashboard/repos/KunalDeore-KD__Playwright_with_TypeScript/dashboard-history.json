@@ -1,6 +1,1593 @@
 {
-  "lastUpdated": "2026-06-21T15:16:53.857Z",
+  "lastUpdated": "2026-06-22T12:22:06.452Z",
   "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "27952026622",
+      "runNumber": 76,
+      "branch": "test",
+      "commit": "275d597",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "Kunal Deore",
+        "email": "kunal.d@york.ie",
+        "date": "2026-06-22T11:50:21Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-22T12:19:16.974Z",
+      "finishedAt": "2026-06-22T12:22:06.452Z",
+      "durationSeconds": 135,
+      "environment": "",
+      "suiteFilter": null,
+      "summary": {
+        "total": 73,
+        "passed": 72,
+        "failed": 0,
+        "skipped": 1,
+        "flaky": 0,
+        "passRate": 98.6
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/27952026622",
+      "artifactViewUrl": "./run?runId=27952026622#evidence",
+      "artifactExpiresAt": "2026-07-22T12:22:06.449Z",
+      "allureReportUrl": null,
+      "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-76",
+      "videos": {
+        "01-first-test-should-open--2af12-e-and-verify-the-page-title-chromium": "01-first-test-should-open--2af12-e-and-verify-the-page-title-chromium/video.webm",
+        "02-locators-basics-locators-demo-form-elements--chromium": "02-locators-basics-locators-demo-form-elements--chromium/video.webm",
+        "03-assertion_and_validatio-2f11b-ons-on-AngularPractice-form-chromium": "03-assertion_and_validatio-2f11b-ons-on-AngularPractice-form-chromium/video.webm",
+        "04-actions-interactions-Ph-1fc60-ons-on-AngularPractice-form-chromium": "04-actions-interactions-Ph-1fc60-ons-on-AngularPractice-form-chromium/video.webm",
+        "05-Codegen-script-test-chromium": "05-Codegen-script-test-chromium/video.webm",
+        "06-waits-and-timing-Phase--715cd-s-timing-on-AngularPractice-chromium": "06-waits-and-timing-Phase--715cd-s-timing-on-AngularPractice-chromium/video.webm",
+        "07-pom-practice-Phase-3-8---POM-fill-form-and-verify-success-chromium": "07-pom-practice-Phase-3-8---POM-fill-form-and-verify-success-chromium/video.webm",
+        "07-pom-practice-Phase-3-8--6c614-repreneur-radio-is-disabled-chromium": "07-pom-practice-Phase-3-8--6c614-repreneur-radio-is-disabled-chromium/video.webm",
+        "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium": "08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm",
+        "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium": "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm",
+        "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium": "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm",
+        "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium": "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm",
+        "08-hooks-and-organization--c767e-uired-validation-regression-chromium": "08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium": "09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm",
+        "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium": "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm",
+        "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium": "09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm",
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm",
+        "11-visual-regression-Visua-2d9af-tion-visual-snapshot-visual-chromium": "11-visual-regression-Visua-2d9af-tion-visual-snapshot-visual-chromium/video.webm",
+        "11-visual-regression-Visua-2fc70-page-visual-snapshot-visual-chromium": "11-visual-regression-Visua-2fc70-page-visual-snapshot-visual-chromium/video.webm",
+        "11-visual-regression-Visua-914fb-data-visual-snapshot-visual-chromium": "11-visual-regression-Visua-914fb-data-visual-snapshot-visual-chromium/video.webm",
+        "11-visual-regression-Visua-eb10b-vbar-visual-snapshot-visual-chromium": "11-visual-regression-Visua-eb10b-vbar-visual-snapshot-visual-chromium/video.webm",
+        "13-component-test-Componen-0a07d--3-gender-options-component-chromium": "13-component-test-Componen-0a07d--3-gender-options-component-chromium/video.webm",
+        "13-component-test-Componen-0f78c-st-and-be-visible-component-chromium": "13-component-test-Componen-0f78c-st-and-be-visible-component-chromium/video.webm",
+        "13-component-test-Componen-4cb5c-r-can-select-Male-component-chromium": "13-component-test-Componen-4cb5c-r-can-select-Male-component-chromium/video.webm",
+        "13-component-test-Componen-5e09f-screenshot-component-visual-chromium": "13-component-test-Componen-5e09f-screenshot-component-visual-chromium/video.webm",
+        "13-component-test-Componen-9053b-after-form-submit-component-chromium": "13-component-test-Componen-9053b-after-form-submit-component-chromium/video.webm",
+        "13-component-test-Componen-908e1-e-binding-section-component-chromium": "13-component-test-Componen-908e1-e-binding-section-component-chromium/video.webm",
+        "13-component-test-Componen-afbdb-on-multiple-times-component-chromium": "13-component-test-Componen-afbdb-on-multiple-times-component-chromium/video.webm",
+        "13-component-test-Componen-f7b84-can-select-Female-component-chromium": "13-component-test-Componen-f7b84-can-select-Female-component-chromium/video.webm",
+        "14-test-agents-Playwright--a03c5-auto-healing-locators-agent-chromium": "14-test-agents-Playwright--a03c5-auto-healing-locators-agent-chromium/video.webm",
+        "14-test-agents-Playwright--c1189-cts-disabled-elements-agent-chromium": "14-test-agents-Playwright--c1189-cts-disabled-elements-agent-chromium/video.webm",
+        "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium": "15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium/video.webm",
+        "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium": "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm",
+        "15-allure-reporting-Allure-d7df9--correct-options-regression-chromium": "15-allure-reporting-Allure-d7df9--correct-options-regression-chromium/video.webm",
+        "16-screenplay-pattern-Scre-0a53c--different-roles-screenplay-chromium": "16-screenplay-pattern-Scre-0a53c--different-roles-screenplay-chromium/video.webm",
+        "16-screenplay-pattern-Scre-dbe64-verifies-success-screenplay-chromium": "16-screenplay-pattern-Scre-dbe64-verifies-success-screenplay-chromium/video.webm",
+        "16-screenplay-pattern-Scre-dd254-s-POM-comparison-screenplay-chromium": "16-screenplay-pattern-Scre-dd254-s-POM-comparison-screenplay-chromium/video.webm",
+        "17-component-runner-Compon-0a2af-d-test-validation-component-chromium": "17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm",
+        "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium": "17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm",
+        "17-component-runner-Compon-819fc--and-verify-click-component-chromium": "17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm",
+        "17-component-runner-Compon-b83a4-d-test-validation-component-chromium": "17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm",
+        "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium": "17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm",
+        "18-react-site-component-Re-04438-todo-is-unchecked-component-chromium": "18-react-site-component-Re-04438-todo-is-unchecked-component-chromium/video.webm",
+        "18-react-site-component-Re-0f2ea-used-on-page-load-component-chromium": "18-react-site-component-Re-0f2ea-used-on-page-load-component-chromium/video.webm",
+        "18-react-site-component-Re-1d50c-e-todo-completion-component-chromium": "18-react-site-component-Re-1d50c-e-todo-completion-component-chromium/video.webm",
+        "18-react-site-component-Re-2f2f9-s-completed-todos-component-chromium": "18-react-site-component-Re-2f2f9-s-completed-todos-component-chromium/video.webm",
+        "18-react-site-component-Re-30389-s-todos-are-added-component-chromium": "18-react-site-component-Re-30389-s-todos-are-added-component-chromium/video.webm",
+        "18-react-site-component-Re-45c6d-only-active-todos-component-chromium": "18-react-site-component-Re-45c6d-only-active-todos-component-chromium/video.webm",
+        "18-react-site-component-Re-4bfda-ove-todo-on-hover-component-chromium": "18-react-site-component-Re-4bfda-ove-todo-on-hover-component-chromium/video.webm",
+        "18-react-site-component-Re-693a0-y-completed-todos-component-chromium": "18-react-site-component-Re-693a0-y-completed-todos-component-chromium/video.webm",
+        "18-react-site-component-Re-6bcd5-r-shows-all-todos-component-chromium": "18-react-site-component-Re-6bcd5-r-shows-all-todos-component-chromium/video.webm",
+        "18-react-site-component-Re-a80eb-ck-to-edit-a-todo-component-chromium": "18-react-site-component-Re-a80eb-ck-to-edit-a-todo-component-chromium/video.webm",
+        "18-react-site-component-Re-a85d1-e-completed-class-component-chromium": "18-react-site-component-Re-a85d1-e-completed-class-component-chromium/video.webm",
+        "18-react-site-component-Re-a87eb-omplete-all-todos-component-chromium": "18-react-site-component-Re-a87eb-omplete-all-todos-component-chromium/video.webm",
+        "18-react-site-component-Re-c0b97-play-3-todo-items-component-chromium": "18-react-site-component-Re-c0b97-play-3-todo-items-component-chromium/video.webm",
+        "18-react-site-component-Re-de108-todo-is-completed-component-chromium": "18-react-site-component-Re-de108-todo-is-completed-component-chromium/video.webm",
+        "18-react-site-component-Re-e201f-d-a-todo-on-Enter-component-chromium": "18-react-site-component-Re-e201f-d-a-todo-on-Enter-component-chromium/video.webm",
+        "18-react-site-component-Re-e9360-ot-add-empty-todo-component-chromium": "18-react-site-component-Re-e9360-ot-add-empty-todo-component-chromium/video.webm",
+        "18-react-site-component-Re-f28fd-s-with-Faker-data-component-chromium": "18-react-site-component-Re-f28fd-s-with-Faker-data-component-chromium/video.webm",
+        "19-shared-library-Shared-L-48392-for-random-test-data-shared-chromium": "19-shared-library-Shared-L-48392-for-random-test-data-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium": "19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium": "19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium": "19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm",
+        "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium": "19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm",
+        "example-get-started-link-chromium": "example-get-started-link-chromium/video.webm",
+        "example-has-title-chromium": "example-has-title-chromium/video.webm"
+      },
+      "consoleLogs": [
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Abel McKenzie',\n  email: 'Leonard59@hotmail.com',\n  password: 'PaXFA4z_bq9Q',\n  gender: 'Male',\n  dob: '1989-04-10',\n  loveIceCream: false,\n  employment: 'student'\n}"
+            }
+          ]
+        },
+        {
+          "title": "fill form with different random data on each run @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Run with data: {\n  name: 'Valerie Ortiz',\n  email: 'Johanna84@yahoo.com',\n  password: 'qAXra4gonu0R',\n  gender: 'Male',\n  dob: '2003-01-11',\n  loveIceCream: false,\n  employment: 'student'\n}"
+            }
+          ]
+        },
+        {
+          "title": "use individual utility for name field only @regression",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Random name: Johathan Hodkiewicz"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Total users on page 1: 6"
+            },
+            {
+              "stream": "stdout",
+              "text": "First user: George Bluth"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 3: POST to API, then verify response @regression",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Created user with ID: 101"
+            },
+            {
+              "stream": "stdout",
+              "text": "Created at: 2026-06-22T12:20:08.632Z"
+            }
+          ]
+        },
+        {
+          "title": "agent-like form fill with auto-healing locators @agent",
+          "fullTitle": "14-test-agents.spec.ts > Playwright Test Agent Patterns > agent-like form fill with auto-healing locators @agent",
+          "browser": "chromium",
+          "file": "14-test-agents.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 1: Navigate to practice page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 2: Detect page state"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Page state: form-ready"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 3: Find name input using auto-healing locator"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Name input\" using: form input[name=\"name\"]:first-of-type"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 4: Find email input using auto-healing locator"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Email input\" using: input[name=\"email\"]"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 5: Find password input using auto-healing locator"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Password input\" using: #exampleInputPassword1"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 6: Find and select gender dropdown"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Gender dropdown\" using: #exampleFormControlSelect1"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 7: Submit form with retry logic"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Submit button\" using: input[type=\"submit\"][value=\"Submit\"]"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] \"Form submission\" succeeded on attempt 1"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 8: Verify success state"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Final page state: success"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Test completed successfully!"
+            }
+          ]
+        },
+        {
+          "title": "agent detects disabled elements @agent",
+          "fullTitle": "14-test-agents.spec.ts > Playwright Test Agent Patterns > agent detects disabled elements @agent",
+          "browser": "chromium",
+          "file": "14-test-agents.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 1: Navigate to practice page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 2: Detect page state"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 3: Find entrepreneur radio and check if disabled"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Entrepreneur radio\" using: #inlineRadio3"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Entrepreneur radio disabled: true"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Step 4: Verify student radio is enabled and selectable"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Found \"Student radio\" using: #inlineRadio1"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Student radio enabled: true"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Agent] Disabled element detection test completed!"
+            }
+          ]
+        },
+        {
+          "title": "actor fills form and verifies success @screenplay",
+          "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > actor fills form and verifies success @screenplay",
+          "browser": "chromium",
+          "file": "16-screenplay-pattern.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Test] Actor: Kunal"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Test] Form data: {\n  name: 'Emmanuel Klocko',\n  email: 'Leland.Waters62@hotmail.com',\n  password: 'r0InoRxrvyxt',\n  gender: 'Female'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Kunal] performs: Navigate"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Kunal] performs: FillForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Kunal] performs: SubmitForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Kunal] asks: Visibility"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Kunal] sees: TextOf"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Test] Success message: ×\nSuccess! The Form has been submitted successfully!."
+            }
+          ]
+        },
+        {
+          "title": "two actors with different roles @screenplay",
+          "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > two actors with different roles @screenplay",
+          "browser": "chromium",
+          "file": "16-screenplay-pattern.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Test] Actor: Student Kunal"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Student Kunal] performs: Navigate"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Student Kunal] performs: FillForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Student Kunal] performs: SubmitForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Student Kunal] asks: Visibility"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Student Kunal] sees: TextOf"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Test] Student Kunal sees: ×\nSuccess! The Form has been submitted successfully!."
+            }
+          ]
+        },
+        {
+          "title": "screenplay vs POM comparison @screenplay",
+          "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > screenplay vs POM comparison @screenplay",
+          "browser": "chromium",
+          "file": "16-screenplay-pattern.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Tester] performs: Navigate"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Tester] performs: FillForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Tester] performs: SubmitForm"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Tester] asks: Visibility"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Test] Screenplay pattern test completed!"
+            }
+          ]
+        },
+        {
+          "title": "login form with random Faker data @component",
+          "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+          "browser": "chromium",
+          "file": "17-component-runner.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Component Test] Email: Kent_Johnston@yahoo.com"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Component Test] Password: T2xMJLT_HifO"
+            }
+          ]
+        },
+        {
+          "title": "use BasePage for common actions @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Page title: ProtoCommerce"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Current URL: https://rahulshettyacademy.com/angularpractice/"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ BasePage actions completed"
+            }
+          ]
+        },
+        {
+          "title": "Use data generators for random test data @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > Use data generators for random test data @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated user: {\n  firstName: 'Josephine',\n  lastName: 'Kiehn',\n  fullName: 'Josephine Kiehn',\n  email: 'Josephine_Kiehn68@gmail.com',\n  password: 'OM41qSwvUUGg',\n  phone: '459-430-6093 x1306',\n  avatar: 'https://avatars.githubusercontent.com/u/47112928'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated form: {\n  name: 'Leland Pfannerstill',\n  email: 'Cody_Skiles91@gmail.com',\n  password: '9Zaf6XcFamMH',\n  gender: 'Female',\n  dateOfBirth: '1987-07-15',\n  message: 'Ara stella asperiores tandem. Antea utique talis vulnero valetudo terga abbas videlicet textor volaticus. Annus cumque spargo deficio agnitio.'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ℹ️  Generated address: {\n  street: '756 Elm Close',\n  city: 'Lake Eliaschester',\n  state: 'Wisconsin',\n  zipCode: '49818',\n  country: 'Pitcairn Islands'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Form submitted with generated data"
+            }
+          ]
+        },
+        {
+          "title": "use ComponentRunner from shared library @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ ComponentRunner from shared library works"
+            }
+          ]
+        },
+        {
+          "title": "use retry helper for flaky operations @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 1/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[Retry] flaky operation — attempt 2/5 failed"
+            },
+            {
+              "stream": "stdout",
+              "text": "[SharedLib] ✅ Retry succeeded after 3 attempts"
+            }
+          ]
+        },
+        {
+          "title": "use Logger for structured output @shared",
+          "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+          "browser": "chromium",
+          "file": "19-shared-library.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 1: Navigate to page"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 2: Verify page loaded"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 3: Fill form"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 4: Submit"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] Step 5: Verify success"
+            },
+            {
+              "stream": "stdout",
+              "text": "[MyTest] ✅ All steps completed!"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "01-first-test.spec.ts",
+          "file": "01-first-test.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "should open Playwright website and verify the page title",
+              "fullTitle": "01-first-test.spec.ts > should open Playwright website and verify the page title",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/01-first-test-should-open--2af12-e-and-verify-the-page-title-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "02-locators-basics.spec.ts",
+          "file": "02-locators-basics.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "locators demo (form elements)",
+              "fullTitle": "02-locators-basics.spec.ts > locators demo (form elements)",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/02-locators-basics-locators-demo-form-elements--chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "03-assertion_and_validation.spec.ts",
+          "file": "03-assertion_and_validation.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Phase 3.4 - assertions & validations on AngularPractice form",
+              "fullTitle": "03-assertion_and_validation.spec.ts > Phase 3.4 - assertions & validations on AngularPractice form",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/03-assertion_and_validatio-2f11b-ons-on-AngularPractice-form-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "04-actions-interactions.spec.ts",
+          "file": "04-actions-interactions.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Phase 3.5 - actions & interactions on AngularPractice form",
+              "fullTitle": "04-actions-interactions.spec.ts > Phase 3.5 - actions & interactions on AngularPractice form",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/04-actions-interactions-Ph-1fc60-ons-on-AngularPractice-form-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "05-Codegen-script.spec.ts",
+          "file": "05-Codegen-script.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "test",
+              "fullTitle": "05-Codegen-script.spec.ts > test",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/05-Codegen-script-test-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "06-waits-and-timing.spec.ts",
+          "file": "06-waits-and-timing.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Phase 3.7 - waits & timing on AngularPractice",
+              "fullTitle": "06-waits-and-timing.spec.ts > Phase 3.7 - waits & timing on AngularPractice",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/06-waits-and-timing-Phase--715cd-s-timing-on-AngularPractice-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "07-pom-practice.spec.ts",
+          "file": "07-pom-practice.spec.ts",
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Phase 3.8 - POM: fill form and verify success",
+              "fullTitle": "07-pom-practice.spec.ts > Phase 3.8 - POM: fill form and verify success",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/07-pom-practice-Phase-3-8---POM-fill-form-and-verify-success-chromium/video.webm"
+            },
+            {
+              "title": "Phase 3.8 - POM: verify entrepreneur radio is disabled",
+              "fullTitle": "07-pom-practice.spec.ts > Phase 3.8 - POM: verify entrepreneur radio is disabled",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/07-pom-practice-Phase-3-8--6c614-repreneur-radio-is-disabled-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm"
+            },
+            {
+              "title": "verify name is required validation @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify name is required validation @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--c767e-uired-validation-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify checkbox can be checked and unchecked @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > verify checkbox can be checked and unchecked @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--2874e-ed-and-unchecked-regression-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 1,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm"
+            },
+            {
+              "title": "verify disabled dropdown option @regression",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > verify disabled dropdown option @regression",
+              "browser": "chromium",
+              "status": "skipped",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Navigation Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm"
+            },
+            {
+              "title": "fill form with different random data on each run @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with different random data on each run @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-fc820-data-on-each-run-regression-chromium/video.webm"
+            },
+            {
+              "title": "use individual utility for name field only @regression",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > use individual utility for name field only @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-2f92f--name-field-only-regression-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+            },
+            {
+              "title": "Pattern 2: Pure API test — verify user list endpoint @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 2: Pure API test — verify user list endpoint @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "Pattern 3: POST to API, then verify response @regression",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 3: POST to API, then verify response @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Visual Regression Tests",
+          "file": "11-visual-regression.spec.ts",
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "full page visual snapshot @visual",
+              "fullTitle": "11-visual-regression.spec.ts > Visual Regression Tests > full page visual snapshot @visual",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/11-visual-regression-Visua-2fc70-page-visual-snapshot-visual-chromium/video.webm"
+            },
+            {
+              "title": "form section visual snapshot @visual",
+              "fullTitle": "11-visual-regression.spec.ts > Visual Regression Tests > form section visual snapshot @visual",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/11-visual-regression-Visua-2d9af-tion-visual-snapshot-visual-chromium/video.webm"
+            },
+            {
+              "title": "form with filled data visual snapshot @visual",
+              "fullTitle": "11-visual-regression.spec.ts > Visual Regression Tests > form with filled data visual snapshot @visual",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/11-visual-regression-Visua-914fb-data-visual-snapshot-visual-chromium/video.webm"
+            },
+            {
+              "title": "navbar visual snapshot @visual",
+              "fullTitle": "11-visual-regression.spec.ts > Visual Regression Tests > navbar visual snapshot @visual",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/11-visual-regression-Visua-eb10b-vbar-visual-snapshot-visual-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API Response Snapshot Tests",
+          "file": "12-api-snapshot.spec.ts",
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "snapshot single user response structure @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot single user response structure @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot user list response keys @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot user list response keys @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot POST response with dynamic fields removed @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot POST response with dynamic fields removed @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            },
+            {
+              "title": "snapshot pagination metadata @regression",
+              "fullTitle": "12-api-snapshot.spec.ts > API Response Snapshot Tests > snapshot pagination metadata @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null
+            }
+          ]
+        },
+        {
+          "name": "Component Test: Gender Dropdown Widget",
+          "file": "13-component-test.spec.ts",
+          "passed": 8,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "default state: dropdown should exist and be visible @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > default state: dropdown should exist and be visible @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-0f78c-st-and-be-visible-component-chromium/video.webm"
+            },
+            {
+              "title": "options: dropdown should have exactly 3 gender options @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > options: dropdown should have exactly 3 gender options @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-0a07d--3-gender-options-component-chromium/video.webm"
+            },
+            {
+              "title": "selection: user can select Male @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > selection: user can select Male @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-4cb5c-r-can-select-Male-component-chromium/video.webm"
+            },
+            {
+              "title": "selection: user can select Female @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > selection: user can select Female @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-f7b84-can-select-Female-component-chromium/video.webm"
+            },
+            {
+              "title": "switching: user can change selection multiple times @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > switching: user can change selection multiple times @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-afbdb-on-multiple-times-component-chromium/video.webm"
+            },
+            {
+              "title": "two-way binding: selected gender appears in the binding section @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > two-way binding: selected gender appears in the binding section @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-908e1-e-binding-section-component-chromium/video.webm"
+            },
+            {
+              "title": "visual: dropdown should match baseline screenshot @component @visual",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > visual: dropdown should match baseline screenshot @component @visual",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-5e09f-screenshot-component-visual-chromium/video.webm"
+            },
+            {
+              "title": "form integration: selected gender persists after form submit @component",
+              "fullTitle": "13-component-test.spec.ts > Component Test: Gender Dropdown Widget > form integration: selected gender persists after form submit @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/13-component-test-Componen-9053b-after-form-submit-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Playwright Test Agent Patterns",
+          "file": "14-test-agents.spec.ts",
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "agent-like form fill with auto-healing locators @agent",
+              "fullTitle": "14-test-agents.spec.ts > Playwright Test Agent Patterns > agent-like form fill with auto-healing locators @agent",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/14-test-agents-Playwright--a03c5-auto-healing-locators-agent-chromium/video.webm"
+            },
+            {
+              "title": "agent detects disabled elements @agent",
+              "fullTitle": "14-test-agents.spec.ts > Playwright Test Agent Patterns > agent detects disabled elements @agent",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/14-test-agents-Playwright--c1189-cts-disabled-elements-agent-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm"
+            },
+            {
+              "title": "verify entrepreneur radio is disabled @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify entrepreneur radio is disabled @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-8ad41-adio-is-disabled-regression-chromium/video.webm"
+            },
+            {
+              "title": "verify dropdown has correct options @regression",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > verify dropdown has correct options @regression",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-d7df9--correct-options-regression-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Screenplay Pattern Demo",
+          "file": "16-screenplay-pattern.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "actor fills form and verifies success @screenplay",
+              "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > actor fills form and verifies success @screenplay",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/16-screenplay-pattern-Scre-dbe64-verifies-success-screenplay-chromium/video.webm"
+            },
+            {
+              "title": "two actors with different roles @screenplay",
+              "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > two actors with different roles @screenplay",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/16-screenplay-pattern-Scre-0a53c--different-roles-screenplay-chromium/video.webm"
+            },
+            {
+              "title": "screenplay vs POM comparison @screenplay",
+              "fullTitle": "16-screenplay-pattern.spec.ts > Screenplay Pattern Demo > screenplay vs POM comparison @screenplay",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/16-screenplay-pattern-Scre-dd254-s-POM-comparison-screenplay-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Component Runner: Inline Mount",
+          "file": "17-component-runner.spec.ts",
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "mount a button and verify click @component",
+              "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a button and verify click @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/17-component-runner-Compon-819fc--and-verify-click-component-chromium/video.webm"
+            },
+            {
+              "title": "mount a form inline and test validation @component",
+              "fullTitle": "17-component-runner.spec.ts > Component Runner: Inline Mount > mount a form inline and test validation @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/17-component-runner-Compon-b83a4-d-test-validation-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Component Runner: File Mount",
+          "file": "17-component-runner.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "mount dropdown fixture and test selection @component",
+              "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount dropdown fixture and test selection @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/17-component-runner-Compon-d18c6-nd-test-selection-component-chromium/video.webm"
+            },
+            {
+              "title": "mount login form fixture and test validation @component",
+              "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > mount login form fixture and test validation @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/17-component-runner-Compon-0a2af-d-test-validation-component-chromium/video.webm"
+            },
+            {
+              "title": "login form with random Faker data @component",
+              "fullTitle": "17-component-runner.spec.ts > Component Runner: File Mount > login form with random Faker data @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/17-component-runner-Compon-7dfdc-random-Faker-data-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "React Site Component: Todo Input",
+          "file": "18-react-site-component.spec.ts",
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "input should be focused on page load @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Input > input should be focused on page load @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-0f2ea-used-on-page-load-component-chromium/video.webm"
+            },
+            {
+              "title": "input should add a todo on Enter @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Input > input should add a todo on Enter @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-e201f-d-a-todo-on-Enter-component-chromium/video.webm"
+            },
+            {
+              "title": "input should not add empty todo @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Input > input should not add empty todo @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-e9360-ot-add-empty-todo-component-chromium/video.webm"
+            },
+            {
+              "title": "add multiple todos with Faker data @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Input > add multiple todos with Faker data @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-f28fd-s-with-Faker-data-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "React Site Component: Todo Item",
+          "file": "18-react-site-component.spec.ts",
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "should display 3 todo items @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Item > should display 3 todo items @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-c0b97-play-3-todo-items-component-chromium/video.webm"
+            },
+            {
+              "title": "checkbox should toggle todo completion @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Item > checkbox should toggle todo completion @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-1d50c-e-todo-completion-component-chromium/video.webm"
+            },
+            {
+              "title": "completed todo should have completed class @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Item > completed todo should have completed class @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-a85d1-e-completed-class-component-chromium/video.webm"
+            },
+            {
+              "title": "delete button should remove todo on hover @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Item > delete button should remove todo on hover @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-4bfda-ove-todo-on-hover-component-chromium/video.webm"
+            },
+            {
+              "title": "double-click to edit a todo @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Todo Item > double-click to edit a todo @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-a80eb-ck-to-edit-a-todo-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "React Site Component: Filter Bar",
+          "file": "18-react-site-component.spec.ts",
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "All filter shows all todos @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Filter Bar > All filter shows all todos @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-6bcd5-r-shows-all-todos-component-chromium/video.webm"
+            },
+            {
+              "title": "Active filter shows only active todos @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Filter Bar > Active filter shows only active todos @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-45c6d-only-active-todos-component-chromium/video.webm"
+            },
+            {
+              "title": "Completed filter shows only completed todos @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Filter Bar > Completed filter shows only completed todos @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-693a0-y-completed-todos-component-chromium/video.webm"
+            },
+            {
+              "title": "Clear completed button removes completed todos @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Filter Bar > Clear completed button removes completed todos @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-2f2f9-s-completed-todos-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "React Site Component: Items Counter",
+          "file": "18-react-site-component.spec.ts",
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "counter updates as todos are added @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Items Counter > counter updates as todos are added @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-30389-s-todos-are-added-component-chromium/video.webm"
+            },
+            {
+              "title": "counter decreases when todo is completed @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Items Counter > counter decreases when todo is completed @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-de108-todo-is-completed-component-chromium/video.webm"
+            },
+            {
+              "title": "counter increases when completed todo is unchecked @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Items Counter > counter increases when completed todo is unchecked @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-04438-todo-is-unchecked-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "React Site Component: Toggle All",
+          "file": "18-react-site-component.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "toggle all should complete all todos @component",
+              "fullTitle": "18-react-site-component.spec.ts > React Site Component: Toggle All > toggle all should complete all todos @component",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/18-react-site-component-Re-a87eb-omplete-all-todos-component-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Shared Library Demo",
+          "file": "19-shared-library.spec.ts",
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "use BasePage for common actions @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use BasePage for common actions @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/19-shared-library-Shared-L-903ab-e-for-common-actions-shared-chromium/video.webm"
+            },
+            {
+              "title": "Use data generators for random test data @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > Use data generators for random test data @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/19-shared-library-Shared-L-48392-for-random-test-data-shared-chromium/video.webm"
+            },
+            {
+              "title": "use ComponentRunner from shared library @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use ComponentRunner from shared library @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/19-shared-library-Shared-L-96800--from-shared-library-shared-chromium/video.webm"
+            },
+            {
+              "title": "use retry helper for flaky operations @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use retry helper for flaky operations @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/19-shared-library-Shared-L-7ae6b-for-flaky-operations-shared-chromium/video.webm"
+            },
+            {
+              "title": "use Logger for structured output @shared",
+              "fullTitle": "19-shared-library.spec.ts > Shared Library Demo > use Logger for structured output @shared",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/19-shared-library-Shared-L-a22df-or-structured-output-shared-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "example.spec.ts",
+          "file": "example.spec.ts",
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "has title",
+              "fullTitle": "example.spec.ts > has title",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/example-has-title-chromium/video.webm"
+            },
+            {
+              "title": "get started link",
+              "fullTitle": "example.spec.ts > get started link",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/example-get-started-link-chromium/video.webm"
+            }
+          ]
+        }
+      ],
+      "owner": "KunalDeore-KD",
+      "repo": "Playwright_with_TypeScript",
+      "repositoryId": "KunalDeore-KD/Playwright_with_TypeScript"
+    },
     {
       "schemaVersion": "1.0",
       "runId": "27908582460",
