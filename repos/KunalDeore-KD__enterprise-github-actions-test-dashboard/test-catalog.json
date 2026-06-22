@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T14:40:38.446Z",
+  "generatedAt": "2026-06-22T09:22:12.584Z",
   "suites": {
     "regression": [
       "playwright/tests/08-hooks-and-organization.spec.ts",
