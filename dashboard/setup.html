@@ -70,7 +70,21 @@
           <input id="setupBranch" name="defaultBranch" type="text" required placeholder="main" />
 
           <label for="setupTestDir">Playwright test directory</label>
-          <input id="setupTestDir" name="testDir" type="text" required placeholder="playwright/tests" />
+          <input id="setupTestDir" name="testDir" type="text" required placeholder="tests" />
+
+          <label for="setupProjectRoot">Local project root (optional)</label>
+          <input id="setupProjectRoot" name="projectRoot" type="text" autocomplete="off" placeholder="../my-playwright-project or absolute path" />
+          <p class="setup-note">Path on this machine to the Playwright project. Used for local generate and publishing into the report folder.</p>
+
+          <label for="setupTestResultsDir">Test results directory</label>
+          <input id="setupTestResultsDir" name="testResultsDir" type="text" placeholder="test-results" />
+
+          <label for="setupReportDir">HTML report directory</label>
+          <input id="setupReportDir" name="reportDir" type="text" placeholder="playwright-report" />
+
+          <label for="setupResultsFile">JSON results file</label>
+          <input id="setupResultsFile" name="resultsFile" type="text" placeholder="test-results/results.json" />
+          <p class="setup-note">A static dashboard view will be published to <code>{reportDir}/dashboard/</code> after each generate/sync.</p>
 
           <label class="setup-checkbox">
             <input id="setupScaffoldWorkflow" name="scaffoldWorkflow" type="checkbox" checked />

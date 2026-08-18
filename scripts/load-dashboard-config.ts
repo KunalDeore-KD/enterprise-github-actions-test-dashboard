@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 // CONFIG: was hardcoded, now reads from dashboard.config.json
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const REPO_ROOT = path.resolve(__dirname, '..');
+export const REPO_ROOT = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.join(REPO_ROOT, 'dashboard.config.json');
 
 export interface SuiteDefinition {
@@ -27,9 +27,14 @@ export interface RepositoryProfile {
   label?: string;
   workflow?: string;
   defaultBranch?: string;
+  projectRoot?: string;
   testDir?: string;
   browsers?: string[];
   resultsFile?: string;
+  testResultsDir?: string;
+  reportDir?: string;
+  artifactsDir?: string;
+  artifactNamePattern?: string;
   suites?: SuiteDefinition[];
 }
 
@@ -48,8 +53,13 @@ export interface DashboardConfigFile {
   };
   playwright: {
     browsers: string[];
+    projectRoot: string;
     testDir: string;
     resultsFile: string;
+    testResultsDir: string;
+    reportDir: string;
+    artifactsDir: string;
+    artifactNamePattern: string;
     suites: SuiteDefinition[];
   };
   dashboard: {
@@ -77,8 +87,13 @@ const DEFAULT_CONFIG: DashboardConfigFile = {
   },
   playwright: {
     browsers: ['chromium', 'firefox', 'webkit'],
-    testDir: 'playwright/tests',
+    projectRoot: '.',
+    testDir: 'tests',
     resultsFile: 'test-results/results.json',
+    testResultsDir: 'test-results',
+    reportDir: 'playwright-report',
+    artifactsDir: 'out',
+    artifactNamePattern: 'playwright-artifacts-{runNumber}',
     suites: [
       { label: 'All Test Cases', value: 'all' },
       { label: 'Regression', value: 'regression' },
@@ -102,6 +117,11 @@ const DEFAULT_CONFIG: DashboardConfigFile = {
     { label: 'Dev', value: 'dev' },
   ],
 };
+
+function normalizeRel(value: string | undefined, fallback: string): string {
+  const raw = String(value || fallback || '').trim() || fallback;
+  return raw.replace(/\\/g, '/').replace(/^\.\//, '').replace(/\/+$/, '') || fallback;
+}
 
 function readConfigFile(): DashboardConfigFile {
   if (!fs.existsSync(CONFIG_PATH)) {
@@ -173,6 +193,46 @@ export function buildRepositoryId(owner: string, repo: string): string {
   return `${String(owner).trim()}/${String(repo).trim()}`;
 }
 
+function mergeProfilePaths(
+  entry: Partial<RepositoryProfile>,
+  source: DashboardConfigFile
+): Pick<
+  RepositoryProfile,
+  | 'projectRoot'
+  | 'testDir'
+  | 'browsers'
+  | 'resultsFile'
+  | 'testResultsDir'
+  | 'reportDir'
+  | 'artifactsDir'
+  | 'artifactNamePattern'
+  | 'suites'
+> {
+  const resultsFile = entry.resultsFile || source.playwright.resultsFile;
+  const testResultsDir =
+    entry.testResultsDir ||
+    source.playwright.testResultsDir ||
+    path.posix.dirname(normalizeRel(resultsFile, 'test-results/results.json')) ||
+    'test-results';
+
+  return {
+    projectRoot: entry.projectRoot || source.playwright.projectRoot || '.',
+    testDir: entry.testDir || source.playwright.testDir,
+    browsers: entry.browsers?.length ? [...entry.browsers] : [...source.playwright.browsers],
+    resultsFile,
+    testResultsDir,
+    reportDir: entry.reportDir || source.playwright.reportDir || 'playwright-report',
+    artifactsDir: entry.artifactsDir || source.playwright.artifactsDir || 'out',
+    artifactNamePattern:
+      entry.artifactNamePattern ||
+      source.playwright.artifactNamePattern ||
+      'playwright-artifacts-{runNumber}',
+    suites: entry.suites?.length
+      ? entry.suites.map((suite) => ({ ...suite }))
+      : source.playwright.suites.map((suite) => ({ ...suite })),
+  };
+}
+
 export function getRepositoryProfiles(config?: DashboardConfigFile): RepositoryProfile[] {
   const source = config || loadDashboardConfig();
   const github = source.github || ({} as DashboardConfigFile['github']);
@@ -184,10 +244,7 @@ export function getRepositoryProfiles(config?: DashboardConfigFile): RepositoryP
       label: entry.label || entry.repo,
       workflow: entry.workflow || github.workflow,
       defaultBranch: entry.defaultBranch || github.defaultBranch,
-      testDir: entry.testDir || source.playwright.testDir,
-      browsers: entry.browsers?.length ? [...entry.browsers] : [...source.playwright.browsers],
-      resultsFile: entry.resultsFile || source.playwright.resultsFile,
-      suites: entry.suites?.length ? entry.suites.map((suite) => ({ ...suite })) : source.playwright.suites.map((suite) => ({ ...suite })),
+      ...mergeProfilePaths(entry, source),
     }));
   }
 
@@ -198,10 +255,7 @@ export function getRepositoryProfiles(config?: DashboardConfigFile): RepositoryP
     label: github.repo,
     workflow: github.workflow,
     defaultBranch: github.defaultBranch,
-    testDir: source.playwright.testDir,
-    browsers: [...source.playwright.browsers],
-    resultsFile: source.playwright.resultsFile,
-    suites: source.playwright.suites.map((suite) => ({ ...suite })),
+    ...mergeProfilePaths({}, source),
   }];
 }
 
@@ -258,6 +312,128 @@ export function getSuiteDefinitions(repositoryId?: string | null): SuiteDefiniti
   return getActiveRepositoryProfile(repositoryId).suites || loadDashboardConfig().playwright.suites;
 }
 
+function resolveAgainstRepoRoot(rawPath: string): string {
+  if (path.isAbsolute(rawPath)) return path.normalize(rawPath);
+  return path.resolve(REPO_ROOT, rawPath);
+}
+
+export function resolveProjectRoot(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const root = String(profile.projectRoot || loadDashboardConfig().playwright.projectRoot || '.').trim() || '.';
+  return resolveAgainstRepoRoot(root);
+}
+
+export function resolveTestResultsDir(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const config = loadDashboardConfig();
+  const resultsFile = normalizeRel(profile.resultsFile || config.playwright.resultsFile, 'test-results/results.json');
+  const testResultsDir = normalizeRel(
+    profile.testResultsDir || config.playwright.testResultsDir || path.posix.dirname(resultsFile),
+    'test-results'
+  );
+  if (path.isAbsolute(testResultsDir)) return path.normalize(testResultsDir);
+  return path.join(resolveProjectRoot(profile), testResultsDir);
+}
+
+export function resolveReportDir(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const reportDir = normalizeRel(
+    profile.reportDir || loadDashboardConfig().playwright.reportDir,
+    'playwright-report'
+  );
+  if (path.isAbsolute(reportDir)) return path.normalize(reportDir);
+  return path.join(resolveProjectRoot(profile), reportDir);
+}
+
+export function resolveResultsFile(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const resultsFile = normalizeRel(
+    profile.resultsFile || loadDashboardConfig().playwright.resultsFile,
+    'test-results/results.json'
+  );
+  if (path.isAbsolute(resultsFile)) return path.normalize(resultsFile);
+  return path.join(resolveProjectRoot(profile), resultsFile);
+}
+
+export function resolveArtifactsDir(profileOrId?: RepositoryProfile | string | null): string {
+  if (process.env.ARTIFACT_DOWNLOAD_DIR) {
+    return resolveAgainstRepoRoot(process.env.ARTIFACT_DOWNLOAD_DIR);
+  }
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const artifactsDir = normalizeRel(
+    profile.artifactsDir || loadDashboardConfig().playwright.artifactsDir,
+    'out'
+  );
+  // artifactsDir is relative to the dashboard tool repo, not projectRoot
+  return resolveAgainstRepoRoot(artifactsDir);
+}
+
+export function getArtifactNamePattern(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  return (
+    profile.artifactNamePattern ||
+    loadDashboardConfig().playwright.artifactNamePattern ||
+    'playwright-artifacts-{runNumber}'
+  );
+}
+
+export function formatArtifactName(
+  runNumber: string | number,
+  profileOrId?: RepositoryProfile | string | null
+): string {
+  return getArtifactNamePattern(profileOrId).replace(/\{runNumber\}/g, String(runNumber));
+}
+
+export function getRelativeTestResultsDir(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  const config = loadDashboardConfig();
+  const resultsFile = normalizeRel(profile.resultsFile || config.playwright.resultsFile, 'test-results/results.json');
+  return normalizeRel(
+    profile.testResultsDir || config.playwright.testResultsDir || path.posix.dirname(resultsFile),
+    'test-results'
+  );
+}
+
+export function getRelativeReportDir(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  return normalizeRel(profile.reportDir || loadDashboardConfig().playwright.reportDir, 'playwright-report');
+}
+
+export function getRelativeResultsFile(profileOrId?: RepositoryProfile | string | null): string {
+  const profile =
+    typeof profileOrId === 'object' && profileOrId
+      ? profileOrId
+      : getActiveRepositoryProfile(typeof profileOrId === 'string' ? profileOrId : undefined);
+  return normalizeRel(
+    profile.resultsFile || loadDashboardConfig().playwright.resultsFile,
+    'test-results/results.json'
+  );
+}
+
 export function getPublicConfig(repositoryId?: string | null) {
   const config = loadDashboardConfig();
   const active = getActiveRepositoryProfile(repositoryId);
@@ -279,8 +455,13 @@ export function getPublicConfig(repositoryId?: string | null) {
     playwright: {
       browsers: [...(active.browsers || config.playwright.browsers)],
       suites: (active.suites || config.playwright.suites).map((suite) => ({ ...suite })),
+      projectRoot: active.projectRoot || config.playwright.projectRoot,
       testDir: active.testDir || config.playwright.testDir,
       resultsFile: active.resultsFile || config.playwright.resultsFile,
+      testResultsDir: active.testResultsDir || config.playwright.testResultsDir,
+      reportDir: active.reportDir || config.playwright.reportDir,
+      artifactsDir: active.artifactsDir || config.playwright.artifactsDir,
+      artifactNamePattern: active.artifactNamePattern || config.playwright.artifactNamePattern,
     },
     dashboard: {
       title: config.dashboard.title,
@@ -291,21 +472,32 @@ export function getPublicConfig(repositoryId?: string | null) {
   };
 }
 
-export function getPlaywrightBaseDir(): string {
-  const testDir = loadDashboardConfig().playwright.testDir;
-  const parent = path.dirname(testDir);
-  if (parent !== '.' && fs.existsSync(path.join(REPO_ROOT, parent))) {
-    return parent;
-  }
-  return fs.existsSync(path.join(REPO_ROOT, 'playwright')) ? 'playwright' : '.';
+/** @deprecated Prefer resolveProjectRoot(); kept as thin wrapper for callers. */
+export function getPlaywrightBaseDir(repositoryId?: string | null): string {
+  const absolute = resolveProjectRoot(repositoryId);
+  const relative = path.relative(REPO_ROOT, absolute);
+  if (!relative || relative === '') return '.';
+  if (relative.startsWith('..') || path.isAbsolute(relative)) return absolute;
+  return relative.replace(/\\/g, '/');
 }
 
-export function getResultsGlob(): string {
-  const config = loadDashboardConfig();
-  const baseDir = getPlaywrightBaseDir();
-  const resultsFile = config.playwright.resultsFile.replace(/^\//, '');
-  if (baseDir === 'playwright') {
-    return `playwright/${resultsFile.replace(/^test-results\//, 'test-results/**/')}`;
+export function getResultsGlob(repositoryId?: string | null): string {
+  const profile = getActiveRepositoryProfile(repositoryId);
+  const projectRoot = resolveProjectRoot(profile);
+  const resultsFileAbs = resolveResultsFile(profile);
+  const testResultsDirAbs = resolveTestResultsDir(profile);
+  const resultsFileName = path.basename(resultsFileAbs);
+
+  // Prefer a recursive glob under the configured test results dir
+  const globFromResultsDir = path
+    .join(path.relative(REPO_ROOT, testResultsDirAbs) || '.', '**/' + resultsFileName)
+    .replace(/\\/g, '/');
+
+  // If project root is outside the dashboard repo, return an absolute-friendly pattern
+  // by using path relative to CWD expectation; callers should also try absolute file.
+  if (path.relative(REPO_ROOT, projectRoot).startsWith('..') || path.isAbsolute(profile.projectRoot || '')) {
+    return path.join(testResultsDirAbs, '**/' + resultsFileName).replace(/\\/g, '/');
   }
-  return resultsFile.replace(/^test-results\/results\.json$/, 'test-results/**/results.json');
+
+  return globFromResultsDir.replace(/^\.\//, '');
 }

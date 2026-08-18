@@ -4,6 +4,33 @@ This guide helps you get the test dashboard running on your computer.
 
 ---
 
+## If you received this project as a ZIP
+
+Someone shared `enterprise-github-actions-test-dashboard` with you (not via `git clone`). Do this:
+
+1. **Unzip** the folder somewhere convenient (example: `~/projects/enterprise-github-actions-test-dashboard`).
+2. **Do not commit secrets.** If the zip already contains a `.env` file, delete it or replace the token with **your own** GitHub PAT. Never reuse someone else’s token.
+3. Open Terminal, `cd` into the unzipped folder, then:
+   ```bash
+   npm install
+   npm run server:install
+   npm start
+   ```
+4. Open **http://localhost:3000/setup.html** and connect **your** Playwright GitHub repo + **your** PAT.
+5. On the Review step, set **Local project root** to the path of **your** Playwright project on this machine (example: `../my-playwright-tests`).
+6. Finish setup, then open **http://localhost:3000**.
+
+You still need:
+- Node.js (LTS) and npm
+- Access to the Playwright GitHub repo you want to monitor
+- A GitHub token with **repo** + **workflow** (add **contents:write** if you want the wizard to upload CI files)
+
+This dashboard is a tool that points at an external Playwright project — it does not contain your tests inside the zip.
+
+Then continue from **Step 3** below (or use the full walkthrough if anything fails).
+
+---
+
 ## Before you start
 
 Make sure you have:
@@ -50,9 +77,12 @@ Still in the project folder, run:
 
 ```bash
 npm install
+npm run server:install
 ```
 
 Wait until it finishes (may take 1–2 minutes). You only need to do this once, or again after pulling big updates.
+
+`server:install` installs the Express API dependencies used for Trigger Run and the setup wizard.
 
 ---
 
@@ -81,6 +111,8 @@ If the dashboard has not been configured yet, visiting **http://localhost:3000**
    - Playwright config path
    - test directory
    - workflow file
+   - **local project root** (path on this machine to your Playwright project)
+   - **test results dir** / **report dir** / **JSON results file**
 
 5. Click **Save and finish**.
 
@@ -90,20 +122,66 @@ The wizard will:
 - Update `dashboard.config.json` (and add the repo to `github.repositories` when using multiple Playwright repos)
 - Write your token to `.env`
 - Regenerate `dashboard/config.js`
-- Optionally scaffold a Playwright workflow on the target repo
+- Optionally scaffold a Playwright workflow and dashboard CI files on the target repo
+
+A static dashboard view is published into `{reportDir}/dashboard/` after generate/sync (beside Playwright's HTML report).
 
 ### Multiple Playwright repositories
 
 You can connect more than one GitHub repo with Playwright tests. Each entry under `github.repositories` in `dashboard.config.json` keeps its own:
 
 - workflow + default branch
-- test directory and suite definitions
+- `projectRoot`, `testDir`, `testResultsDir`, `reportDir`, `resultsFile`
+- suite definitions
 - run history cache under `dashboard/repos/<owner>__<repo>/`
 - test catalog fetched from that repo’s `dashboard-data` branch
 
 Use the **Repository** dropdown in the dashboard header to switch repos. The active choice is remembered in your browser.
 
 Re-run setup for each additional repo, or edit `dashboard.config.json` manually and run `npm run config:generate`.
+
+**Example — two Playwright repos:**
+
+```json
+{
+  "github": {
+    "activeRepositoryId": "acme/checkout-e2e",
+    "repositories": [
+      {
+        "id": "acme/checkout-e2e",
+        "owner": "acme",
+        "repo": "checkout-e2e",
+        "label": "Checkout E2E",
+        "workflow": "playwright.yml",
+        "defaultBranch": "main",
+        "projectRoot": "../checkout-e2e",
+        "testDir": "tests",
+        "testResultsDir": "test-results",
+        "reportDir": "playwright-report",
+        "resultsFile": "test-results/results.json",
+        "suites": [
+          { "label": "All Test Cases", "value": "all" },
+          { "label": "Smoke", "value": "smoke", "pattern": "@smoke" },
+          { "label": "Regression", "value": "regression", "pattern": "tests/regression/**/*.spec.ts" }
+        ]
+      },
+      {
+        "id": "acme/admin-e2e",
+        "owner": "acme",
+        "repo": "admin-e2e",
+        "label": "Admin E2E",
+        "projectRoot": "../admin-e2e",
+        "testDir": "tests",
+        "resultsFile": "test-results/results.json",
+        "suites": [
+          { "label": "All Test Cases", "value": "all" },
+          { "label": "Smoke", "value": "smoke", "pattern": "tests/smoke/**/*.spec.ts" }
+        ]
+      }
+    ]
+  }
+}
+```
 
 6. Open the dashboard at **http://localhost:3000**
 
@@ -132,7 +210,11 @@ Open **`dashboard.config.json`** in the project root.
 | Your repo name | `github.repo` | `"my-playwright-tests"` |
 | Your main branch name | `github.defaultBranch` | `"main"` |
 | Workflow file name | `github.workflow` | `"playwright.yml"` |
-| Playwright test directory | `playwright.testDir` | `"playwright/tests"` |
+| Local Playwright project path | `playwright.projectRoot` | `"../my-playwright-tests"` |
+| Playwright test directory | `playwright.testDir` | `"tests"` |
+| Test results / videos dir | `playwright.testResultsDir` | `"test-results"` |
+| HTML report dir | `playwright.reportDir` | `"playwright-report"` |
+| JSON reporter file | `playwright.resultsFile` | `"test-results/results.json"` |
 
 **Optional — test suites in the dropdown**
 
@@ -179,9 +261,29 @@ Your target Playwright repo needs:
 
 1. A workflow with `workflow_dispatch` (`.github/workflows/playwright.yml`)
 2. Dashboard CI files at the repo root: `dashboard.config.json`, `scripts/`, and `tsconfig.scripts.json`
-3. Dev dependencies for CI scripts (`tsx`, `glob`, etc.) — installed automatically in CI when `dashboard.config.json` is present; do not add them to `package.json` manually
+3. A **JSON reporter** in `playwright.config.ts` (the wizard can patch this). Minimum:
 
-The setup wizard can upload all of this automatically when **Upload dashboard CI files** is checked and your token has **contents:write**.
+```ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+  reporter: [
+    ['list'],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+  ],
+  use: {
+    video: 'on', // optional but recommended for dashboard playback
+  },
+});
+```
+
+Match `outputFile` / `outputFolder` / `testDir` to the values you set in the dashboard config.
+
+4. Dev dependencies for CI scripts (`tsx`, `glob`, etc.) — installed automatically in CI when `dashboard.config.json` is present; do not add them to `package.json` manually
+
+The setup wizard can upload workflow + CI files automatically when **Upload dashboard CI files** is checked and your token has **contents:write**.
 
 To push integration files again without re-running the full wizard:
 
@@ -231,15 +333,62 @@ You should see the **Test Execution Dashboard**.
 
 ## Where to put your Playwright tests
 
-Put test files in the target repo’s Playwright test directory (default):
+Tests live in **your external Playwright project**, not in this dashboard repo.
+
+Default layout in that project:
 
 ```
-playwright/tests/
+tests/                  # or whatever playwright.testDir is
+  smoke/                # nested folders are fine
+  regression/
+test-results/           # JSON reporter + videos (testResultsDir)
+playwright-report/      # HTML report (reportDir)
+  dashboard/            # static drop-in published by this tool
 ```
 
-Example: `playwright/tests/login.spec.ts`
+Example: `tests/login.spec.ts` or `tests/smoke/login.spec.ts`
 
-Your developer or automation lead configures browsers and tags; QA usually only adds or updates files in `playwright/tests/`.
+Your automation lead configures browsers and tags; QA usually only adds or updates files under the configured `testDir`.
+
+### Nested folders (smoke / regression / …)
+
+Yes — nested folders under `tests/` are covered.
+
+Discovery uses a recursive glob (`tests/**/*.spec.ts`), so files in `tests/smoke/` and `tests/regression/` are found automatically when you choose **All Test Cases**.
+
+To expose them as separate suite options in **Trigger Run**, set `pattern` in `playwright.suites` (or per-repo `suites`) to either:
+
+| Approach | Example `pattern` | When to use |
+|----------|-------------------|-------------|
+| Folder glob | `"tests/smoke/**/*.spec.ts"` | Specs live in folders named by suite |
+| Tag | `"@smoke"` | Specs are tagged, e.g. `test('login @smoke', …)` |
+| Mixed files | `"tests/smoke/a.spec.ts,tests/api/b.spec.ts"` | Hand-picked files |
+
+Example:
+
+```json
+"suites": [
+  { "label": "All Test Cases", "value": "all" },
+  { "label": "Smoke", "value": "smoke", "pattern": "tests/smoke/**/*.spec.ts" },
+  { "label": "Regression", "value": "regression", "pattern": "tests/regression/**/*.spec.ts" }
+]
+```
+
+### How data gets into the dashboard
+
+Two modes (you can use both):
+
+| Mode | What you do | What happens |
+|------|-------------|--------------|
+| **GitHub Trigger Run** | Click **Trigger Run** in the UI | API dispatches Actions → downloads artifacts into `artifactsDir` → refreshes dashboard JSON |
+| **Local generate** | Run Playwright in the external project, then from this repo run the commands below | Reads configured `testResultsDir` / `resultsFile` on disk and updates the UI |
+
+```bash
+npm run dashboard:generate
+npm run dashboard:publish
+```
+
+`dashboard:publish` copies a static view into `{projectRoot}/{reportDir}/dashboard/`. Re-run it after Playwright’s HTML reporter (that step may wipe `playwright-report/`).
 
 ---
 

@@ -22,6 +22,7 @@ window.DASHBOARD_CONFIG = {
         "label": "Playwright TypeScript",
         "workflow": "playwright.yml",
         "defaultBranch": "test",
+        "projectRoot": "../Playwright_with_TypeScript",
         "testDir": "tests",
         "browsers": [
           "chromium",
@@ -29,6 +30,10 @@ window.DASHBOARD_CONFIG = {
           "webkit"
         ],
         "resultsFile": "test-results/results.json",
+        "testResultsDir": "test-results",
+        "reportDir": "playwright-report",
+        "artifactsDir": "out",
+        "artifactNamePattern": "playwright-artifacts-{runNumber}",
         "suites": [
           {
             "label": "All Test Cases",
@@ -58,13 +63,18 @@ window.DASHBOARD_CONFIG = {
         "label": "Dashboard Demo",
         "workflow": "playwright.yml",
         "defaultBranch": "main",
-        "testDir": "playwright/tests",
+        "projectRoot": "../Playwright_with_TypeScript",
+        "testDir": "tests",
         "browsers": [
           "chromium",
           "firefox",
           "webkit"
         ],
         "resultsFile": "test-results/results.json",
+        "testResultsDir": "test-results",
+        "reportDir": "playwright-report",
+        "artifactsDir": "out",
+        "artifactNamePattern": "playwright-artifacts-{runNumber}",
         "suites": [
           {
             "label": "All Test Cases",
@@ -83,7 +93,7 @@ window.DASHBOARD_CONFIG = {
           {
             "label": "API",
             "value": "api",
-            "pattern": "playwright/tests/10-api-ui-hybrid.spec.ts,playwright/tests/12-api-snapshot.spec.ts"
+            "pattern": "tests/10-api-ui-hybrid.spec.ts,tests/12-api-snapshot.spec.ts"
           }
         ]
       }
@@ -116,8 +126,13 @@ window.DASHBOARD_CONFIG = {
         "pattern": "tests/10-api-ui-hybrid.spec.ts,tests/12-api-snapshot.spec.ts"
       }
     ],
+    "projectRoot": "../Playwright_with_TypeScript",
     "testDir": "tests",
-    "resultsFile": "test-results/results.json"
+    "resultsFile": "test-results/results.json",
+    "testResultsDir": "test-results",
+    "reportDir": "playwright-report",
+    "artifactsDir": "out",
+    "artifactNamePattern": "playwright-artifacts-{runNumber}"
   },
   "dashboard": {
     "title": "Test Execution Dashboard",

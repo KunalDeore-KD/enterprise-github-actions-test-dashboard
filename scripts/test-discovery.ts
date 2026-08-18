@@ -5,12 +5,11 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import {
   getActiveRepositoryProfile,
-  getPlaywrightBaseDir,
   getSuiteDefinitions,
   loadDashboardConfig,
+  resolveProjectRoot,
+  REPO_ROOT,
 } from './load-dashboard-config';
-
-const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function splitSuitePattern(pattern: string): string[] {
   return String(pattern)
@@ -24,38 +23,38 @@ function parseRepositoryIdArg(): string | undefined {
   return index >= 0 ? process.argv[index + 1] : undefined;
 }
 
-function resolvePlaywrightBaseDir(testDir: string): string {
-  const parent = path.dirname(testDir);
-  if (parent !== '.' && fs.existsSync(path.join(REPO_ROOT, parent))) {
-    return parent;
-  }
-  return fs.existsSync(path.join(REPO_ROOT, 'playwright')) ? 'playwright' : '.';
+function parseProjectRootArg(): string | undefined {
+  const index = process.argv.indexOf('--project-root');
+  return index >= 0 ? process.argv[index + 1] : undefined;
 }
 
-function resolveDiscoveryContext(repositoryId?: string) {
-  if (!repositoryId) {
-    loadDashboardConfig();
-    const testDir = loadDashboardConfig().playwright.testDir;
-    return {
-      baseDir: getPlaywrightBaseDir(),
-      testDir,
-      suiteDefs: getSuiteDefinitions().filter((suite) => suite.value !== 'all'),
-      outputPaths: [
-        path.join(REPO_ROOT, 'dashboard', 'test-catalog.json'),
-        path.join(REPO_ROOT, 'test-catalog.json'),
-      ],
-    };
-  }
-
+function resolveDiscoveryContext(repositoryId?: string, projectRootOverride?: string) {
   const profile = getActiveRepositoryProfile(repositoryId);
   const testDir = profile.testDir || loadDashboardConfig().playwright.testDir;
+  const projectRoot = projectRootOverride
+    ? path.resolve(projectRootOverride)
+    : resolveProjectRoot(profile);
   const storageKey = `${profile.owner}__${profile.repo}`;
+  const outputPaths = repositoryId
+    ? [path.join(REPO_ROOT, 'dashboard', 'repos', storageKey, 'test-catalog.json')]
+    : [
+        path.join(REPO_ROOT, 'dashboard', 'test-catalog.json'),
+        path.join(REPO_ROOT, 'test-catalog.json'),
+      ];
+
   return {
-    baseDir: resolvePlaywrightBaseDir(testDir),
+    baseDir: projectRoot,
     testDir,
-    suiteDefs: (profile.suites || getSuiteDefinitions()).filter((suite) => suite.value !== 'all'),
-    outputPaths: [path.join(REPO_ROOT, 'dashboard', 'repos', storageKey, 'test-catalog.json')],
+    suiteDefs: (profile.suites || getSuiteDefinitions(repositoryId)).filter(
+      (suite) => suite.value !== 'all'
+    ),
+    outputPaths,
+    catalogPrefix: normalizeRelPath(testDir),
   };
+}
+
+function normalizeRelPath(value: string): string {
+  return String(value || '').replace(/\\/g, '/').replace(/^\.\//, '').replace(/\/+$/, '');
 }
 
 function matchesTag(fileContents: string, tag: string): boolean {
@@ -105,29 +104,54 @@ function resolveSuitePattern(suiteValue: string, pattern?: string): string {
   return `@${suiteValue}`;
 }
 
-function toCatalogPath(baseDir: string, file: string): string {
-  if (baseDir === '.') {
-    return file.replace(/^\.\//, '');
+function toCatalogPath(catalogPrefix: string, file: string): string {
+  const normalizedFile = file.replace(/\\/g, '/').replace(/^\.\//, '');
+  if (!catalogPrefix || catalogPrefix === '.') {
+    return normalizedFile;
   }
-  return `${baseDir}/${file}`.replace(/\\/g, '/');
+  if (normalizedFile.startsWith(`${catalogPrefix}/`)) {
+    return normalizedFile;
+  }
+  // file is usually relative to project root under testDir basename
+  if (normalizedFile.startsWith('tests/') || !normalizedFile.includes('/')) {
+    return `${catalogPrefix}/${normalizedFile}`.replace(/\/+/g, '/');
+  }
+  return `${catalogPrefix}/${path.posix.basename(path.posix.dirname(normalizedFile)) === path.posix.basename(catalogPrefix) ? normalizedFile.split('/').slice(1).join('/') : normalizedFile}`.replace(
+    /\/+/g,
+    '/'
+  );
 }
 
-function normalizePatternForBaseDir(baseDir: string, segment: string): string {
-  if (baseDir === 'playwright' && segment.startsWith('playwright/')) {
-    return segment.replace(/^playwright\//, '');
+function buildCatalogPath(catalogPrefix: string, relativeFromProject: string): string {
+  const file = relativeFromProject.replace(/\\/g, '/').replace(/^\.\//, '');
+  if (!catalogPrefix || catalogPrefix === '.') return file;
+  if (file.startsWith(`${catalogPrefix}/`)) return file;
+  // glob cwd is project root; test files live under testDir
+  return file;
+}
+
+function normalizePatternForBaseDir(testDir: string, segment: string): string {
+  const normalized = segment.replace(/\\/g, '/');
+  const prefix = normalizeRelPath(testDir);
+  if (prefix && normalized.startsWith(`${prefix}/`)) {
+    return normalized;
   }
-  if (baseDir !== '.' && segment.startsWith(`${baseDir}/`)) {
-    return segment.slice(baseDir.length + 1);
+  if (normalized.startsWith('playwright/')) {
+    return normalized.replace(/^playwright\//, '');
   }
-  return segment;
+  return normalized;
 }
 
 async function main() {
   const repositoryId = parseRepositoryIdArg();
-  const { baseDir, testDir, suiteDefs, outputPaths } = resolveDiscoveryContext(repositoryId);
-  const testGlob = testDir.includes('/')
-    ? `${path.basename(testDir)}/**/*.spec.ts`
-    : 'tests/**/*.spec.ts';
+  const projectRootOverride = parseProjectRootArg();
+  const { baseDir, testDir, suiteDefs, outputPaths, catalogPrefix } = resolveDiscoveryContext(
+    repositoryId,
+    projectRootOverride
+  );
+
+  const relativeTestDir = normalizeRelPath(testDir);
+  const testGlob = `${relativeTestDir}/**/*.spec.ts`;
 
   const catalog: Record<string, string[]> = {};
   const allTests = new Set<string>();
@@ -148,22 +172,22 @@ async function main() {
         for (const file of allTestFiles) {
           const contents = readFileContents(baseDir, file);
           if (matchesTag(contents, tag)) {
-            files.add(toCatalogPath(baseDir, file));
+            files.add(buildCatalogPath(catalogPrefix, file));
           }
         }
         continue;
       }
 
-      const normalizedPattern = normalizePatternForBaseDir(baseDir, segment);
+      const normalizedPattern = normalizePatternForBaseDir(testDir, segment);
       const matched = await glob(normalizedPattern, { nodir: true, cwd: baseDir });
-      matched.forEach((file) => files.add(toCatalogPath(baseDir, file)));
+      matched.forEach((file) => files.add(buildCatalogPath(catalogPrefix, file)));
     }
 
     if (files.size === 0 && !suiteDef.pattern) {
       for (const file of allTestFiles) {
         const contents = readFileContents(baseDir, file);
         if (matchesTag(contents, suiteName) || matchesValueInTitle(contents, suiteName)) {
-          files.add(toCatalogPath(baseDir, file));
+          files.add(buildCatalogPath(catalogPrefix, file));
         }
       }
     }
@@ -171,7 +195,7 @@ async function main() {
     catalog[suiteName] = Array.from(files).sort();
     catalog[suiteName].forEach((f) => allTests.add(f));
   }
-  allTestFiles.forEach((f) => allTests.add(toCatalogPath(baseDir, f)));
+  allTestFiles.forEach((f) => allTests.add(buildCatalogPath(catalogPrefix, f)));
 
   let totalTestCases = 0;
   const suiteTestCaseCounts: Record<string, number> = {};
@@ -202,10 +226,22 @@ async function main() {
       const suiteFiles = catalog[suiteName] || [];
       let count = 0;
       for (const file of suiteFiles) {
-        const relativeFile = file.startsWith(`${baseDir}/`)
-          ? file.slice(baseDir.length + 1)
+        const relativeFile = file.startsWith(`${catalogPrefix}/`)
+          ? file
           : file;
-        count += countTestsInFile(readFileContents(baseDir, relativeFile));
+        const diskPath = relativeFile.startsWith(catalogPrefix)
+          ? relativeFile
+          : relativeFile;
+        // Files on disk are relative to project root
+        const fromProject = allTestFiles.find(
+          (candidate) =>
+            candidate === diskPath ||
+            candidate.endsWith(path.posix.basename(diskPath)) ||
+            buildCatalogPath(catalogPrefix, candidate) === file
+        );
+        if (fromProject) {
+          count += countTestsInFile(readFileContents(baseDir, fromProject));
+        }
       }
       suiteTestCaseCounts[suiteName] = count;
       continue;

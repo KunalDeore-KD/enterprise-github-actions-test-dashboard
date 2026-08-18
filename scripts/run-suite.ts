@@ -3,9 +3,10 @@ import { spawnSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
-  getPlaywrightBaseDir,
+  getActiveRepositoryProfile,
   getSuiteDefinitions,
   loadDashboardConfig,
+  resolveProjectRoot,
 } from './load-dashboard-config';
 
 function parseArgs(argv: string[]) {
@@ -17,6 +18,7 @@ function parseArgs(argv: string[]) {
     else if (token === '--browsers') args.browsers = argv[++i] || '';
     else if (token === '--install-browsers') args.installBrowsers = 'true';
     else if (token === '--log') args.log = argv[++i] || '';
+    else if (token === '--repository-id') args.repositoryId = argv[++i] || '';
   }
   return args;
 }
@@ -28,24 +30,23 @@ function splitPattern(pattern: string): string[] {
     .filter(Boolean);
 }
 
-function normalizeTestFiles(selected: string, baseDir: string): string[] {
-  const testDir = loadDashboardConfig().playwright.testDir;
-  const prefix = baseDir === 'playwright' ? 'playwright/' : '';
+function normalizeTestFiles(selected: string, testDir: string): string[] {
+  const prefix = testDir.replace(/\\/g, '/').replace(/\/+$/, '');
   return selected
     .split(',')
     .map((value) => value.trim())
     .filter(Boolean)
-    .map((file) => file.replace(new RegExp(`^${prefix}`), '').replace(/^playwright\//, ''))
+    .map((file) => file.replace(/^playwright\//, ''))
     .map((file) => {
+      if (prefix && file.startsWith(`${prefix}/`)) return file;
       if (file.startsWith('tests/')) return file;
-      if (testDir.endsWith(file)) return file;
       return file;
     });
 }
 
-function buildPlaywrightArgs(suite: string, selected: string, baseDir: string): string[] {
+function buildPlaywrightArgs(suite: string, selected: string, testDir: string): string[] {
   if (selected.trim()) {
-    return normalizeTestFiles(selected, baseDir);
+    return normalizeTestFiles(selected, testDir);
   }
 
   const normalizedSuite = String(suite || 'all').trim().toLowerCase();
@@ -65,21 +66,14 @@ function buildPlaywrightArgs(suite: string, selected: string, baseDir: string): 
 
   const fileSegments = segments.filter((segment) => !segment.startsWith('@'));
   if (fileSegments.length > 0) {
-    return fileSegments.map((segment) => {
-      if (baseDir === 'playwright' && segment.startsWith('playwright/')) {
-        return segment.replace(/^playwright\//, '');
-      }
-      return segment;
-    });
+    return fileSegments.map((segment) => segment.replace(/^playwright\//, ''));
   }
 
   return ['--grep', `@${normalizedSuite}`];
 }
 
-function buildBrowserProjectArgs(browsersRaw: string): string[] {
-  const configured = loadDashboardConfig().playwright.browsers.map((browser) =>
-    String(browser).trim().toLowerCase()
-  );
+function buildBrowserProjectArgs(browsersRaw: string, browsers: string[]): string[] {
+  const configured = browsers.map((browser) => String(browser).trim().toLowerCase());
   const requested = String(browsersRaw || process.env.TEST_BROWSERS || '')
     .split(',')
     .map((value) => value.trim().toLowerCase())
@@ -117,14 +111,16 @@ function runCommand(command: string, args: string[], cwd: string, logPath?: stri
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
+  const profile = getActiveRepositoryProfile(args.repositoryId || undefined);
   const config = loadDashboardConfig();
-  const baseDir = getPlaywrightBaseDir();
-  const cwd = path.resolve(process.cwd(), baseDir);
+  const cwd = resolveProjectRoot(profile);
+  const testDir = profile.testDir || config.playwright.testDir;
+  const browsers = profile.browsers || config.playwright.browsers;
 
   if (args.installBrowsers === 'true') {
     const status = runCommand(
       'npx',
-      ['playwright', 'install', '--with-deps', ...config.playwright.browsers],
+      ['playwright', 'install', '--with-deps', ...browsers],
       cwd
     );
     process.exit(status);
@@ -133,8 +129,12 @@ function main() {
   const logPath = args.log || process.env.WORKFLOW_RUN_LOG_PATH;
   const playwrightArgs = [
     'test',
-    ...buildPlaywrightArgs(args.suite || process.env.TEST_SUITE_FILTER || '', args.selected || process.env.TEST_SELECTED_TESTS || '', baseDir),
-    ...buildBrowserProjectArgs(args.browsers || ''),
+    ...buildPlaywrightArgs(
+      args.suite || process.env.TEST_SUITE_FILTER || '',
+      args.selected || process.env.TEST_SELECTED_TESTS || '',
+      testDir
+    ),
+    ...buildBrowserProjectArgs(args.browsers || '', browsers),
   ];
   const status = runCommand('npx', ['playwright', ...playwrightArgs], cwd, logPath);
   process.exit(status);

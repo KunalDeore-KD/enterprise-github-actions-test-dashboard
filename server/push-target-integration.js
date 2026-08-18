@@ -87,7 +87,7 @@ async function fetchRepositoryContent(owner, repo, filePath, tokenValue, ref) {
 async function main() {
   const config = loadDashboardConfig();
   const { owner, repo, workflow, defaultBranch } = config.github;
-  const testDir = config.playwright.testDir;
+  const pw = config.playwright || {};
 
   console.log(`Uploading dashboard CI integration to ${owner}/${repo} (${defaultBranch})...`);
 
@@ -97,7 +97,10 @@ async function main() {
     token,
     branch: defaultBranch,
     repoRoot,
-    testDir,
+    testDir: pw.testDir,
+    testResultsDir: pw.testResultsDir,
+    reportDir: pw.reportDir,
+    resultsFile: pw.resultsFile,
     workflow,
     templateConfig: config,
     githubRequest,

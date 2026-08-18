@@ -59,29 +59,37 @@ jobs:
         id: layout
         run: |
           set -euo pipefail
-          if [ -f dashboard.config.json ]; then
-            PLAYWRIGHT_BASE=$(node - <<'NODE'
+          node <<'NODE'
           const fs = require('fs');
           const path = require('path');
-          const config = JSON.parse(fs.readFileSync('dashboard.config.json', 'utf8'));
-          const testDir = config.playwright?.testDir || 'playwright/tests';
-          const parent = path.dirname(testDir);
-          if (parent !== '.' && fs.existsSync(path.join(parent, 'package.json'))) {
-            process.stdout.write(parent);
-          } else if (fs.existsSync('playwright/package.json')) {
-            process.stdout.write('playwright');
-          } else {
-            process.stdout.write('.');
+          const out = process.env.GITHUB_OUTPUT;
+          let playwrightBase = '.';
+          let testResultsDir = 'test-results';
+          let reportDir = 'playwright-report';
+          let artifactPrefix = 'playwright-artifacts-';
+          if (fs.existsSync('dashboard.config.json')) {
+            const config = JSON.parse(fs.readFileSync('dashboard.config.json', 'utf8'));
+            const pw = config.playwright || {};
+            const projectRoot = pw.projectRoot || '.';
+            const testDir = pw.testDir || 'tests';
+            testResultsDir = pw.testResultsDir || path.dirname(pw.resultsFile || 'test-results/results.json') || 'test-results';
+            reportDir = pw.reportDir || 'playwright-report';
+            artifactPrefix = String(pw.artifactNamePattern || 'playwright-artifacts-{runNumber}').split('{runNumber}')[0] || 'playwright-artifacts-';
+            if (projectRoot === '.' || projectRoot === './') {
+              const parent = path.dirname(testDir);
+              if (parent !== '.' && fs.existsSync(path.join(parent, 'package.json'))) {
+                playwrightBase = parent;
+              }
+            } else if (fs.existsSync(path.join(projectRoot, 'package.json'))) {
+              playwrightBase = projectRoot;
+            }
           }
+          fs.appendFileSync(out, `playwright_base=${playwrightBase}\n`);
+          fs.appendFileSync(out, `test_results_dir=${testResultsDir}\n`);
+          fs.appendFileSync(out, `report_dir=${reportDir}\n`);
+          fs.appendFileSync(out, `artifact_name_prefix=${artifactPrefix}\n`);
+          console.log(`Detected Playwright base=${playwrightBase} results=${testResultsDir} report=${reportDir}`);
           NODE
-            )
-          elif [ -f playwright/package.json ]; then
-            PLAYWRIGHT_BASE="playwright"
-          else
-            PLAYWRIGHT_BASE="."
-          fi
-          echo "playwright_base=$PLAYWRIGHT_BASE" >> "$GITHUB_OUTPUT"
-          echo "Detected Playwright base directory: $PLAYWRIGHT_BASE"
 
       - name: Install dependencies
         run: |
@@ -114,7 +122,15 @@ jobs:
         run: |
           set -o pipefail
           BASE="${{ steps.layout.outputs.playwright_base }}"
-          rm -rf "${BASE}/test-results" "${BASE}/playwright-report"
+          RESULTS_DIR="${{ steps.layout.outputs.test_results_dir }}"
+          REPORT_DIR="${{ steps.layout.outputs.report_dir }}"
+          # Clean configured output dirs (relative to project base when nested)
+          if [ "$BASE" = "." ]; then
+            rm -rf "${RESULTS_DIR}" "${REPORT_DIR}"
+          else
+            rm -rf "${BASE}/${RESULTS_DIR}" "${BASE}/${REPORT_DIR}"
+            rm -rf "${RESULTS_DIR}" "${REPORT_DIR}"
+          fi
           mkdir -p "${GITHUB_WORKSPACE}/.tmp"
           LOG="${GITHUB_WORKSPACE}/.tmp/playwright_run.log"
           npx tsx scripts/run-suite.ts --suite "${{ inputs.testSuite }}" --selected "${{ inputs.selectedTests }}" --browsers "${{ inputs.browsers }}" --log "$LOG"
@@ -151,6 +167,12 @@ jobs:
           ARTIFACT_URL: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
           ALLURE_REPORT_URL: ''
 
+      # Publish static dashboard into reportDir/dashboard/ AFTER HTML report exists.
+      # Playwright may wipe reportDir on each run — always re-publish here.
+      - name: Publish dashboard into report folder
+        if: always()
+        run: npx tsx scripts/publish-dashboard-to-report.ts
+
       - name: Upload Playwright artifacts
         uses: actions/upload-artifact@v4
         if: always()
@@ -158,6 +180,8 @@ jobs:
           name: playwright-artifacts-${{ github.run_number }}
           path: |
             .tmp/playwright_run.log
+            ${{ steps.layout.outputs.report_dir }}/**
+            ${{ steps.layout.outputs.test_results_dir }}/**
             **/playwright-report/**
             **/test-results/**
             test-catalog.json

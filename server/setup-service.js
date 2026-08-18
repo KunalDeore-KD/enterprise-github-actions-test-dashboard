@@ -365,6 +365,21 @@ function writeDashboardConfig(repoRoot, updates) {
     if (profile.resultsFile) {
       nextConfig.playwright.resultsFile = profile.resultsFile;
     }
+    if (profile.projectRoot) {
+      nextConfig.playwright.projectRoot = profile.projectRoot;
+    }
+    if (profile.testResultsDir) {
+      nextConfig.playwright.testResultsDir = profile.testResultsDir;
+    }
+    if (profile.reportDir) {
+      nextConfig.playwright.reportDir = profile.reportDir;
+    }
+    if (profile.artifactsDir) {
+      nextConfig.playwright.artifactsDir = profile.artifactsDir;
+    }
+    if (profile.artifactNamePattern) {
+      nextConfig.playwright.artifactNamePattern = profile.artifactNamePattern;
+    }
   }
 
   fs.writeFileSync(configPath, `${JSON.stringify(nextConfig, null, 2)}\n`);
@@ -552,6 +567,10 @@ export async function runPreflight({ repoUrl, token }) {
     defaultBranch,
     playwrightConfigPath: configPath,
     testDir,
+    projectRoot: '',
+    testResultsDir: 'test-results',
+    reportDir: 'playwright-report',
+    resultsFile: 'test-results/results.json',
     workflow: preferredWorkflow || DEFAULT_WORKFLOW_FILE,
     workflowDispatch: Boolean(preferredWorkflow),
     workflowCandidates,
@@ -572,6 +591,10 @@ export async function runComplete({
   workflow,
   defaultBranch,
   testDir,
+  projectRoot = '',
+  testResultsDir = 'test-results',
+  reportDir = 'playwright-report',
+  resultsFile = 'test-results/results.json',
   scaffoldWorkflow = true,
   scaffoldIntegration = true,
   repoRoot,
@@ -582,15 +605,41 @@ export async function runComplete({
   const resolvedBranch = String(defaultBranch || repository.default_branch || 'main').trim();
   const resolvedWorkflow = String(workflow || DEFAULT_WORKFLOW_FILE).trim();
   const detection = await detectPlaywrightConfig(owner, repo, token, resolvedBranch);
-  const resolvedTestDir = String(testDir || detection.testDir || 'playwright/tests').trim();
+  const resolvedTestDir = String(testDir || detection.testDir || 'tests').trim();
+  const resolvedTestResultsDir = String(testResultsDir || 'test-results').trim() || 'test-results';
+  const resolvedReportDir = String(reportDir || 'playwright-report').trim() || 'playwright-report';
+  const resolvedResultsFile = String(resultsFile || 'test-results/results.json').trim() || 'test-results/results.json';
+  const resolvedProjectRoot = String(projectRoot || '').trim();
 
   const warnings = [];
+  if (resolvedProjectRoot) {
+    const absoluteProjectRoot = path.isAbsolute(resolvedProjectRoot)
+      ? resolvedProjectRoot
+      : path.resolve(repoRoot, resolvedProjectRoot);
+    if (!fs.existsSync(absoluteProjectRoot)) {
+      warnings.push(
+        `Local project root does not exist yet (${resolvedProjectRoot}). GitHub sync will still work; local generate/publish will work once the path is available.`
+      );
+    }
+  }
+
   let scaffolded = false;
   let scaffoldMessage = null;
   let integrationUploaded = [];
   let integrationMessage = null;
 
   const { config: templateConfig } = readDashboardConfig(repoRoot);
+
+  const pathFields = {
+    projectRoot: resolvedProjectRoot || templateConfig.playwright?.projectRoot || '.',
+    testDir: resolvedTestDir,
+    testResultsDir: resolvedTestResultsDir,
+    reportDir: resolvedReportDir,
+    resultsFile: resolvedResultsFile,
+    artifactsDir: templateConfig.playwright?.artifactsDir || 'out',
+    artifactNamePattern:
+      templateConfig.playwright?.artifactNamePattern || 'playwright-artifacts-{runNumber}',
+  };
 
   const configPath = writeDashboardConfig(repoRoot, {
     github: {
@@ -600,7 +649,7 @@ export async function runComplete({
       defaultBranch: resolvedBranch,
     },
     playwright: {
-      testDir: resolvedTestDir,
+      ...pathFields,
     },
     repositoryProfile: {
       id: buildRepositoryId(owner, repo),
@@ -609,9 +658,8 @@ export async function runComplete({
       label: repo,
       workflow: resolvedWorkflow,
       defaultBranch: resolvedBranch,
-      testDir: resolvedTestDir,
+      ...pathFields,
       browsers: templateConfig.playwright?.browsers,
-      resultsFile: templateConfig.playwright?.resultsFile,
       suites: templateConfig.playwright?.suites,
     },
   });
@@ -655,6 +703,9 @@ export async function runComplete({
         branch: resolvedBranch,
         repoRoot,
         testDir: resolvedTestDir,
+        testResultsDir: resolvedTestResultsDir,
+        reportDir: resolvedReportDir,
+        resultsFile: resolvedResultsFile,
         workflow: resolvedWorkflow,
         templateConfig,
         githubRequest,

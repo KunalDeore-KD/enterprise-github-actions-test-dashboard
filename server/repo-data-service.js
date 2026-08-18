@@ -62,11 +62,14 @@ export async function discoverRepositoryCatalog(repoRoot, repositoryId) {
   }
 
   try {
-    await execFileAsync(
-      'npx',
-      ['tsx', 'scripts/test-discovery.ts', '--repository-id', repositoryId],
-      { cwd: repoRoot, env: process.env }
-    );
+    const args = ['tsx', 'scripts/test-discovery.ts', '--repository-id', repositoryId];
+    if (profile.projectRoot) {
+      args.push('--project-root', profile.projectRoot);
+    }
+    await execFileAsync('npx', args, {
+      cwd: repoRoot,
+      env: process.env,
+    });
     const paths = ensureRepoDataDir(repoRoot, profile.owner, profile.repo);
     return readJsonIfExists(paths.catalog);
   } catch (error) {

@@ -18,6 +18,7 @@ export const CI_SCRIPT_FILES = [
   'scripts/test-discovery.ts',
   'scripts/extract-metadata.ts',
   'scripts/generate-dashboard-data.ts',
+  'scripts/publish-dashboard-to-report.ts',
   'scripts/manage-history.ts',
   'scripts/validate-reporter-config.ts',
 ];
@@ -32,6 +33,7 @@ const DASHBOARD_NPM_SCRIPTS = {
   'test:discover': 'tsx scripts/test-discovery.ts',
   'dashboard:validate': 'tsx scripts/validate-reporter-config.ts',
   'dashboard:generate': 'tsx scripts/generate-dashboard-data.ts',
+  'dashboard:publish': 'tsx scripts/publish-dashboard-to-report.ts',
   'dashboard:history': 'tsx scripts/manage-history.ts',
   'metadata:extract': 'tsx scripts/extract-metadata.ts',
 };
@@ -56,6 +58,9 @@ export function buildTargetDashboardConfig({
   defaultBranch,
   workflow,
   testDir,
+  testResultsDir,
+  reportDir,
+  resultsFile,
   templateConfig,
 }) {
   const base = templateConfig && typeof templateConfig === 'object' ? templateConfig : {};
@@ -72,8 +77,14 @@ export function buildTargetDashboardConfig({
     },
     playwright: {
       browsers: base.playwright?.browsers || ['chromium', 'firefox', 'webkit'],
+      projectRoot: '.',
       testDir: testDir || base.playwright?.testDir || 'tests',
-      resultsFile: base.playwright?.resultsFile || 'test-results/results.json',
+      resultsFile: resultsFile || base.playwright?.resultsFile || 'test-results/results.json',
+      testResultsDir: testResultsDir || base.playwright?.testResultsDir || 'test-results',
+      reportDir: reportDir || base.playwright?.reportDir || 'playwright-report',
+      artifactsDir: 'out',
+      artifactNamePattern:
+        base.playwright?.artifactNamePattern || 'playwright-artifacts-{runNumber}',
       suites: base.playwright?.suites || [
         { label: 'All Test Cases', value: 'all' },
         { label: 'Regression', value: 'regression', pattern: '@regression' },
@@ -174,6 +185,9 @@ export async function scaffoldTargetRepoIntegration({
   branch,
   repoRoot,
   testDir,
+  testResultsDir,
+  reportDir,
+  resultsFile,
   workflow,
   templateConfig,
   githubRequest,
@@ -190,6 +204,9 @@ export async function scaffoldTargetRepoIntegration({
     defaultBranch: branch,
     workflow,
     testDir,
+    testResultsDir,
+    reportDir,
+    resultsFile,
     templateConfig,
   });
 
@@ -362,8 +379,8 @@ function patchPlaywrightVideoContent(content) {
 }
 
 const PLAYWRIGHT_CONFIG_CANDIDATES = [
-  'playwright/playwright.config.ts',
-  'playwright/playwright.config.js',
   'playwright.config.ts',
   'playwright.config.js',
+  'playwright/playwright.config.ts',
+  'playwright/playwright.config.js',
 ];

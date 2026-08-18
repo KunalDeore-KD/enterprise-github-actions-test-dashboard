@@ -1,6 +1,235 @@
 {
-  "lastUpdated": "2026-06-22T12:22:06.452Z",
+  "lastUpdated": "2026-06-25T07:47:13.368Z",
   "entries": [
+    {
+      "schemaVersion": "1.0",
+      "runId": "28154962492",
+      "runNumber": 77,
+      "branch": "test",
+      "commit": "275d597",
+      "triggeredBy": "KunalDeore-KD",
+      "commitAuthor": {
+        "name": "Kunal Deore",
+        "email": "kunal.d@york.ie",
+        "date": "2026-06-22T11:50:21Z"
+      },
+      "workflowActor": "KunalDeore-KD",
+      "startedAt": "2026-06-25T07:46:24.727Z",
+      "finishedAt": "2026-06-25T07:47:13.368Z",
+      "durationSeconds": 23,
+      "environment": "",
+      "suiteFilter": "smoke",
+      "summary": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "passRate": 100
+      },
+      "artifactUrl": "https://github.com/KunalDeore-KD/Playwright_with_TypeScript/actions/runs/28154962492",
+      "artifactViewUrl": "./run?runId=28154962492#evidence",
+      "artifactExpiresAt": "2026-07-25T07:47:13.366Z",
+      "allureReportUrl": null,
+      "videoBaseUrl": "http://localhost:5000/artifacts/playwright-artifacts-77",
+      "videos": {
+        "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium": "08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm",
+        "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium": "08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm",
+        "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium": "08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm",
+        "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium": "09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm",
+        "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium": "10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm",
+        "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium": "15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm"
+      },
+      "consoleLogs": [
+        {
+          "title": "fill form and verify success @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Starting AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "navigate to Shop page @smoke",
+          "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+          "browser": "chromium",
+          "file": "08-hooks-and-organization.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "=== Finished AngularPractice Test Suite ==="
+            }
+          ]
+        },
+        {
+          "title": "fill form with random Faker data and verify success @smoke",
+          "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+          "browser": "chromium",
+          "file": "09-faker-utilities.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "Generated form data: {\n  name: 'Ashley Jones',\n  email: 'Chauncey.Bartell@hotmail.com',\n  password: '5tJ0PfQS_HjW',\n  gender: 'Male',\n  dob: '2004-08-16',\n  loveIceCream: true,\n  employment: 'employed'\n}"
+            }
+          ]
+        },
+        {
+          "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+          "browser": "chromium",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "lines": [
+            {
+              "stream": "stdout",
+              "text": "API returned user: {\n  id: 1,\n  email: 'george.bluth@reqres.in',\n  first_name: 'George',\n  last_name: 'Bluth',\n  avatar: 'https://reqres.in/img/faces/1-image.jpg'\n}"
+            },
+            {
+              "stream": "stdout",
+              "text": "Name: George Bluth"
+            },
+            {
+              "stream": "stdout",
+              "text": "Email: george.bluth@reqres.in"
+            }
+          ]
+        }
+      ],
+      "suites": [
+        {
+          "name": "Form Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form and verify success @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Form Tests > fill form and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--83995-rm-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Disabled Elements Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "entrepreneur radio should be disabled @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Disabled Elements Tests > entrepreneur radio should be disabled @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--78415-io-should-be-disabled-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Navigation Tests",
+          "file": "08-hooks-and-organization.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "navigate to Shop page @smoke",
+              "fullTitle": "08-hooks-and-organization.spec.ts > Navigation Tests > navigate to Shop page @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/08-hooks-and-organization--53b23-navigate-to-Shop-page-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Faker.js + Utilities Tests",
+          "file": "09-faker-utilities.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with random Faker data and verify success @smoke",
+              "fullTitle": "09-faker-utilities.spec.ts > Faker.js + Utilities Tests > fill form with random Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/09-faker-utilities-Faker-j-65bb3-ta-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "API + UI Hybrid Tests",
+          "file": "10-api-ui-hybrid.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "fullTitle": "10-api-ui-hybrid.spec.ts > API + UI Hybrid Tests > Pattern 1: Fetch user from API, fill UI form with that data @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/10-api-ui-hybrid-API-UI-Hy-1e8a2-I-form-with-that-data-smoke-chromium/video.webm"
+            }
+          ]
+        },
+        {
+          "name": "Allure Reporting Demo",
+          "file": "15-allure-reporting.spec.ts",
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "durationMs": 0,
+          "tests": [
+            {
+              "title": "fill form with Faker data and verify success @smoke",
+              "fullTitle": "15-allure-reporting.spec.ts > Allure Reporting Demo > fill form with Faker data and verify success @smoke",
+              "browser": "chromium",
+              "status": "passed",
+              "durationMs": 0,
+              "errorMessage": null,
+              "errorStack": null,
+              "videoPath": "test-results/15-allure-reporting-Allure-9a7b4-ta-and-verify-success-smoke-chromium/video.webm"
+            }
+          ]
+        }
+      ],
+      "owner": "KunalDeore-KD",
+      "repo": "Playwright_with_TypeScript",
+      "repositoryId": "KunalDeore-KD/Playwright_with_TypeScript"
+    },
     {
       "schemaVersion": "1.0",
       "runId": "27952026622",

@@ -2,7 +2,7 @@
 import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { getPlaywrightBaseDir, loadDashboardConfig } from './load-dashboard-config';
+import { getActiveRepositoryProfile, resolveTestResultsDir } from './load-dashboard-config';
 
 export interface CommitMetadata {
   authorName: string;
@@ -101,10 +101,8 @@ async function main() {
   const commitMeta = getCommitMetadata(sha);
   const workflowMeta = getWorkflowMetadata();
   
-  // CONFIG: was hardcoded, now reads from dashboard.config.json
-  loadDashboardConfig();
-  const baseDir = getPlaywrightBaseDir();
-  const resultsDir = path.join(baseDir, path.dirname(loadDashboardConfig().playwright.resultsFile));
+  const profile = getActiveRepositoryProfile();
+  const resultsDir = resolveTestResultsDir(profile);
   const videoFiles = findVideoFiles(resultsDir);
 
   const metadata = {

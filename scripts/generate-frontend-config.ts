@@ -30,8 +30,13 @@ window.DASHBOARD_CONFIG = ${JSON.stringify(
       playwright: {
         browsers: [...(active.browsers || config.playwright.browsers)],
         suites: (active.suites || config.playwright.suites).map((suite) => ({ ...suite })),
+        projectRoot: active.projectRoot || config.playwright.projectRoot,
         testDir: active.testDir || config.playwright.testDir,
         resultsFile: active.resultsFile || config.playwright.resultsFile,
+        testResultsDir: active.testResultsDir || config.playwright.testResultsDir,
+        reportDir: active.reportDir || config.playwright.reportDir,
+        artifactsDir: active.artifactsDir || config.playwright.artifactsDir,
+        artifactNamePattern: active.artifactNamePattern || config.playwright.artifactNamePattern,
       },
       dashboard: {
         title: config.dashboard.title,

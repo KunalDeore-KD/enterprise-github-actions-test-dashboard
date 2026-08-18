@@ -58,14 +58,13 @@ export function catalogMatchesProfile(catalog, profile) {
   if (!sample) {
     return true;
   }
-  const normalizedTestDir = String(profile.testDir).replace(/^\.\//, '');
-  if (sample.startsWith(`${normalizedTestDir}/`)) {
+  const normalizedTestDir = String(profile.testDir).replace(/\\/g, '/').replace(/^\.\//, '').replace(/\/+$/, '');
+  if (sample.startsWith(`${normalizedTestDir}/`) || sample === normalizedTestDir) {
     return true;
   }
-  if (normalizedTestDir === 'tests' && sample.startsWith('tests/')) {
-    return true;
-  }
-  if (normalizedTestDir === 'playwright/tests' && sample.startsWith('playwright/tests/')) {
+  // Allow catalogs that store paths relative to project root without the full prefix match failing on basename
+  const testDirBase = path.posix.basename(normalizedTestDir);
+  if (testDirBase && (sample.startsWith(`${testDirBase}/`) || sample.includes(`/${testDirBase}/`))) {
     return true;
   }
   return false;
@@ -75,7 +74,12 @@ export function localTestsExist(repoRoot, profile) {
   if (!profile?.testDir) {
     return false;
   }
-  return fs.existsSync(path.join(repoRoot, profile.testDir));
+  const projectRoot = profile.projectRoot
+    ? (path.isAbsolute(profile.projectRoot)
+        ? profile.projectRoot
+        : path.resolve(repoRoot, profile.projectRoot))
+    : repoRoot;
+  return fs.existsSync(path.join(projectRoot, profile.testDir));
 }
 
 export function historyEntryMatchesRepository(entry, owner, repo) {

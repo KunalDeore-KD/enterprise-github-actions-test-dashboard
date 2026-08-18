@@ -18,12 +18,14 @@ server/.env
 *.swo
 *~
 
-# Test artifacts
-playwright/test-results/
-playwright/playwright-report/
-playwright/allure-result/
-playwright/allure-results/
-playwright/allure-report/
+# Local Playwright / artifact outputs (external projectRoot or downloads)
+test-results/
+playwright-report/
+out/
+artifacts/
+allure-result/
+allure-results/
+allure-report/
 
 # Build outputs
 *.tgz

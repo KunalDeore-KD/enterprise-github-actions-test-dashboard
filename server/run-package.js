@@ -2,6 +2,12 @@ import archiver from 'archiver';
 import fs from 'fs';
 import path from 'path';
 import { findHistoryEntryAcrossRepositories } from './repo-data-service.js';
+import {
+  formatArtifactName,
+  getRelativeReportDir,
+  getRelativeResultsFile,
+  getRelativeTestResultsDir,
+} from '../scripts/load-dashboard-config.js';
 const OFFLINE_ASSET_FILES = [
   'assets/styles.css',
   'assets/error-explainer.js',
@@ -55,19 +61,35 @@ export function getArtifactDirName(entry, artifactRoot) {
       const name = parts[parts.length - 1];
       if (name) return name;
     } catch (error) {
-      const match = String(entry.videoBaseUrl).match(/playwright-artifacts-\d+/);
+      const match = String(entry.videoBaseUrl).match(/(?:playwright-)?artifacts-\d+/);
       if (match) return match[0];
     }
   }
 
   if (entry.runNumber) {
-    const candidate = `playwright-artifacts-${entry.runNumber}`;
+    const repositoryId = entry.repositoryId || (entry.owner && entry.repo ? `${entry.owner}/${entry.repo}` : undefined);
+    const candidate = formatArtifactName(entry.runNumber, repositoryId);
     if (fs.existsSync(path.join(artifactRoot, candidate))) {
       return candidate;
+    }
+    const legacy = `playwright-artifacts-${entry.runNumber}`;
+    if (fs.existsSync(path.join(artifactRoot, legacy))) {
+      return legacy;
     }
   }
 
   return null;
+}
+
+function resolvePlaywrightReportDir(artifactDir, repositoryId) {
+  if (!artifactDir) return null;
+  const reportDir = getRelativeReportDir(repositoryId);
+  const candidates = [
+    path.join(artifactDir, reportDir),
+    path.join(artifactDir, 'playwright-report'),
+    path.join(artifactDir, 'playwright', 'playwright-report'),
+  ];
+  return candidates.find((candidate) => fs.existsSync(candidate)) || null;
 }
 
 function getVideoZipPath(absolutePath) {
@@ -75,18 +97,10 @@ function getVideoZipPath(absolutePath) {
   return `videos/${folderName}/${path.basename(absolutePath)}`;
 }
 
-function resolvePlaywrightReportDir(artifactDir) {
-  if (!artifactDir) return null;
-  const candidates = [
-    path.join(artifactDir, 'playwright', 'playwright-report'),
-    path.join(artifactDir, 'playwright-report'),
-  ];
-  return candidates.find((candidate) => fs.existsSync(candidate)) || null;
-}
-
 function prepareOfflineEntry(entry, artifactDir) {
   const offlineEntry = JSON.parse(JSON.stringify(entry));
   delete offlineEntry.videoBaseUrl;
+  const repositoryId = entry.repositoryId || (entry.owner && entry.repo ? `${entry.owner}/${entry.repo}` : undefined);
 
   if (!artifactDir || !fs.existsSync(artifactDir)) {
     return offlineEntry;
@@ -103,7 +117,7 @@ function prepareOfflineEntry(entry, artifactDir) {
 
   const videoPathMap = new Map();
   videoPaths.forEach((relativePath) => {
-    const absolutePath = resolveVideoFile(artifactDir, relativePath);
+    const absolutePath = resolveVideoFile(artifactDir, relativePath, repositoryId);
     if (absolutePath) {
       videoPathMap.set(relativePath, getVideoZipPath(absolutePath));
     }
@@ -117,7 +131,7 @@ function prepareOfflineEntry(entry, artifactDir) {
     });
   });
 
-  offlineEntry.hasPlaywrightReport = Boolean(resolvePlaywrightReportDir(artifactDir));
+  offlineEntry.hasPlaywrightReport = Boolean(resolvePlaywrightReportDir(artifactDir, repositoryId));
   return offlineEntry;
 }
 
@@ -158,14 +172,15 @@ function appendOfflineReportAssets(archive, repoRoot) {
   });
 }
 
-function resolveVideoFile(artifactDir, relativePath) {
+function resolveVideoFile(artifactDir, relativePath, repositoryId) {
   const cleanPath = String(relativePath || '').replace(/^\/+/, '');
+  const testResultsDir = getRelativeTestResultsDir(repositoryId);
   const candidates = [
     path.join(artifactDir, cleanPath),
     path.join(artifactDir, 'playwright', cleanPath),
   ];
 
-  if (cleanPath.startsWith('test-results/')) {
+  if (cleanPath.startsWith(`${testResultsDir}/`) || cleanPath.startsWith('test-results/')) {
     candidates.push(path.join(artifactDir, 'playwright', cleanPath));
   }
 
@@ -328,10 +343,11 @@ function buildRunSummaryJson(entry) {
 export function streamRunDetailsZip({ entry, artifactRoot, repoRoot, res }) {
   const runLabel = entry.runNumber && Number(entry.runNumber) > 0 ? entry.runNumber : entry.runId;
   const filename = `playwright-run-${runLabel}.zip`;
+  const repositoryId = entry.repositoryId || (entry.owner && entry.repo ? `${entry.owner}/${entry.repo}` : undefined);
   const artifactName = getArtifactDirName(entry, artifactRoot);
   const artifactDir = artifactName ? path.join(artifactRoot, artifactName) : null;
   const offlineEntry = prepareOfflineEntry(entry, artifactDir);
-  const hasPlaywrightReport = Boolean(resolvePlaywrightReportDir(artifactDir));
+  const hasPlaywrightReport = Boolean(resolvePlaywrightReportDir(artifactDir, repositoryId));
 
   res.setHeader('Content-Type', 'application/zip');
   res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
@@ -389,22 +405,24 @@ export function streamRunDetailsZip({ entry, artifactRoot, repoRoot, res }) {
 
   if (artifactDir && fs.existsSync(artifactDir)) {
     videoPaths.forEach((relativePath) => {
-      const absolutePath = resolveVideoFile(artifactDir, relativePath);
+      const absolutePath = resolveVideoFile(artifactDir, relativePath, repositoryId);
       if (!absolutePath) return;
       archive.file(absolutePath, { name: getVideoZipPath(absolutePath) });
     });
 
+    const relativeResultsFile = getRelativeResultsFile(repositoryId);
     const resultsCandidates = [
-      path.join(artifactDir, 'playwright', 'test-results', 'results.json'),
+      path.join(artifactDir, relativeResultsFile),
       path.join(artifactDir, 'test-results', 'results.json'),
+      path.join(artifactDir, 'playwright', 'test-results', 'results.json'),
     ];
     resultsCandidates.forEach((candidate) => {
       if (fs.existsSync(candidate)) {
-        archive.file(candidate, { name: 'playwright/test-results/results.json' });
+        archive.file(candidate, { name: relativeResultsFile });
       }
     });
 
-    const playwrightReportDir = resolvePlaywrightReportDir(artifactDir);
+    const playwrightReportDir = resolvePlaywrightReportDir(artifactDir, repositoryId);
     if (playwrightReportDir) {
       archive.directory(playwrightReportDir, 'playwright-report');
     }

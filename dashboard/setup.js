@@ -113,7 +113,11 @@ class SetupWizard {
   _populateReviewForm(report) {
     document.getElementById('setupWorkflow').value = report.workflow || 'playwright.yml';
     document.getElementById('setupBranch').value = report.defaultBranch || 'main';
-    document.getElementById('setupTestDir').value = report.testDir || 'playwright/tests';
+    document.getElementById('setupTestDir').value = report.testDir || 'tests';
+    document.getElementById('setupProjectRoot').value = report.projectRoot || '';
+    document.getElementById('setupTestResultsDir').value = report.testResultsDir || 'test-results';
+    document.getElementById('setupReportDir').value = report.reportDir || 'playwright-report';
+    document.getElementById('setupResultsFile').value = report.resultsFile || 'test-results/results.json';
     document.getElementById('setupScaffoldWorkflow').checked = Boolean(report.canScaffoldWorkflow);
   }
 
@@ -180,6 +184,10 @@ class SetupWizard {
           workflow: document.getElementById('setupWorkflow').value.trim(),
           defaultBranch: document.getElementById('setupBranch').value.trim(),
           testDir: document.getElementById('setupTestDir').value.trim(),
+          projectRoot: document.getElementById('setupProjectRoot').value.trim(),
+          testResultsDir: document.getElementById('setupTestResultsDir').value.trim() || 'test-results',
+          reportDir: document.getElementById('setupReportDir').value.trim() || 'playwright-report',
+          resultsFile: document.getElementById('setupResultsFile').value.trim() || 'test-results/results.json',
           scaffoldWorkflow: document.getElementById('setupScaffoldWorkflow').checked,
           scaffoldIntegration: document.getElementById('setupScaffoldIntegration').checked,
         }),

@@ -2,13 +2,13 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { pathToFileURL } from 'url';
-import { loadDashboardConfig } from './load-dashboard-config';
+import { loadDashboardConfig, resolveProjectRoot } from './load-dashboard-config';
 
 export const PLAYWRIGHT_CONFIG_CANDIDATES = [
-  'playwright/playwright.config.ts',
-  'playwright/playwright.config.js',
   'playwright.config.ts',
   'playwright.config.js',
+  'playwright/playwright.config.ts',
+  'playwright/playwright.config.js',
 ];
 
 export function findPlaywrightConfigFile(cwd = process.cwd()): string | null {
@@ -60,7 +60,7 @@ export function patchPlaywrightConfigContent(content: string, resultsFile: strin
   throw new Error('Could not locate a reporter block to patch in Playwright config.');
 }
 
-export function ensureJsonReporter(cwd = process.cwd()): {
+export function ensureJsonReporter(cwd = resolveProjectRoot()): {
   configFile: string;
   changed: boolean;
 } {
@@ -69,7 +69,9 @@ export function ensureJsonReporter(cwd = process.cwd()): {
   const configFile = findPlaywrightConfigFile(cwd);
 
   if (!configFile) {
-    throw new Error('No playwright.config.ts / playwright.config.js found in project root or playwright folder.');
+    throw new Error(
+      'No playwright.config.ts / playwright.config.js found under the configured projectRoot.'
+    );
   }
 
   const absolutePath = path.join(cwd, configFile);

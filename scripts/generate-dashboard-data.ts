@@ -2,7 +2,15 @@
 import { glob } from 'glob';
 import * as fs from 'fs';
 import * as path from 'path';
-import { getResultsGlob, loadDashboardConfig } from './load-dashboard-config';
+import {
+  getActiveRepositoryProfile,
+  getRelativeResultsFile,
+  getRelativeTestResultsDir,
+  getResultsGlob,
+  loadDashboardConfig,
+  resolveResultsFile,
+  resolveTestResultsDir,
+} from './load-dashboard-config';
 
 interface PlaywrightRunError {
   message?: string;
@@ -128,6 +136,13 @@ export interface DashboardData {
 function normalizeArtifactRelativePath(filePath?: string): string | null {
   if (!filePath) return null;
   const normalized = filePath.replace(/\\/g, '/');
+  const configuredDir = getRelativeTestResultsDir().replace(/\\/g, '/');
+  const configuredMarker = `/${configuredDir}/`;
+  const configuredIndex = normalized.lastIndexOf(configuredMarker);
+  if (configuredIndex !== -1) {
+    return normalized.slice(configuredIndex + 1);
+  }
+  // Compatibility fallbacks for older artifact layouts
   const playwrightIndex = normalized.lastIndexOf('/playwright/test-results/');
   if (playwrightIndex !== -1) {
     return normalized.slice(playwrightIndex + 1);
@@ -268,7 +283,7 @@ function buildSummaryFromRun(
 function resolveArtifactScopeRoot(requestedPattern: string): string | null {
   const resolved = path.resolve(requestedPattern);
   const parts = resolved.split(path.sep);
-  const artifactIdx = parts.findIndex((part) => /^playwright-artifacts-\d+$/.test(part));
+  const artifactIdx = parts.findIndex((part) => /^(?:playwright-)?artifacts-\d+$/.test(part) || /^playwright-artifacts-\d+$/.test(part));
   if (artifactIdx !== -1) {
     return parts.slice(0, artifactIdx + 1).join(path.sep);
   }
@@ -281,12 +296,14 @@ function pickScopedResultFiles(files: string[], scopeRoot: string): string[] {
     return scoped;
   }
 
+  const preferredSuffix = `/${getRelativeResultsFile()}`.replace(/\\/g, '/');
   const ranked = [...scoped].sort((a, b) => {
     const score = (filePath: string) => {
       const normalized = filePath.replace(/\\/g, '/');
-      if (normalized.endsWith('/playwright/test-results/results.json')) return 0;
+      if (preferredSuffix !== '/' && normalized.endsWith(preferredSuffix)) return 0;
       if (normalized.endsWith('/test-results/results.json')) return 1;
-      return 2;
+      if (normalized.endsWith('/playwright/test-results/results.json')) return 2;
+      return 3;
     };
     return score(a) - score(b);
   });
@@ -299,18 +316,28 @@ function pickScopedResultFiles(files: string[], scopeRoot: string): string[] {
 }
 
 async function collectResultFiles(requestedPattern?: string): Promise<string[]> {
-  // CONFIG: was hardcoded, now reads from dashboard.config.json
   loadDashboardConfig();
+  const profile = getActiveRepositoryProfile();
+  const configuredResultsFile = resolveResultsFile(profile);
+  const configuredResultsDir = resolveTestResultsDir(profile);
+  const relativeResultsFile = getRelativeResultsFile(profile);
   const defaultPattern = getResultsGlob();
   const pattern = requestedPattern || defaultPattern;
   const explicit = Boolean(requestedPattern);
   const resolvedPattern = path.resolve(pattern);
 
+  if (fs.existsSync(configuredResultsFile) && fs.statSync(configuredResultsFile).isFile() && !explicit) {
+    return [configuredResultsFile];
+  }
+
   if (fs.existsSync(resolvedPattern) && fs.statSync(resolvedPattern).isFile()) {
     return [resolvedPattern];
   }
 
-  let files = await glob(pattern);
+  let files = await glob(pattern, { absolute: true, nodir: true });
+  if (files.length === 0 && path.isAbsolute(pattern)) {
+    files = await glob(pattern.replace(/\\/g, '/'), { absolute: true, nodir: true });
+  }
   if (files.length > 0) {
     if (explicit) {
       const scopeRoot = resolveArtifactScopeRoot(pattern);
@@ -329,12 +356,13 @@ async function collectResultFiles(requestedPattern?: string): Promise<string[]> 
     const scopeRoot = resolveArtifactScopeRoot(pattern);
     if (scopeRoot) {
       const scopedCandidates = [
-        path.join(scopeRoot, 'playwright', 'test-results', 'results.json'),
+        path.join(scopeRoot, relativeResultsFile),
         path.join(scopeRoot, 'test-results', 'results.json'),
+        path.join(scopeRoot, 'playwright', 'test-results', 'results.json'),
         path.join(scopeRoot, '**/results.json'),
       ];
       for (const candidate of scopedCandidates) {
-        files = await glob(candidate);
+        files = await glob(candidate, { absolute: true, nodir: true });
         if (files.length > 0) {
           return pickScopedResultFiles(files.map((file) => path.resolve(file)), scopeRoot);
         }
@@ -342,28 +370,28 @@ async function collectResultFiles(requestedPattern?: string): Promise<string[]> 
     }
 
     console.error(`\nERROR: No Playwright JSON results found for explicit path: ${pattern}`);
-    console.error('Ensure the artifact was extracted and contains test-results/results.json.');
+    console.error(`Ensure the artifact was extracted and contains ${relativeResultsFile}.`);
     process.exit(1);
   }
 
   const patternVariants = [
-    pattern,
-    pattern.replace(/^playwright\//, ''),
-    'playwright/test-results/**/results.json',
+    path.join(configuredResultsDir, '**/results.json').replace(/\\/g, '/'),
+    relativeResultsFile,
     'test-results/**/results.json',
+    'playwright/test-results/**/results.json',
     '**/test-results/**/results.json',
     '**/results.json',
   ];
 
-  for (const candidate of patternVariants.slice(1)) {
-    files = await glob(candidate);
+  for (const candidate of patternVariants) {
+    files = await glob(candidate, { absolute: true, nodir: true });
     if (files.length > 0) break;
   }
 
   if (files.length === 0) {
     console.error(`\nERROR: No Playwright JSON results found matching: ${pattern}`);
-    const resultsFile = loadDashboardConfig().playwright.resultsFile;
-    console.error(`Ensure playwright.config.ts has: reporter: [['json', { outputFile: '${resultsFile}' }]]`);
+    console.error(`Looked under configured project path: ${configuredResultsFile}`);
+    console.error(`Ensure playwright.config.ts has: reporter: [['json', { outputFile: '${relativeResultsFile}' }]]`);
     process.exit(1);
   }
 
@@ -731,6 +759,20 @@ async function main() {
   history.lastUpdated = dashboard.finishedAt || new Date().toISOString();
   fs.writeFileSync(uiHistoryPath, JSON.stringify(history, null, 2));
   console.log(`\n✅ dashboard.json written to root and dashboard/dashboard.json. Summary: ${totalPassed}/${total} passed (${passRate}%).`);
+
+  try {
+    const { execFileSync } = await import('child_process');
+    execFileSync('npx', ['tsx', 'scripts/publish-dashboard-to-report.ts'], {
+      cwd: path.resolve('.'),
+      stdio: 'inherit',
+      env: process.env,
+    });
+  } catch (publishError) {
+    console.warn(
+      '⚠️  Could not publish dashboard into reportDir:',
+      publishError instanceof Error ? publishError.message : publishError
+    );
+  }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

@@ -8,10 +8,14 @@ import { promisify } from 'util';
 import { loadHistoryEntry, streamRunDetailsZip } from './run-package.js';
 import {
   getActiveRepositoryProfile,
+  getArtifactNamePattern,
   getGithubTarget,
   getPublicConfig,
+  getRelativeResultsFile,
+  getRelativeTestResultsDir,
   loadDashboardConfig,
   buildRepositoryId,
+  resolveArtifactsDir,
 } from '../scripts/load-dashboard-config.js';
 import {
   getSetupStatus,
@@ -36,7 +40,7 @@ const dashboardConfig = loadDashboardConfig();
 const port = dashboardConfig.server.port;
 const execFileAsync = promisify(execFile);
 const repoRoot = path.resolve(process.cwd(), '..');
-const defaultArtifactDir = path.resolve(repoRoot, process.env.ARTIFACT_DOWNLOAD_DIR || 'out');
+const defaultArtifactDir = resolveArtifactsDir();
 const activeSyncJobs = new Set();
 const syncJobStatuses = new Map();
 const MAX_SYNC_JOB_STATUSES = 50;
@@ -242,14 +246,23 @@ async function githubBinaryRequest(url, token) {
   throw lastError || new Error('GitHub artifact download failed.');
 }
 
-async function waitForPlaywrightArtifacts({ owner, repo, runId, token }) {
+function getArtifactNamePrefix(repositoryId) {
+  const pattern = getArtifactNamePattern(repositoryId);
+  return pattern.split('{runNumber}')[0] || 'playwright-artifacts-';
+}
+
+async function waitForPlaywrightArtifacts({ owner, repo, runId, token, repositoryId }) {
   const artifactsUrl = `https://api.github.com/repos/${owner}/${repo}/actions/runs/${runId}/artifacts`;
+  const artifactPrefix = getArtifactNamePrefix(repositoryId);
 
   for (let attempt = 1; attempt <= ARTIFACT_READY_MAX_ATTEMPTS; attempt += 1) {
     const artifactsPayload = await githubJsonRequest(artifactsUrl, token);
     const artifacts = Array.isArray(artifactsPayload.artifacts) ? artifactsPayload.artifacts : [];
     const playwrightArtifacts = artifacts.filter(
-      (artifact) => artifact.name.includes('playwright') && !artifact.expired && artifact.archive_download_url
+      (artifact) =>
+        !artifact.expired &&
+        artifact.archive_download_url &&
+        (artifact.name.startsWith(artifactPrefix) || artifact.name.includes('playwright'))
     );
 
     if (playwrightArtifacts.length) {
@@ -265,12 +278,14 @@ async function waitForPlaywrightArtifacts({ owner, repo, runId, token }) {
   throw new Error(`No active Playwright artifacts found for run ${runId}.`);
 }
 
-function resolveArtifactResultsPath(artifactDir, artifactName) {
+function resolveArtifactResultsPath(artifactDir, artifactName, repositoryId) {
   if (!artifactName) {
     return `${artifactDir}/**/results.json`;
   }
 
+  const relativeResultsFile = getRelativeResultsFile(repositoryId);
   const candidates = [
+    path.join(artifactDir, artifactName, relativeResultsFile),
     path.join(artifactDir, artifactName, 'test-results', 'results.json'),
     path.join(artifactDir, artifactName, 'playwright', 'test-results', 'results.json'),
   ];
@@ -281,7 +296,7 @@ function resolveArtifactResultsPath(artifactDir, artifactName) {
     }
   }
 
-  return path.resolve(artifactDir, artifactName, 'playwright', 'test-results', 'results.json');
+  return path.resolve(artifactDir, artifactName, relativeResultsFile);
 }
 
 function resolveWorkflowRunLogPath(artifactDir, artifactName) {
@@ -309,13 +324,18 @@ function resolveWorkflowRunLogPath(artifactDir, artifactName) {
   return null;
 }
 
-function resolveArtifactTestResultsDir(artifactDir, artifactName) {
+function resolveArtifactTestResultsDir(artifactDir, artifactName, repositoryId) {
+  const relativeTestResultsDir = getRelativeTestResultsDir(repositoryId);
   const candidates = artifactName
     ? [
+        path.join(artifactDir, artifactName, relativeTestResultsDir),
         path.join(artifactDir, artifactName, 'test-results'),
         path.join(artifactDir, artifactName, 'playwright', 'test-results'),
       ]
-    : [path.join(artifactDir, 'test-results')];
+    : [
+        path.join(artifactDir, relativeTestResultsDir),
+        path.join(artifactDir, 'test-results'),
+      ];
 
   for (const candidate of candidates) {
     if (fs.existsSync(candidate)) {
@@ -429,13 +449,14 @@ async function extractArtifactZip(zipPath, extractPath) {
 }
 
 async function syncDashboardData({ headSha, run, owner, repo, artifactDir, token, artifactViewUrl, artifactName, workflowInputs = {} }) {
+  const repositoryId = buildRepositoryId(owner, repo);
   const metadataPath = path.join(repoRoot, '.tmp', 'metadata.json');
   const dashboardJsonPath = path.join(repoRoot, 'dashboard.json');
   const uiDashboardJsonPath = path.join(repoRoot, 'dashboard', 'dashboard.json');
   const uiHistoryPath = path.join(repoRoot, 'dashboard', 'dashboard-history.json');
   const commitMeta = await fetchCommitMetadata(owner, repo, headSha, token);
   const workflowActor = run.actor?.login || process.env.GITHUB_ACTOR || 'unknown';
-  const videoFiles = collectVideoFiles(resolveArtifactTestResultsDir(artifactDir, artifactName));
+  const videoFiles = collectVideoFiles(resolveArtifactTestResultsDir(artifactDir, artifactName, repositoryId));
 
   fs.mkdirSync(path.dirname(metadataPath), { recursive: true });
   fs.writeFileSync(
@@ -478,7 +499,7 @@ async function syncDashboardData({ headSha, run, owner, repo, artifactDir, token
     ALLURE_REPORT_URL: '',
   };
 
-  const resultsPath = resolveArtifactResultsPath(artifactDir, artifactName);
+  const resultsPath = resolveArtifactResultsPath(artifactDir, artifactName, repositoryId);
   const workflowRunLogPath = resolveWorkflowRunLogPath(artifactDir, artifactName);
   if (workflowRunLogPath) {
     generatorEnv.WORKFLOW_RUN_LOG_PATH = workflowRunLogPath;
@@ -489,12 +510,24 @@ async function syncDashboardData({ headSha, run, owner, repo, artifactDir, token
     env: generatorEnv,
   });
 
+  try {
+    await execFileAsync('npx', ['tsx', 'scripts/publish-dashboard-to-report.ts', '--repository-id', repositoryId], {
+      cwd: repoRoot,
+      env: process.env,
+    });
+  } catch (publishError) {
+    console.warn(
+      '⚠️  Could not publish dashboard into reportDir:',
+      publishError instanceof Error ? publishError.message : publishError
+    );
+  }
+
   await syncRepositoryCatalogAfterRun({
     repoRoot,
     owner,
     repo,
     historyBranch: dashboardConfig.dashboard.historyBranch || 'dashboard-data',
-    repositoryId: buildRepositoryId(owner, repo),
+    repositoryId,
     artifactDir,
     artifactName,
   });
@@ -504,7 +537,7 @@ async function syncDashboardData({ headSha, run, owner, repo, artifactDir, token
     dashboardData = JSON.parse(fs.readFileSync(dashboardJsonPath, 'utf-8'));
     dashboardData.owner = owner;
     dashboardData.repo = repo;
-    dashboardData.repositoryId = buildRepositoryId(owner, repo);
+    dashboardData.repositoryId = repositoryId;
 
     const repoPaths = saveRepositoryHistoryEntry({
       repoRoot,
@@ -584,11 +617,13 @@ async function downloadAndSyncRunArtifacts({ owner, repo, workflowId, ref, token
       { runId: String(completedRun.id), runNumber: completedRun.run_number }
     );
 
+    const repositoryId = buildRepositoryId(owner, repo);
     const playwrightArtifacts = await waitForPlaywrightArtifacts({
       owner,
       repo,
       runId: completedRun.id,
       token,
+      repositoryId,
     });
 
     const artifactDir = defaultArtifactDir;
@@ -780,6 +815,10 @@ app.post('/api/setup/complete', async (req, res) => {
       workflow,
       defaultBranch,
       testDir,
+      projectRoot,
+      testResultsDir,
+      reportDir,
+      resultsFile,
       scaffoldWorkflow,
       scaffoldIntegration,
     } = req.body || {};
@@ -790,6 +829,10 @@ app.post('/api/setup/complete', async (req, res) => {
       workflow,
       defaultBranch,
       testDir,
+      projectRoot,
+      testResultsDir,
+      reportDir,
+      resultsFile,
       scaffoldWorkflow: scaffoldWorkflow !== false,
       scaffoldIntegration: scaffoldIntegration !== false,
       repoRoot,

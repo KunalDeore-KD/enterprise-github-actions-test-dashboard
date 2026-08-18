@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import https from 'https';
 import { execSync } from 'child_process';
-import { getGithubTarget } from './load-dashboard-config';
+import { getArtifactNamePattern, getGithubTarget, resolveArtifactsDir } from './load-dashboard-config';
 
 interface ArtifactResponse {
   artifacts: Array<{
@@ -85,7 +85,9 @@ async function main() {
   const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] || process.argv[3] || githubDefaults.repo;
   const runId = parseInt(process.env.GITHUB_RUN_ID || process.argv[4], 10);
   const token = process.env.GITHUB_TOKEN;
-  const outputDir = process.env.ARTIFACT_DOWNLOAD_DIR || process.argv[5] || './artifacts';
+  const outputDir = process.env.ARTIFACT_DOWNLOAD_DIR || process.argv[5] || resolveArtifactsDir();
+  const artifactPattern = getArtifactNamePattern();
+  const artifactPrefix = artifactPattern.split('{runNumber}')[0] || 'playwright-artifacts-';
 
   if (!owner || !repo || !runId) {
     console.error('Usage: npx tsx download-artifacts.ts <owner> <repo> <runId> [outputDir]');
@@ -112,12 +114,12 @@ async function main() {
 
     console.log(`Found ${artifacts.length} artifact(s).`);
 
-    // Filter for Playwright artifacts
+    // Prefer configured artifact name pattern; fall back to playwright-named artifacts
     const playwrightArtifacts = artifacts.filter(
       (art) =>
-        art.name.includes('playwright') &&
         !art.expired &&
-        art.archive_download_url
+        art.archive_download_url &&
+        (art.name.startsWith(artifactPrefix) || art.name.includes('playwright'))
     );
 
     if (playwrightArtifacts.length === 0) {

@@ -1,13 +1,21 @@
-# Test Dashboard Enhancement: Artifacts, Metadata & Video Playback
+# Test Dashboard: Artifacts, Metadata & Video Playback
 
 ## Overview
 
-The dashboard has been enhanced with the following capabilities:
+The dashboard consumes Playwright **JSON reporter** output and artifacts from an **external** Playwright project (or from GitHub Actions downloads). Paths come from `dashboard.config.json`:
 
-1. **Artifact Download & Extraction** - Automatically download and extract test artifacts from GitHub Actions
-2. **Commit & Workflow Metadata** - Display information about who committed the code and who triggered the workflow
-3. **Test Video Recording** - View recorded videos of test executions directly in the dashboard
-4. **Enhanced Test Reports** - Click "View" button to open detailed test reports with metadata and videos
+- `projectRoot` — local Playwright project
+- `testResultsDir` / `resultsFile` — JSON + videos
+- `reportDir` — HTML report; static dashboard publishes to `{reportDir}/dashboard/`
+- `artifactsDir` — downloaded CI zips (default `out/`)
+
+Capabilities:
+
+1. **Artifact Download & Extraction** — from GitHub Actions into `artifactsDir`
+2. **Commit & Workflow Metadata** — who committed / who triggered
+3. **Test Video Recording** — playback from `testResultsDir` or `/artifacts/...`
+4. **Report-folder drop-in** — `npm run dashboard:publish` writes a static UI next to Playwright's HTML report
+5. **Enhanced Test Reports** — View button for detailed reports with metadata and videos
 
 ---
 
@@ -38,7 +46,7 @@ npx tsx scripts/download-artifacts.ts KunalDeore-KD enterprise-github-actions-te
 - `GITHUB_REPOSITORY` - Repository in `owner/repo` format (auto-detected in GitHub Actions)
 - `GITHUB_RUN_ID` - Workflow run ID (auto-detected in GitHub Actions)
 - `GITHUB_TOKEN` - Personal access token for authentication (required for private repos)
-- `ARTIFACT_DOWNLOAD_DIR` - Output directory (default: `./artifacts`)
+- `ARTIFACT_DOWNLOAD_DIR` - Output directory (overrides `playwright.artifactsDir`, default `out/`)
 
 **Features:**
 - Downloads all active Playwright artifacts
@@ -95,8 +103,8 @@ The dashboard data now includes:
   
   // NEW: Video File Map
   "videos": {
-    "ui-tests-login": "playwright/test-results/ui-tests-login/video.webm",
-    "api-tests-auth": "playwright/test-results/api-tests-auth/video.webm"
+    "ui-tests-login": "test-results/ui-tests-login/video.webm",
+    "api-tests-auth": "test-results/api-tests-auth/video.webm"
   },
   
   // Suites now include video paths per test
@@ -105,7 +113,7 @@ The dashboard data now includes:
       "title": "should login successfully",
       "status": "passed",
       "durationMs": 5000,
-      "videoPath": "playwright/test-results/ui-tests-login/video.webm"
+      "videoPath": "test-results/ui-tests-login/video.webm"
     }]
   }]
 }
@@ -166,7 +174,7 @@ The following has been automatically integrated:
 
 - name: Generate dashboard data
   if: always()
-  run: npx tsx scripts/generate-dashboard-data.ts "playwright/test-results/**/results.json"
+  run: npx tsx scripts/generate-dashboard-data.ts "test-results/**/results.json"
   env:
     GITHUB_RUN_ID: ${{ github.run_id }}
     GITHUB_RUN_NUMBER: ${{ github.run_number }}
@@ -198,14 +206,14 @@ This reads from git history and outputs to `.tmp/metadata.json`.
 ### Generate Dashboard Data Locally
 
 ```bash
-# Run tests first
-npm test
-
-# Generate dashboard
+# After tests have written JSON results under the configured testResultsDir
 npm run dashboard:generate
 
-# This merges metadata automatically
+# Also publishes static UI into {projectRoot}/{reportDir}/dashboard/
+npm run dashboard:publish
 ```
+
+**Important:** Playwright's HTML reporter may wipe `playwright-report/` on each run. Always publish **after** the HTML report step (the CI workflow does this automatically).
 
 ### View Dashboard Locally
 
@@ -235,7 +243,7 @@ window.openTestDetail({
   retries: 0,
   errorMessage: null,
   errorStack: null,
-  videoPath: "playwright/test-results/auth-login/video.webm"
+  videoPath: "test-results/auth-login/video.webm"
 }, dashboardData, { name: "Auth" });
 ```
 
@@ -301,7 +309,7 @@ package.json                    # Added new npm scripts
 **Solutions**:
 1. Verify videos exist in test results:
    ```bash
-   find playwright/test-results -name "*.webm" -o -name "*.mp4"
+   find test-results -name "*.webm" -o -name "*.mp4"
    ```
 
 2. Check that metadata was extracted:
