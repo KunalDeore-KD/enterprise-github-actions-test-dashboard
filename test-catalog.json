@@ -1,51 +1,15 @@
 {
-  "generatedAt": "2026-06-22T12:54:43.916Z",
+  "generatedAt": "2026-08-18T07:55:41.714Z",
   "suites": {
-    "regression": [
-      "playwright/tests/08-hooks-and-organization.spec.ts",
-      "playwright/tests/09-faker-utilities.spec.ts",
-      "playwright/tests/10-api-ui-hybrid.spec.ts",
-      "playwright/tests/12-api-snapshot.spec.ts",
-      "playwright/tests/20-flaky-demo.spec.ts",
-      "playwright/tests/21-failure-demo.spec.ts"
-    ],
-    "smoke": [
-      "playwright/tests/08-hooks-and-organization.spec.ts",
-      "playwright/tests/09-faker-utilities.spec.ts",
-      "playwright/tests/10-api-ui-hybrid.spec.ts"
-    ],
-    "api": [
-      "playwright/tests/10-api-ui-hybrid.spec.ts",
-      "playwright/tests/12-api-snapshot.spec.ts"
-    ]
+    "regression": [],
+    "smoke": [],
+    "api": []
   },
-  "allTests": [
-    "playwright/tests/01-first-test.spec.ts",
-    "playwright/tests/02-locators-basics.spec.ts",
-    "playwright/tests/03-assertion_and_validation.spec.ts",
-    "playwright/tests/04-actions-interactions.spec.ts",
-    "playwright/tests/05-Codegen-script.spec.ts",
-    "playwright/tests/06-waits-and-timing.spec.ts",
-    "playwright/tests/07-pom-practice.spec.ts",
-    "playwright/tests/08-hooks-and-organization.spec.ts",
-    "playwright/tests/09-faker-utilities.spec.ts",
-    "playwright/tests/10-api-ui-hybrid.spec.ts",
-    "playwright/tests/11-visual-regression.spec.ts",
-    "playwright/tests/12-api-snapshot.spec.ts",
-    "playwright/tests/13-component-test.spec.ts",
-    "playwright/tests/14-test-agents.spec.ts",
-    "playwright/tests/16-screenplay-pattern.spec.ts",
-    "playwright/tests/17-component-runner.spec.ts",
-    "playwright/tests/18-react-site-component.spec.ts",
-    "playwright/tests/19-shared-library.spec.ts",
-    "playwright/tests/20-flaky-demo.spec.ts",
-    "playwright/tests/21-failure-demo.spec.ts",
-    "playwright/tests/example.spec.ts"
-  ],
-  "totalCount": 74,
+  "allTests": [],
+  "totalCount": 0,
   "suiteTestCaseCounts": {
-    "regression": 15,
-    "smoke": 5,
-    "api": 7
+    "regression": 0,
+    "smoke": 0,
+    "api": 0
   }
 }
