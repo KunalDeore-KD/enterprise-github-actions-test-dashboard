@@ -7,12 +7,27 @@
     return `${String(baseUrl).replace(/\/+$/, '')}/${cleanRelative}`;
   }
 
+  function getConfiguredTestResultsDir() {
+    try {
+      const configured = window.DASHBOARD_CONFIG?.playwright?.testResultsDir;
+      if (configured) return String(configured).replace(/^\/+|\/+$/g, '');
+    } catch (error) {}
+    return 'test-results';
+  }
+
   function resolveArtifactVideoUrl(baseUrl, relativePath) {
     const candidates = [];
     const cleanPath = String(relativePath || '').replace(/^\/+/, '');
+    const testResultsDir = getConfiguredTestResultsDir();
 
     if (cleanPath) {
       candidates.push(cleanPath);
+      if (
+        cleanPath.startsWith(`${testResultsDir}/`) &&
+        !cleanPath.startsWith('playwright/')
+      ) {
+        candidates.push(`playwright/${cleanPath}`);
+      }
       if (cleanPath.startsWith('test-results/') && !cleanPath.startsWith('playwright/')) {
         candidates.push(`playwright/${cleanPath}`);
       }
